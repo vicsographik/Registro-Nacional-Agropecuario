@@ -1,0 +1,8 @@
+.cuentaPasos__list { list-style-type:none; margin:0; padding:0; display:flex; gap:8px; }
+.cuentaPasos__item { width:100%;; align-items:center; text-align:center; color:var(--neutro600); font-size:0.875rem; position: relative; padding-top:12px;}
+.cuentaPasos__item::before { content:""; width:100%; background:var(--neutro500); height:8px; position:absolute; left:0; border-radius:5rem; top:0px;}
+/*current*/
+.cuentaPasos__item--active,
+.cuentaPasos__item[aria-current] { color:var(--neutro800)}
+.cuentaPasos__item--active::before,
+.cuentaPasos__item[aria-current]::before { background:var(--dorado600) ;}

@@ -1,0 +1,21 @@
+[class^="botonera"] {  display:flex; align-items:center; gap:24px; border-radius:0; width:100%; justify-content:flex-end; color:var(--neutro600)}
+[class^="botonera"] > div { display:flex; gap:24px; align-items:center; margin:0; padding:0; text-align:center;}
+
+.botonera--between { justify-content:space-between;}
+.botonera--end { justify-content:flex-end;}
+.botonera--center { justify-content:center;}
+.botonera--start { justify-content: flex-start;}
+.botonera--borde { border-top:solid 1px var(--neutro400); padding:24px 0 0 0;}
+@media (max-width:768px) {
+    .botonera--responsiva { flex-direction:column; flex-wrap:wrap; row-gap:16px; }
+    .botonera--responsiva [class*="boton__"] { width:100%;}
+    .botonera--responsiva div  { flex-direction:column; width:100%;}
+    .boton--1 { order:1;}
+    .boton--2 { order:2;}
+    .boton--3 { order:3;}
+    .boton--4 { order:4;}
+    .boton--5 { order:5;}
+}
+
+
+

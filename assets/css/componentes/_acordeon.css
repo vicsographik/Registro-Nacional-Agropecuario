@@ -1,0 +1,32 @@
+/**/
+[class^="acordeon__gatillo"] { text-align:left; display:flex; column-gap:.5rem; }
+[class^="acordeon__gatillo"],
+.acordeon__contenido  { border:none; border-radius:.5rem; padding:1rem; background:#FFF; width:100%;  }
+[class^="acordeon__gatillo"]:after { content:"";  width:.7rem; height:.7rem; transition:all .2s; border:solid 2px var(--principal); transform:rotate(45deg); border-top:transparent; border-left:transparent; margin-top:.25rem; }
+.acordeon__grupo { display:flex; flex-direction:column; gap:1rem;}
+.acordeon__tit { font-size:1.25rem; font-weight:600; margin:0; width:100%; padding-right:1.5rem;}
+.acordeon__tit b { font-weight:700;}
+
+/*Expandido*/
+[class^="acordeon__gatillo"][aria-expanded="true"]:after { transform: rotate(-135deg);}
+[class^="acordeon__gatillo"][aria-expanded="true"] { border-radius:.5rem .5rem 0 0 ;}
+.acordeon__contenido { border-radius:0 0 .5rem .5rem; text-align: justify;}
+
+/*Con sombra*/
+.acordeon--sombra .acordeon__gatillo,
+.acordeon--sombra .acordeon__contenido  { box-shadow:0 4px 4px rgba(152, 152, 152, .25);} 
+
+/*contenido*/
+.acordeon__contenido li::marker { font-weight:bold;}
+.acordeon__contenido li ul,
+.acordeon__contenido li ol { margin-top:1rem; padding-left:1rem;}
+.acordeon__contenido li p { margin:0; }
+
+/*Solo Movil: En desk se ve expandido y pierde la funcionalidad*/
+@media (min-width: 768px) {
+  .acordeon__soloMovil .collapse { display: block;}
+  .acordeon__soloMovil .acordeon__gatillo { pointer-events: none;}
+  .acordeon__soloMovil .acordeon__contenido { box-shadow:none;}
+  .acordeon__soloMovil [class^="acordeon__gatillo"]:after { content:none;}
+}
+

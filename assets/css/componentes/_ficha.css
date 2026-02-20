@@ -1,0 +1,13 @@
+/*Ficha*/
+.ficha {
+    --radius:0.5rem;
+    display:flex;
+    flex-direction:column;
+    border-radius:var(--radius);
+    border:solid 1px #CCC;
+    word-wrap:break-word;
+    background:#fcfcfc;
+    flex-basis:0%;
+}
+.ficha__img { height:10rem; object-fit:cover; border-radius:var(--radius) var(--radius) 0 0;}
+.ficha__body { flex-grow:1}

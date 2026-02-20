@@ -1,0 +1,33 @@
+:root {
+    /*color primario*/
+    --gama100:var(--pverde100);
+    --gama200:var(--pverde200);
+    --gama300:var(--pverde300);
+    --gama400:var(--pverde400);
+    --gama500:var(--pverde500);
+    --gama600:var(--pverde600);
+    --gama700:var(--pverde700);
+    --gama800:var(--pverde800);
+    --gama900:var(--pverde900);
+    --gama950:var(--pverde950);
+    --gama1000:var(--pverde1000);
+    --principal:var(--pverde900);
+
+    /*filtro para imágenes de negro a color primario*/
+    --filtroPrimario:invert(21%) sepia(58%) saturate(1200%) hue-rotate(133deg) brightness(92%) contrast(103%);
+
+    /*degradado*/
+    --degradadoColores: var(--pverde900), var(--pverde600);
+}
+
+/*Color de texto*/
+.color--gama100 { color:var(--pverde100)}
+.color--gama200 { color:var(--pverde200)}
+.color--gama300 { color:var(--pverde300)}
+.color--gama400 { color:var(--pverde400)}
+.color--gama500 { color:var(--pverde500)}
+.color--gama600 { color:var(--pverde600)}
+.color--gama700 { color:var(--pverde700)}
+.color--gama800 { color:var(--pverde800)}
+.color--gama900 { color:var(--pverde900)}
+.color--gama950 { color:var(--pverde950)}

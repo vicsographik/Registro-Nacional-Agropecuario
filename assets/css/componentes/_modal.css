@@ -1,0 +1,38 @@
+.contAvance {
+  background: none;
+  padding: 0;
+  width: 98%;
+}
+.contAvance .contAvance__modal .boton__link {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.modal-content {
+  padding: 1rem;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+}
+.modal__footer--boton {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.modal-footer button{
+  width: 180px;
+}
+
+.modalFooter__parBoton {
+  display: flex;
+  justify-content: space-between;
+}

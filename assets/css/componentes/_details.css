@@ -1,0 +1,14 @@
+/* Limpia el SUMMARY*/
+summary { cursor: pointer; list-style-type:none; display:flex; align-items:center; gap:8px; user-select: none; display:flex; align-items:center; justify-content: space-between;}
+
+/* Muestra/Oculta cuando se Abre/Cierra Details*/
+details .openShow { display:none}           /*Oculto en Details cerrado*/
+details[open] .openShow { display:block;}   /*Mostrado en Details open*/
+details[open] .openHide { display:none;}    /*Oculto en Details open / Mostrado en Details cerrado*/
+
+/* Anima la apertura/cierre del contenido. Requiere details.css*/
+.details__caja { transition:all .3s ease; height:0px; overflow:hidden}
+
+/* Rota la flecha del summary*/
+.details__flecha {transition:all 0.2s;}
+[open] .details__flecha { transform: rotate(-180deg);}

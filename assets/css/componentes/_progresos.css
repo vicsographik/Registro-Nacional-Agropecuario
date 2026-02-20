@@ -1,0 +1,84 @@
+/*BARRA DE PROGRESO*/
+.progresoBar { margin:1.5rem auto 0;}
+.progresoBar__avance { display:flex; align-items:end; flex-direction:column; width:100%;}
+[class^="progresoBar__barra"] { height:.5rem; background:#DDD; border-radius:1rem; width:100%; position:relative; position:relative; overflow:hidden; }
+.progresoBar__info { font-size:0.875rem; margin-top:0.5rem; display:flex; justify-content: space-between; width:100%; }
+.progresoBar__tit { font-size:2.3rem; font-weight:normal; margin:2rem 0;}
+.progresoBar__tit span { color:var(--principal);}
+[class^="progresoBar__barra"]:before { content:""; position:absolute; height:.75rem; }
+/*color*/
+.progresoBar__barra--avance,
+.progresoBar__barra--principal:before  { background:var(--principal);}
+.progresoBar__barra--secundario:before  { background:var(--dorado500);}
+
+/*BARRA DE PROGRESO PROGRESS*/
+progress { background-color:var(--neutro400);}
+[class^="progresoBar__barra"]::-webkit-progress-value { background:var(--dorado500);}
+[class^="progresoBar__barra"]::-moz-progress-bar { background:var(--dorado500);}
+[class^="progresoBar__barra--azul"]::-webkit-progress-value { background:var(--info);}
+[class^="progresoBar__barra--azul"]::-moz-progress-bar { background:var(--info);}
+
+/* % avance */
+.progresoBar__barra--0:before { width:0%;}
+.progresoBar__barra--5:before { width:5%;}
+.progresoBar__barra--10:before { width:10%;}
+.progresoBar__barra--15:before { width:15%;}
+.progresoBar__barra--20:before { width:20%;}
+.progresoBar__barra--25:before { width:25%;}
+.progresoBar__barra--30:before { width:30%;}
+.progresoBar__barra--35:before { width:35%;}
+.progresoBar__barra--40:before { width:40%;}
+.progresoBar__barra--45:before { width:45%;}
+.progresoBar__barra--50:before { width:50%;}
+.progresoBar__barra--55:before { width:55%;}
+.progresoBar__barra--60:before { width:60%;}
+.progresoBar__barra--65:before { width:65%;}
+.progresoBar__barra--70:before { width:70%;}
+.progresoBar__barra--75:before { width:75%;}
+.progresoBar__barra--80:before { width:80%;}
+.progresoBar__barra--85:before { width:85%;}
+.progresoBar__barra--90:before { width:90%;}
+.progresoBar__barra--95:before { width:95%;}
+.progresoBar__barra--100:before { width:100%;}
+
+@media (max-width:799px) {
+    .progresoBar { width:100%; margin:auto;}
+    .progresoBar__tit { font-size:1.75rem; margin:1.5rem 0;}
+}
+
+/*PASOS PROGRESO*/
+.progresoPasos { margin-bottom:3rem;}
+.progresoPasos__desc {  font-size:1rem; font-weight:600; color: var(--neutro600);  margin:0; }
+.progresoPasos__desc.desc--v2 { font-size:1.5rem; color: var(--principal); margin-bottom:16px;}
+.progresoPasos__tit { font-size:1.5rem; font-weight:600; color: var(--principal); margin:0 0 1.5rem 0; }
+.progresoPasos__tit.tit--v2 { font-weight:400;  margin:0; }
+
+.progresoPasos__pasos { display:flex; column-gap:1rem; align-items:start; justify-content: center;  }
+[class^="progresoPasos__item"]  { flex:1; }
+.progresoPasos__pasoBar { background:var(--neutro400); width:100%; height:.5rem; border-radius:5rem}
+.progresoPasos__item--encendido .progresoPasos__pasoBar { background:var(--dorado500)}
+.progresoPasos__pasoTxt { font-size:.875rem; text-align:center; margin-top:.5rem; display:flex; justify-content:center; color:var(--neutro600);}
+.progresoPasos__pasoTxt.pasoTxt--v2 { color:var(--neutro800); justify-content:space-between; width:100%; }
+.progresoPasos__item--encendido .progresoPasos__pasoTxt { color:inherit; }
+.progresoPasos__pasoTxtAvance { display:none;}
+.progresoPasos__pasoTxt1 { text-align:start; }
+.progresoPasos__pasoTxt2 {  min-width:55px; text-align: end; }
+
+@media (max-width:700px) {
+    .progresoPasos__pasos { position:relative; column-gap:0}
+    .progresoPasos__pasoBar { border-radius:0;}
+    .progresoPasos__pasos [class^="progresoPasos__item"]:first-of-type .progresoPasos__pasoBar { border-radius:.5rem 0 0 .5rem;}
+    .progresoPasos__pasos [class^="progresoPasos__item"]:last-of-type .progresoPasos__pasoBar { border-radius:0 .5rem .5rem 0;}
+    .progresoPasos__pasoTxtAvance { display:block;}
+    .progresoPasos__pasoTxt {justify-content:space-between;}
+    .progresoPasos__pasoTxtInfo,
+    .progresoPasos__pasoTxtAvance { display:none;}
+    .progresoPasos__item--actual .progresoPasos__pasoTxtInfo,
+    .progresoPasos__item--actual .progresoPasos__pasoTxtAvance { display:inline-block; position: absolute;}
+    .progresoPasos__item--actual .progresoPasos__pasoTxtInfo {  left:0; width:70%; text-align: left;}
+    .progresoPasos__item--actual .progresoPasos__pasoTxtAvance {  right:0;}
+}
+ /* Codigo agregado por Cinthya */
+progress::-webkit-progress-bar {background-color:var(--neutro400); border-radius: 5rem;}
+
+.progresoPasos__desc.desc--v2 { font-size:1.5rem; color: var(--principal); margin-bottom:16px;}

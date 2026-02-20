@@ -1,0 +1,145 @@
+/* Disparador */
+[class*="tooltip--"]{
+  cursor: pointer;
+  position: relative;
+
+}
+
+.tooltip__button{ border:0; background:none; }
+
+/* Activación única (hover/focus/clase forzada) */
+[class*="tooltip--"]:is(:hover, :focus-visible, .tooltip--show)::before,
+[class*="tooltip--"]:is(:hover, :focus-visible, .tooltip--show)::after{
+  opacity: 1;
+  pointer-events: none; /* evita parpadeo */
+}
+
+/* Burbuja */
+[class*="tooltip--"]::before{
+  content: attr(data-tooltip);
+  position: absolute;
+  background: var(--azul100);
+  color: var(--azul500);
+  border: 1px solid var(--azul500);
+  box-shadow: 0 .1rem .2rem rgba(0,0,0,.3);
+  text-align: left;
+  width: max-content;
+  padding: .4rem .7rem;
+  border-radius: .25rem;
+  font-size: .875rem;
+  z-index: 1;
+  max-width: 320px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+
+  /* oculto por default */
+  opacity: 0;
+}
+
+/* Flecha (relleno) */
+[class*="tooltip--"]::after{
+  content:"";
+  position: absolute;
+  z-index: 1;
+  width: 12px;
+  height: 6px;
+  background: var(--azul500);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+  /* oculto por default */
+  opacity: 0;
+}
+
+/* Animación (aplícasela solo cuando esté activo) */
+[class*="tooltip--"]:is(:hover, :focus-visible, .tooltip--show)::before,
+[class*="tooltip--"]:is(:hover, :focus-visible, .tooltip--show)::after{
+  animation: XX-tooltip .2s both;
+}
+
+/* Contenedor (si lo usas) */
+.tooltipContenedor{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.tooltip__iconoTxt {
+    border: 1px solid var(--azul500);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+/* ==============================
+   POSICIONES: TOP / BOTTOM
+============================== */
+
+/* TOP (default: center) */
+[class*="tooltip--"][class*="--top"]::before{ bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+[class*="tooltip--"][class*="--top"]::after { bottom: calc(100% + 2px); left: calc(50% - 6px); }
+
+/* TOP-left */
+[class*="tooltip--"][class*="--topLeft"]::before{ bottom: calc(100% + 8px); left: 0; transform: none; }
+[class*="tooltip--"][class*="--topLeft"]::after { bottom: calc(100% + 2px); left: 10px; }
+
+/* TOP-right */
+[class*="tooltip--"][class*="--topRight"]::before{ bottom: calc(100% + 8px); right: 0; left: unset; transform: none; }
+[class*="tooltip--"][class*="--topRight"]::after { bottom: calc(100% + 2px); right: 10px; left: unset; }
+
+/* BOTTOM (default: center) */
+[class*="tooltip--"][class*="--bottom"]::before{ top: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+[class*="tooltip--"][class*="--bottom"]::after{
+  top: calc(100% + 2px);
+  left: calc(50% - 6px);
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* BOTTOM-left */
+[class*="tooltip--"][class*="--bottomLeft"]::before{ top: calc(100% + 8px); left: 0; transform: none; }
+[class*="tooltip--"][class*="--bottomLeft"]::after { top: calc(100% + 2px); left: 10px;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* BOTTOM-right */
+[class*="tooltip--"][class*="--bottomRight"]::before{ top: calc(100% + 8px); right: 0; left: unset; transform: none; }
+[class*="tooltip--"][class*="--bottomRight"]::after { top: calc(100% + 2px); right: 10px; left: unset;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* ==============================
+   LATERALES (si los quieres)
+   Ojo: aquí conviene hacer flecha con clip-path distinto,
+   pero te lo dejo simple para mantener tu estilo
+============================== */
+
+.tooltip--right::before{ left: calc(100% + .6rem); top: 50%; transform: translateY(-50%); }
+.tooltip--right::after { left: calc(100% + .2rem); top: calc(50% - 3px); transform: rotate(-90deg); }
+
+.tooltip--left::before{ right: calc(100% + .6rem); top: 50%; transform: translateY(-50%); }
+.tooltip--left::after { right: calc(100% + .2rem); top: calc(50% - 3px); transform: rotate(90deg); }
+
+/* ==============================
+   TAMAÑOS (compartidos)
+============================== */
+[class*="tooltip--"][class*="--fit"]::before{ width: max-content; }
+[class*="tooltip--"][class*="--sm"]::before{ width: 15vw; }
+[class*="tooltip--"][class*="--md"]::before{ width: 40vw; }
+[class*="tooltip--"][class*="--lg"]::before{ width: 80vw; }
+
+/* Animaciones */
+@keyframes XX-tooltip{
+  from { opacity:0; transform: translateY(2px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+

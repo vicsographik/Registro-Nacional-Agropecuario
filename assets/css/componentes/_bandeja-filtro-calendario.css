@@ -1,0 +1,342 @@
+.two-month-view {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.customdate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+  background-color: white;
+}
+
+.customdate .dateSelected {
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  transition: 0.5s;
+  border: 1px solid var(--neutro500);
+  height: 2.5em;
+  font-size: 1em;
+  padding: 0 .5rem;
+}
+
+.dateTit {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0 0 .8rem;
+}
+
+.dateFields {
+  display: flex;
+  flex-direction: row;
+  gap: .3rem;
+  margin-bottom: .5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoNavegacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.customdate .dateSelected:hover {
+  cursor: pointer;
+}
+
+.customdate .dateSelected img,
+.customdate .dateSelected i {
+  position: absolute;
+  right: 15px;
+}
+
+.boxSelector {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right:0;
+  width: fit-content;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid var(--principal);
+  min-width: 19rem;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.boxSelector .form__checkbox:checked:before { animation: none;}
+
+.filtro-menu--fecha .boxSelector { top: 110%;}
+
+.customdate .boxSelector .infoAnio {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.customdate .boxSelector .infoAnio .iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #f0ebed;
+  transition: 0.5s;
+}
+
+.customdate .boxSelector .infoAnio .iconBox:hover {
+  cursor: pointer;
+  background-color: #dfdfdf;
+}
+
+.customdate .boxSelector .infoAnio .textAnio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.customdate .boxSelector .infoAnio .textAnio .anio {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.customdate .boxSelector .infoAnio .textAnio img {
+  width: 12px;
+  margin-left: 10px;
+}
+
+.customdate .boxSelector .anioSelector {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  min-height: 100px;
+  max-height: 500px;
+  border-radius: 0 0 15px 15px;
+  background: white;
+  overflow-y: auto;
+}
+
+.customdate .boxSelector .anioSelector .anio {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.customdate .boxSelector .anioSelector .anio img {
+  opacity: 0;
+  margin-right: 15px;
+}
+
+.customdate .boxSelector .anioSelector .anio:nth-child(1) {
+  margin-top: 5px;
+}
+
+.customdate .boxSelector .anioSelector .anio.active {
+  background: #f0ebed;
+}
+
+.customdate .boxSelector .anioSelector .anio.active img {
+  opacity: 1;
+}
+
+.customdate .boxSelector .anioSelector .anio:hover {
+  background: #dfdfdf;
+}
+
+.infoMes {
+  margin: 0 0 1rem;
+}
+
+.infoMes .row {
+  margin-top: .5rem
+}
+
+.customdate .boxSelector .infoMes .mes {
+  border-radius: .5rem;
+  margin-bottom: .2rem;
+  text-align: center;
+  padding: .15rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 13px;
+}
+
+.customdate .boxSelector .infoMes .mes:hover {
+  background-color: #c6c6c6;
+}
+
+.infoMes .mes-slot {
+  display: none;
+}
+
+.infoMes .mes-slot.active-slot {
+  display: block;
+}
+
+.customdate .boxSelector .infoMes .mes.active {
+  background: #621132;
+  color: white;
+  display: block;
+}
+
+.mes-slot {
+  min-width: 4rem;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.month-header {
+  text-align: center;
+  margin-top: -6.5rem;
+  margin-bottom: 2rem;
+  font-size: .9rem;
+}
+
+.dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: .75em;
+  text-align: center;
+  margin-bottom: 5px;
+  gap: 5px;
+}
+
+.grid-dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 columnas para los días */
+}
+
+.month-container {
+  width: 100%;
+}
+
+.grid-dias .dia {
+  padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: .75em;
+    margin: .05rem;
+    width:1.875rem;
+}
+
+.grid-dias .dia:hover:not(.empty-day):not(.selected) {
+  background-color:var(--neutro300); border-radius:50rem;
+}
+
+.grid-dias .dia.selected {
+  background-color:var(--principal);
+  /* Color del día seleccionado */
+  color: white;
+  border-radius:50rem;
+}
+
+.grid-dias .dia.empty-day {
+  visibility: hidden;
+  /* Para las celdas vacías al inicio del mes */
+  cursor: default;
+}
+
+.dia.in-range {
+  background-color:color-mix(in srgb, var(--principal) 20%, white);
+  border-radius:5rem;
+}
+
+.grid-dias .dia.other-month {
+  opacity: 0.5;
+  /* Días del mes anterior/siguiente */
+}
+
+.calendar-actions {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.datePick {
+  border: 1px solid var(--neutro500);
+  border-radius: 5px;
+  padding: .5rem 0 1.5rem;
+}
+
+/* Estilo base de los botones de acción */
+.btn-calendar-action {
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  flex-grow: 1;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* Estilo para el botón Confirmar */
+.btn-calendar-action.confirm {
+  background-color: #002F2A;
+  /* Color principal */
+  color: white;
+  border-color: #002F2A;
+}
+
+.btn-calendar-action.confirm:hover:not(:disabled) {
+  background-color: #4c0d27;
+}
+
+/* Estilo para el botón Restablecer */
+.btn-calendar-action.reset {
+  background-color: transparent;
+  color: #621132;
+  border-color: #621132;
+}
+
+.btn-calendar-action.reset:hover:not(:disabled) {
+  background-color: #f0ebed;
+}
+
+/* Estilo para botones deshabilitados */
+.btn-calendar-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  /* Asegura que no se dispare el evento */
+}
+
+@media (max-width: 939px) {
+  .customdate .boxSelector {
+    width: fit-content;
+
+  }
+
+  .infoMes .row {
+    flex-direction: row;
+  }
+}

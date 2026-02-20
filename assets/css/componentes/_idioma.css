@@ -1,0 +1,54 @@
+/*IDIOMA SELECT*/
+.idioma { display:flex; align-items:center;}
+.idioma__cont { display:flex; align-items:center; position:relative;}
+.idioma__select {
+    appearance:none;
+    border-radius:100px;
+    font-size:1rem;
+    padding:12px 25px 12px 43px;
+    width:fit-content;
+    margin:auto;
+    background-color:transparent;
+    background-image:url(../../icons-base/idioma.svg);
+    background-position:15px center;
+    background-repeat:no-repeat;
+    border:solid 1px transparent;
+    font-weight:600;
+    cursor:pointer;
+    color:#FFF;
+}
+.idioma__select:hover { background-color: rgba(0, 0, 0, .3)}
+.idioma__select:focus { outline:none; background:var(--neutro300); color:inherit; border:solid 1px #FFF; background-image:url(../../icons-base/idioma-negro.svg); background-position:15px center; background-repeat:no-repeat; }
+.idioma__select:focus:hover { background:rgba(243, 243, 243,.8); background-image:url(../../icons-base/idioma-negro.svg); background-position:15px center; background-repeat:no-repeat; }
+.idioma__select:focus-visible { outline:invert;}
+
+.idioma__marker { margin-left:-30px; line-height:0; position:absolute; right:5px; pointer-events:none;}
+.idioma__marker svg { color:#FFF; width:24px; transition:all .2s; }
+:focus + .idioma__marker svg { transform: rotate(-180deg); top:0.85rem; color:inherit;}
+
+.idioma--lg,
+.idioma--sm { display:none;}
+
+@media (max-width:767.9px){
+    .idioma--sm { display:flex;} 
+}
+@media (min-width:768px) {
+    .idioma--lg { display:flex;}
+}
+
+/*IDIOMA DETAILS*/
+.idioma__details { position:relative; z-index:2; }
+.idioma__summary { color:#FFF; list-style-type:none; display:flex; align-items:center; gap:4px; font-weight:600; cursor: pointer; justify-content:space-between; padding:8px 8px 8px 16px; border-radius:100px; border:solid 1px transparent;}
+.idioma__summary:hover { background: rgba(0, 0, 0, .3);}
+.idioma__globe { width:24px;}
+.idioma__ul {
+    background: #FFF;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 15%);
+    border: solid 1px var(--neutro400);
+    overflow: hidden;
+    margin: 6px 0 0 0;
+    position: absolute;
+    list-style-type:none;
+    padding:0;
+}

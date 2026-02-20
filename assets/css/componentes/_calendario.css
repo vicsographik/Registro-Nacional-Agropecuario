@@ -1,0 +1,114 @@
+
+  .field {
+    position: relative;
+  }
+
+  /* Input visual */
+  #fechaInicio {
+    width: 100%;
+    padding: .6rem .75rem;
+    border: 1px solid var(--neutro400);
+    border-radius: .6rem;
+    font-size: 14px;
+  }
+  /* Input visual */
+  #fechaFinal {
+    width: 100%;
+    padding: .6rem .75rem;
+    border: 1px solid var(--neutro400);
+    border-radius: .6rem;
+    font-size: 14px;
+  }
+
+  .input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon input {
+  width: 100%;
+  padding-right: 35px; /* espacio para el ícono */
+}
+
+.input-icon .icon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  pointer-events: none; /* evita que tape el click en el input */
+}
+  /* Popup */
+  .datepicker {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    padding: .5rem;
+    z-index: 20;
+    display: none;
+    width: 100%;
+  }
+  .datepicker.open { display: block; }
+
+  /* Header con flechas y mes centrado */
+  .dp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    padding: .25rem .25rem .5rem;
+  }
+  .dp-btn {
+    border:none;
+    background: #fff;
+    border-radius: .6rem;
+    padding: .35rem .55rem;
+    cursor: pointer;
+  }
+  .dp-btn:focus { outline: 2px solid var(--principal); outline-offset: 2px; }
+  .dp-title {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: center;
+    flex: 1;
+  }
+
+  /* Grids */
+  .dp-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: .35rem;
+    padding: .35rem;
+  }
+  .dp-dow {
+    text-align: center;
+    font-size: 12px;
+    color: var(--neutro400);
+    padding: .25rem 0;
+  }
+
+  /* Días */
+  .dp-day {
+    border: 1px solid transparent;
+    background: #fff;
+    border-radius: 50%; /* círculo */
+    width: 34px; height: 34px;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .dp-day:focus { outline: 2px solid var(--principal); outline-offset: 2px; }
+  .dp-day.out { color: #9ca3af; }   /* días fuera del mes */
+  .dp-day.today { border-color: var(--gama600); }
+
+  .dp-day.selected {
+    background: var(--principal);
+    color: #fff;
+  }
+  .dp-day.selected:hover { background: var(--principal); }

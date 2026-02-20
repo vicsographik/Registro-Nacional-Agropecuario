@@ -1,0 +1,153 @@
+/* Contenedor (si lo usas) */
+.tooltipContenedor3{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+/* Disparador base: SOLO tooltip3 */
+[class*="tooltip3--"]{
+  cursor: pointer;
+  position: relative;
+}
+
+.tooltip__button3{ border:0; background:none; padding:0; }
+
+/* Activación (hover/focus/clase forzada) */
+[class*="tooltip3--"]:is(:hover, :focus-visible, .tooltip3--show)::before,
+[class*="tooltip3--"]:is(:hover, :focus-visible, .tooltip3--show)::after{
+  opacity: 1;
+  pointer-events: none; /* evita parpadeo */
+}
+
+/* Burbuja */
+[class*="tooltip3--"]::before{
+  content: attr(data-tooltip);
+  position: absolute;
+  background: var(--azul100);
+  color: var(--azul500);
+  border: 1px solid var(--azul500);
+  box-shadow: 0 .1rem .2rem rgba(0,0,0,.3);
+  text-align: left;
+  width: max-content;
+  padding: .4rem .7rem;
+  border-radius: .25rem;
+  font-size: .875rem;
+  z-index: 1;
+  max-width: 320px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+  opacity: 0; /* oculto por default */
+}
+
+/* Flecha */
+[class*="tooltip3--"]::after{
+  content:"";
+  position: absolute;
+  z-index: 1;
+  width: 12px;
+  height: 6px;
+  background: var(--azul500);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  opacity: 0; /* oculto por default */
+}
+
+/* Animación */
+[class*="tooltip3--"]:is(:hover, :focus-visible, .tooltip3--show)::before,
+[class*="tooltip3--"]:is(:hover, :focus-visible, .tooltip3--show)::after{
+  animation: XX-tooltip3 .2s both;
+}
+
+/* Icono redondo */
+.tooltip__iconoTxt3{
+  border: 1px solid var(--azul500);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+/* Texto oculto (auditivo) */
+.oculto3{
+  position:absolute;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* ==============================
+   POSICIONES (4 que pediste)
+============================== */
+
+/* TOP-right */
+[class*="tooltip3--"][class*="--topRight"]::before{
+  bottom: calc(100% + 8px);
+  right: 0;
+  left: unset;
+  transform: none;
+}
+[class*="tooltip3--"][class*="--topRight"]::after{
+  bottom: calc(100% + 2px);
+  right: 10px;
+  left: unset;
+}
+
+/* TOP-left */
+[class*="tooltip3--"][class*="--topLeft"]::before{
+  bottom: calc(100% + 8px);
+  left: 0;
+  transform: none;
+}
+[class*="tooltip3--"][class*="--topLeft"]::after{
+  bottom: calc(100% + 2px);
+  left: 10px;
+}
+
+/* BOTTOM-right */
+[class*="tooltip3--"][class*="--bottomRight"]::before{
+  top: calc(100% + 8px);
+  right: 0;
+  left: unset;
+  transform: none;
+}
+[class*="tooltip3--"][class*="--bottomRight"]::after{
+  top: calc(100% + 2px);
+  right: 10px;
+  left: unset;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* BOTTOM-left */
+[class*="tooltip3--"][class*="--bottomLeft"]::before{
+  top: calc(100% + 8px);
+  left: 0;
+  transform: none;
+}
+[class*="tooltip3--"][class*="--bottomLeft"]::after{
+  top: calc(100% + 2px);
+  left: 10px;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* Tamaños */
+[class*="tooltip3--"][class*="--fit"]::before{ width: max-content; }
+[class*="tooltip3--"][class*="--sm"]::before{ width: 15vw; }
+[class*="tooltip3--"][class*="--md"]::before{ width: 40vw; }
+[class*="tooltip3--"][class*="--lg"]::before{ width: 80vw; }
+
+/* Animación */
+@keyframes XX-tooltip3{
+  from { opacity:0; transform: translateY(2px); }
+  to   { opacity:1; transform: translateY(0); }
+}

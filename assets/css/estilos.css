@@ -1,0 +1,47 @@
+/*BASE*/
+@import "base/_tema-guinda.css";
+@import "base/_color.css";
+@import "base/_normalize.css";
+@import "base/_config.css";
+@import "base/_layout.css";
+@import "base/_filas-columnas.css";
+@import "base/_listas.css";
+
+/*COMPONENTES BÁSICOS*/
+@import "componentes/_boton.css";
+@import "componentes/_forms.css";
+
+/*COMPONENTES SECUNDARIOS*/
+@import "componentes/_aviso.css";
+@import "componentes/_bandeja-filtros.css";
+@import "componentes/_bandeja-filtro-calendario.css";
+@import "componentes/_botonera.css";
+@import "componentes/_cajas.css";
+@import "componentes/_cargar.css";
+@import "componentes/_colorPaleta.css";
+@import "componentes/_details.css";
+@import "componentes/_dialog.css";
+@import "componentes/_idioma.css";
+@import "componentes/_pildora.css";
+@import "componentes/_progresos.css";
+@import "componentes/_tablas.css";
+@import "componentes/_timeline.css";
+@import "componentes/_titulares.css";
+@import "componentes/_tooltip.css";
+@import "componentes/_tooltip1.css";
+@import "componentes/_tooltip2.css";
+@import "componentes/_tooltip3 .css";
+@import "componentes/_tooltip4Unificado.css";
+@import "componentes/_ruta.css";
+@import "componentes/_barraBusqueda.css";
+@import "componentes/_ventanilla247.css";
+
+/*HELPERS*/
+@import "base/_helpers.css";
+
+/*PERSONALIZAR*/
+@import "personalizar/_snd-landing.css";
+@import "personalizar/_snd-varios.css";
+@import "personalizar/_snd-supremo.css";
+@import "personalizar/_snd-tooltips.css";
+@import "personalizar/_personalizar.css";

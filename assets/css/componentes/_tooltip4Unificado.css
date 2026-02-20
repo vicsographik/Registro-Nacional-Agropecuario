@@ -1,0 +1,177 @@
+/* =========
+   SR-ONLY
+========= */
+.sr-only4{
+  position:absolute;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* =========
+   VARIABLES
+========= */
+:root{
+  --tt4-bg: var(--azul100);
+  --tt4-border: var(--azul500);
+  --tt4-text: var(--azul500);
+  --tt4-shadow: 0 .1rem .2rem rgba(0,0,0,.3);
+  --tt4-gap: 8px;
+  --tt4-arrow-border: 7px;
+  --tt4-arrow-fill: 6px;
+}
+
+/* Contenedor */
+.tooltipContenedor4{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Disparador */
+.tooltip__button4{
+  cursor: help;
+  border: 0;
+  background: none;
+  padding: 0;
+  line-height: 0;
+}
+
+/* Foco visible */
+.tooltip__button4:focus-visible{
+  outline: 2px solid var(--tt4-border);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Burbuja base (oculta) */
+.tooltipBubble4{
+  position: absolute;
+  z-index: 10;
+
+  background: var(--tt4-bg);
+  color: var(--tt4-text);
+  border: 1px solid var(--tt4-border);
+   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: .25rem;
+  padding: .4rem .7rem;
+
+  width: max-content;
+  max-width: 320px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: .875rem;
+  line-height: 1.35;
+
+  opacity: 0;
+  visibility: hidden; /* evita tab a links cuando está cerrado */
+  pointer-events: none;
+
+  transition: opacity .15s ease;
+}
+
+/* Visible por hover, foco dentro o clase forzada */
+.tooltipContenedor4:is(:hover, :focus-within, .tooltip4--show) .tooltipBubble4{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .tooltipBubble4{ transition: none; }
+}
+
+/* Flecha (borde + relleno) */
+.tooltipBubble4::before,
+.tooltipBubble4::after{
+  content:"";
+  position: absolute;
+  border: var(--tt4-arrow-border) solid transparent;
+}
+.tooltipBubble4::after{
+  border-width: var(--tt4-arrow-fill);
+}
+
+/* =========
+   POSICIONES (4)
+========= */
+
+/* TOP-left */
+.tooltipBubble4.tooltip4--topLeft{
+  bottom: calc(100% + var(--tt4-gap));
+  left: 0;
+}
+.tooltipBubble4.tooltip4--topLeft::before{
+  top: 100%;
+  left: 10px;
+  border-top-color: var(--tt4-border);
+}
+.tooltipBubble4.tooltip4--topLeft::after{
+  top: 100%;
+  left: 11px;
+  border-top-color: var(--tt4-bg);
+  margin-top: 0px;
+}
+
+/* TOP-right */
+.tooltipBubble4.tooltip4--topRight{
+  bottom: calc(100% + var(--tt4-gap));
+  right: 0;
+  left: unset;
+}
+.tooltipBubble4.tooltip4--topRight::before{
+  top: 100%;
+  right: 10px;
+  border-top-color: var(--tt4-border);
+}
+.tooltipBubble4.tooltip4--topRight::after{
+  top: 100%;
+  right: 11px;
+  border-top-color: var(--tt4-bg);
+  margin-top: 0px;
+}
+
+/* BOTTOM-left */
+.tooltipBubble4.tooltip4--bottomLeft{
+  top: calc(100% + var(--tt4-gap));
+  left: 0;
+}
+.tooltipBubble4.tooltip4--bottomLeft::before{
+  bottom: 100%;
+  left: 10px;
+  border-bottom-color: var(--tt4-border);
+}
+.tooltipBubble4.tooltip4--bottomLeft::after{
+  bottom: 100%;
+  left: 11px;
+  border-bottom-color: var(--tt4-bg);
+  margin-bottom: 0px;
+}
+
+/* BOTTOM-right */
+.tooltipBubble4.tooltip4--bottomRight{
+  top: calc(100% + var(--tt4-gap));
+  right: 0;
+  left: unset;
+}
+.tooltipBubble4.tooltip4--bottomRight::before{
+  bottom: 100%;
+  right: 10px;
+  border-bottom-color: var(--tt4-border);
+}
+.tooltipBubble4.tooltip4--bottomRight::after{
+  bottom: 100%;
+  right: 11px;
+  border-bottom-color: var(--tt4-bg);
+  margin-bottom: 0px;
+}
+
+/* Tamaños */
+.tooltipBubble4.tooltip4--fit{ width: max-content; }
+.tooltipBubble4.tooltip4--sm{ width: 15vw; }
+.tooltipBubble4.tooltip4--md{ width: 40vw; }
+.tooltipBubble4.tooltip4--lg{ width: 80vw; }

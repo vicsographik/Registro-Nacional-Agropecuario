@@ -1,0 +1,117 @@
+/* Tooltip 1 (clases con sufijo 1) */
+.tooltipContenedor1{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip__button1{
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+  line-height: 0;
+}
+
+.tooltip__button1:focus-visible{
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.tooltipBubble1{
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+
+  background: var(--azul100);
+  color: var(--azul500);
+  border: 1px solid var(--azul500);
+  box-shadow: 0 .1rem .2rem rgba(0,0,0,.3);
+  border-radius: .25rem;
+  padding: .4rem .7rem;
+
+  width: max-content;
+  max-width: 320px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  font-size: .875rem;
+  line-height: 1.35;
+}
+
+/* Mostrar: hover + focus-within */
+.tooltipContenedor1:is(:hover, :focus-within) .tooltipBubble1{
+  opacity: 1;
+  animation: XX-tooltip1 .2s both;
+}
+
+/* Flecha */
+.tooltipBubble1::after{
+  content:"";
+  position: absolute;
+  z-index: 11;
+  width: 12px;
+  height: 6px;
+  background: var(--azul500);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* POSICIONES */
+.tooltipBubble1.tooltip1--topRight{
+  bottom: calc(100% + 8px);
+  right: 0;
+  left: unset;
+}
+.tooltipBubble1.tooltip1--topRight::after{
+  bottom: -6px;
+  right: 10px;
+  left: unset;
+}
+
+.tooltipBubble1.tooltip1--topLeft{
+  bottom: calc(100% + 8px);
+  left: 0;
+}
+.tooltipBubble1.tooltip1--topLeft::after{
+  bottom: -6px;
+  left: 10px;
+}
+
+.tooltipBubble1.tooltip1--bottomRight{
+  top: calc(100% + 8px);
+  right: 0;
+  left: unset;
+}
+.tooltipBubble1.tooltip1--bottomRight::after{
+  top: -6px;
+  right: 10px;
+  left: unset;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+.tooltipBubble1.tooltip1--bottomLeft{
+  top: calc(100% + 8px);
+  left: 0;
+}
+.tooltipBubble1.tooltip1--bottomLeft::after{
+  top: -6px;
+  left: 10px;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+@keyframes XX-tooltip1{
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .tooltipContenedor1:is(:hover, :focus-within) .tooltipBubble1{
+    animation: none;
+  }
+}

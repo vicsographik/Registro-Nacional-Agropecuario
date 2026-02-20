@@ -1,0 +1,29 @@
+.ventanilla247 { text-align:center; position:fixed; right:16px; bottom:20px; z-index:5; }
+.ventanilla247__tit { font-weight:800; color:var(--neutro700);}
+.ventanilla247__tit .patria { color:var(--neutro800); font-weight:700;}
+.ventanilla247__079 { font-weight:800; color:var(--pverde200);}
+.ventanilla247__079 .patria { color:var(--neutro100); font-weight:700;}
+
+@media (min-width:768px) {
+    .ventanilla247 {  
+        background:url(../../img/ventanilla247-lg.svg) no-repeat; 
+        padding-top:24px;
+        width:394px; 
+        height:190px;
+    }
+    .ventanilla247__tit { font-size:2rem; margin-bottom:24px;}
+    .ventanilla247__079 { font-size:2.6rem;}
+    .ventanilla247__flor { width:29px; height:29px;}
+
+}
+@media (max-width:767.9px) {
+    .ventanilla247 {  
+        background:url(../../img/ventanilla247-sm.svg) no-repeat; 
+        padding-top:14px;
+        width:245px; 
+        height:120px;
+    }
+    .ventanilla247__tit { font-size:1.25rem; margin-bottom:16px;}
+    .ventanilla247__079 { font-size:1.5rem;}
+    .ventanilla247__flor { width:18px; height:18px;}
+}    

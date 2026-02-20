@@ -1,0 +1,139 @@
+.cargaArchivo { padding: 16px; display: flex; align-items: center; border-radius: 16px; gap: .5rem; }
+
+.cargaArchivo--verde500 {border:solid 1px var(--verde500); }
+.cargaArchivo--subiendo {border:solid 1px var(--neutro400); }
+.cargaArchivo--rojo500 {border:solid 1px var(--rojo500); }
+.cargaArchivo--subir {border:2px var(--neutro400) dashed;}
+.cargaArchivo--soltar {border:2px var(--info) dashed;}
+.cargaArchivo--visualizar {border:1px var(--neutro800) solid;}
+.cargaArchivo--soltarTxt {color:var(--info); font-weight: 600;}
+
+.cargaArchivoHoriz,
+.cargaArchivoHoriz--rojo500,
+.cargaArchivoHoriz--verde500 { border-radius:1rem; padding:.5rem 1rem; display:flex; gap:.5rem; background:#FFF; align-items:center; }
+.cargaArchivoHoriz { border:dashed 1px var(--neutro400);}
+.cargaArchivoHoriz--rojo500 { border:solid 1px var(--rojo500);}
+.cargaArchivoHoriz--verde500 { border:solid 1px var(--verde500);}
+
+.cargaArchivoHoriz__msjExito { font-size:.75rem; color:var(--verde500);}
+.cargaArchivoHoriz__msjError { font-size:.75rem; color:var(--rojo500);}
+
+.cargaArchivoHoriz__col2 { display:flex; flex-direction:column; flex-grow:1;}
+.cargaArchivoHoriz__tit { font-weight:600;}
+.cargaArchivoHoriz__desc { font-size: 0.875rem; color:var(--neutro700);}
+
+.cargaArchivoHoriz__col3 { display:flex; flex-direction:row; column-gap:.25rem;}
+.cargaArchivoHoriz__col3 [class^="boton"] { font-weight:600;}
+
+/*boton cargar*/
+.cargaArchivoHoriz .form__fileInput { display:none;}
+.cargaDoble__col1 { display: flex; align-items: center; width: 100%;}
+
+@media (max-width:767.9px) {
+    .cargaArchivoHoriz,
+    .cargaArchivoHoriz__col3,
+    .cargaArchivoHoriz--verde500 { flex-direction:column;}
+    .cargaArchivo { flex-direction: column;}
+    .cargaDoble__Excol3 { flex-direction: column;}
+}
+
+/*Carga Doble*/
+.cargaDoble,
+.cargaDoble--verde500, .cargaDoble--rojo500 { border-radius:1rem; border:2px var(--neutro400) dashed; padding:1.5rem 1rem; display:flex; align-items:center; column-gap:2rem;}
+.cargaDoble--verde500 {  gap:.5rem; border:solid 1px var(--verde500);}
+
+.cargaDoble__Doc     { font-size:.875rem; font-weight:600; word-break:break-all;}
+.cargaDoble__msjExito { font-size:.875rem; color:var(--verde500);}
+.cargaDoble__msjError { font-size:.875rem; color:var(--rojo500);}
+
+.cargaFile { display:flex; align-items:center; gap:16px; cursor: pointer; border-radius:1rem; padding: .5rem; width: 100%;}
+.cargaFile:hover { background:var(--neutro300); }
+.cargaFile__instruccion { display:block; font-weight:600;}
+.cargaFile__formato { font-size:.875rem;}
+.cargaDoble__Excol2,
+.cargaDoble__col2 { display:flex; flex-direction:column; gap:1.5rem; align-items:center; justify-content:center;}
+.cargaDoble__col2 { min-width:300px;}
+.cargaDoble__Excol2 { gap:4px; justify-content:start; align-items: start; flex-grow:1; }
+.cargaDoble__Excol3 { display:flex; gap:16px; align-items:center; justify-content:end; min-width:280px;}
+.cargaDoble__Excol3 .boton { font-weight:600; color:var(--principal);}
+.cargaDoble__Excol3 .boton__link { padding:8px 0;}
+.cargarMx { border-radius:10rem; display:flex; padding:.75rem 2rem; column-gap:1.25rem;}
+.cargarMxSpan { font-size:.75rem;}
+.cargarMxB { font-size:.875rem;}
+.cargarMx img { height:27px;}
+.cargarMx span { display:flex; flex-direction:column; align-items:start;}
+@media (max-width:900px) {
+    .cargaFile { flex-direction:column; text-align:center; }
+}
+@media (max-width:600px) {
+    .cargaDoble { flex-direction:column; row-gap:2rem ; }
+    .cargaDoble--verde500 {flex-direction: column;}
+    .cargaDoble--rojo500 {flex-direction: column;}
+}
+
+/*boton cargar*/
+.form__fileInput { display:none;}
+
+/* BARRA DE PROGRESO CARGAR*/
+
+[class^="cargarBarra__barra"] { height:.5rem; background:var(--neutro400); border-radius:1rem; width:100%; position:relative; position:relative; overflow:hidden; }
+.cargarBarra__barra--avance,
+.cargarBarra__barra--principal:before  { background:var(--principal);}
+.cargarBarra__barra--secundario:before  { background:var(--dorado500);}
+.cargarBarra__paso { display:flex; column-gap:1rem; align-items:start; justify-content: center;  }
+.cargarBarra__avance { display:flex; align-items:end; flex-direction:column; width:100%;}
+progress { background-color:var(--neutro400);}
+[class^="cargarBarra__barra"]::-webkit-progress-value { background:var(--dorado500);}
+[class^="cargarBarra__barra"]::-moz-progress-bar { background:var(--dorado500);}
+[class^="cargarBarra__barra--azul"]::-webkit-progress-value { background:var(--info);}
+[class^="cargarBarra__barra--azul"]::-moz-progress-bar { background:var(--info);}
+
+.cargaProgreso__txt { font-size:.875rem; text-align:center; margin-top:.5rem; display:flex; justify-content:center; color:var(--neutro600); color:var(--neutro800); justify-content:space-between; width:100%; }
+
+
+.cargarBarra__barra--0:before { width:0%;}
+.cargarBarra__barra--5:before { width:5%;}
+.cargarBarra__barra--10:before { width:10%;}
+.cargarBarra__barra--15:before { width:15%;}
+.cargarBarra__barra--20:before { width:20%;}
+.cargarBarra__barra--25:before { width:25%;}
+.cargarBarra__barra--30:before { width:30%;}
+.cargarBarra__barra--35:before { width:35%;}
+.cargarBarra__barra--40:before { width:40%;}
+.cargarBarra__barra--45:before { width:45%;}
+.cargarBarra__barra--50:before { width:50%;}
+.cargarBarra__barra--55:before { width:55%;}
+.cargarBarra__barra--60:before { width:60%;}
+.cargarBarra__barra--65:before { width:65%;}
+.cargarBarra__barra--70:before { width:70%;}
+.cargarBarra__barra--75:before { width:75%;}
+.cargarBarra__barra--80:before { width:80%;}
+.cargarBarra__barra--85:before { width:85%;}
+.cargarBarra__barra--90:before { width:90%;}
+.cargarBarra__barra--95:before { width:95%;}
+.cargarBarra__barra--100:before { width:100%;}
+
+.carga__subiendo--gris {
+    background: var(--neutro400);
+    width: 100%;
+    height: 4px;
+    display: flex;
+    margin: .5rem 0;
+}
+
+.carga__subiendo--azul {background: var(--info); width: 50%; height: 4px; display: flex}
+.cargaFile__txt { width: 100%;}
+
+ progress::-webkit-progress-bar {background-color:var(--neutro400); border-radius: 5rem;}
+
+
+.cargaPorcentaje__cargando { color: var(--info);}
+ .progresoBar { margin:1.5rem auto 0;}
+
+ @media (max-width:767.9px) {
+    .cargarBarra__avance { margin-top:8px;}
+    .cargaProgreso__txt { justify-content:center;}
+    .cargaDoble__Excol3,
+    .cargaDoble__Excol2 { align-items:center; min-width:unset;}
+}
+
