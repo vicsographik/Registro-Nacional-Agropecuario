@@ -1,0 +1,31 @@
+.persona-tutor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.persona-tutor--fotoYNombre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1rem;
+}
+.persona-tutor--foto {
+    border-radius: .5rem;
+    overflow: hidden;
+    margin-left: .35rem;
+}
+.persona-tutor--foto img {
+    display: block;
+}
+.registro-nuevo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.registro-nuevo details {
+    width: 75%;
+}
