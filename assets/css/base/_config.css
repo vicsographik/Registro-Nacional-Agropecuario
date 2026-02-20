@@ -72,14 +72,15 @@ hr { border:none; border-top:solid 1px var(--neutro400); width:100%;}
 /*Botones CTA*/
 .cta  { font-size:1rem; font-weight:600; }
 
-/*Detalles (SDS)*/
-.sdbl, .sdb, .sdsb, .sdm, .sdr, .sd { font-size:0.875rem; line-height:1.1875rem; margin:0 0 16px 0; }
+/*Detalles (SD)*/
+.sdbl, .sdb, .sdsb, .sdm, .sdr, .sd, .sdit { font-size:0.875rem; line-height:1.1875rem; margin:0 0 16px 0; }
 .sdbl { font-weight:800;}
 .sdb  { font-weight:700;}
 .sdsb { font-weight:600;}
 .sdm  { font-weight:500;}
 .sdr,
 .sd  { font-weight:400;}
+.sdit { font-weight:400; font-style: oblique;}
 
 /*Detalles (XSDS)*/
 .xsdbl, .xsdb, .xsdsb, .xsdm, .xsdr, .xsd  { font-weight:400; font-size:0.75rem; line-height:1rem; margin:0 0 16px 0; }
