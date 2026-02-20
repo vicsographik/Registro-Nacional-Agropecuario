@@ -40,8 +40,4 @@
 @import "base/_helpers.css";
 
 /*PERSONALIZAR*/
-@import "personalizar/_snd-landing.css";
-@import "personalizar/_snd-varios.css";
-@import "personalizar/_snd-supremo.css";
-@import "personalizar/_snd-tooltips.css";
 @import "personalizar/_personalizar.css";
