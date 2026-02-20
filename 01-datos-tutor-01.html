@@ -389,51 +389,85 @@
 
         <!-- MAIN -->
         <main id="mainContent">
-            <a href="#" class="boton__fantasma">
-                <img src="./assets/icons-base/arrow-left.svg" alt="">
-                Salir
-            </a>
-            <div class="rowgap--24 mt--24">
-                <div class="rowgap--16">
-                    <h2 class="sh0m">Preinscripción</h2>
-                    <p>Completa los 3 módulos de información, en el orden que prefieras. Al terminar, da clic en el
-                        botón “Continuar”</p>
-                    <p class="color--verde500">0/3 módulos completados</p>
-                </div>
-                <div class="preregistro-pasos rowgap--16">
-                    <div class="cajaBasica--16">
-                        <div class="sh1m mb--0">Datos del estudiante</div>
-                        <div>
-                            <div class="pildora--exito--dot">
-                                Completado
-                            </div>
-                            <a href="#" class="boton__fantasma">
-                                Editar
-                                <img src="./assets/icons-base/edit.svg" alt="">
-                            </a>
+            <div class="ruta__cont">
+                <ul class="ruta__lista">
+                    <li class="ruta__li">
+                        <img src="assets/icons-base/home.svg" alt="" class="ruta__home" aria-hidden="true">
+                        <span class="oculto">Inicio</span>
+                    </li>
+                    <li class="ruta__li">Datos de la madre, padre o tutor</li>
+                </ul>
+            </div>
+            <div class="cajaBasica--3248 rowgap--32 mt--24">
+                <h2 class="sh0m">Datos de la madre, padre o tutor</h2>
+                <div class="fila--col3">
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="nombre">
+                                Nombre (s)
+                            </label>
                         </div>
+                        <p class="mt--10" id="nombre"><strong>Juan Carlos</strong></p>
                     </div>
-                    <div class="cajaBasica--16">
-                        <div class="sh1m mb--0">Datos de preinscripción</div>
-                        <a href="#" class="boton__fantasma">
-                            Comenzar
-                            <img src="./assets/icons-base/chevron--right.svg" alt="">
-                        </a>
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="apellido-1">
+                                Primer apellido
+                            </label>
+                        </div>
+                        <p class="mt--10" id="apellido-1"><strong>Méndez</strong></p>
                     </div>
-                    <div class="cajaBasica--16">
-                        <div class="sh1m mb--0">Selección de escuelas</div>
-                        <a href="#" class="boton__fantasma">
-                            Comenzar
-                            <img src="./assets/icons-base/chevron--right.svg" alt="">
-                        </a>
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="apellido-2">
+                                Segundo apellido
+                            </label>
+                        </div>
+                        <p class="mt--10" id="apellido-2"><strong>Pérez</strong></p>
+                    </div>
+
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="telefono">
+                                Teléfono
+                            </label>
+                        </div>
+                        <p class="mt--10" id="telefono"><strong><a href="tel:+525512345678">55 1234 5678</a></strong>
+                        </p>
+                    </div>
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="email">
+                                Correo electrónico
+                            </label>
+                        </div>
+                        <p class="mt--10" id="email"><strong>
+                            <a href="mailto:tutor@ejemplo.com">juanr@correo.com</a></strong></p>
+                    </div>
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="curp">
+                                CURP
+                            </label>
+                        </div>
+                        <p class="mt--10" id="curp"><strong>COFP911012HDFRGS09</strong></p>
+                    </div>
+
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="nacionalidad">
+                                Nacionalidad
+                            </label>
+                        </div>
+                        <p class="mt--10" id="nacionalidad"><strong>Mexicana</strong></p>
                     </div>
                 </div>
-                <div class="botonera--end botonera--responsiva">
-                    <button type="submit" class="boton__primario" disabled>
-                        Continuar
-                        <img src="./assets/icons-base/arrow--right.svg" alt="">
-                    </button>
-                </div>
+            </div>
+            <div class="botonera--end botonera--responsiva mt--32">
+                <button type="submit" class="boton__secundario">
+                    <img src="./assets/icons-base/arrow-left.svg" alt="">
+                    Volver
+                </button>
             </div>
 
             <!--VENTANILLA 24/7-->
@@ -448,6 +482,7 @@
                     <img src="assets/icons-base/footer-flor.svg" alt="" aria-hidden="true" class="ventanilla247__flor">
                 </p>
             </section>
+
         </main>
 
         <!-- FOOTER -->
@@ -599,27 +634,6 @@
                 </div>
             </div>
         </footer>
-        <div>
-            <dialog class="aviso--top" id="aviso" open="">
-                <div class="aviso aviso--exito" role="alert" aria-live="polite">
-                    <img class="icono--verde500" src="./assets/icons-base/checkmark--outline.svg" alt="">
-                    <div class="aviso__cont">
-                        Módulo guardado y completado con éxito
-                    </div>
-                    <button type="button" class="aviso__cerrar" onclick="window.aviso.close();">
-                        <span class="oculto">
-                            cerrar
-                        </span>
-                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                            viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
-            </dialog>
-        </div>
 
     </div>
 

@@ -31,7 +31,7 @@
     padding: 12px;
     border-radius: 10px;
 }
-[class^="cajaBasica--"] {
+.preregistro-pasos [class^="cajaBasica--"] {
     width: 100%;
     display: flex;
     flex-direction: row;

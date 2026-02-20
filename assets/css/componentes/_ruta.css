@@ -1,7 +1,7 @@
 /*RUTA o BREADCRUMB*/
 .ruta__cont { margin:0px; padding:0; display:flex; align-items: center; justify-content:start;}
 .ruta__lista { display:flex; list-style-type:none; padding:0px; margin:auto; width:100%;}
-.ruta__li { display:flex; align-items:center; line-height:normal; color:var(--neutro600); padding:4px 0;}
+.ruta__li { display:flex; align-items:center; line-height:normal; color:var(--neutro8800); padding:4px 0;}
 .ruta__li:after { content:""; width:24px; height:24px; background-image:url(../../icons-base/chevron--right.svg); background-repeat:no-repeat; background-position:center; display:inline-block; opacity:0.55; margin:0 8px 0 16px; }
 .ruta__li:last-of-type::after { content:none;}
 .ruta__li[aria-current] { }
