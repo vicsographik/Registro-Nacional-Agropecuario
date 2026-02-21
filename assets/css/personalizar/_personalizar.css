@@ -42,3 +42,16 @@
 .preregistro-pasos [class^="boton__"] {
     min-height: 0;
 }
+.estudianteR {
+    overflow: hidden;
+}
+.estudianteR-nombre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--neutro200);
+    column-gap: .5rem;
+}
+.estudianteR [class^="boton__"] {
+    width: 100%;
+}
