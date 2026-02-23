@@ -25,7 +25,7 @@ td .pildora { width:100%;}
 /*TABLA 01*/
 .tabla01  { border-collapse:separate; border-radius:.5rem; border-spacing: 0; border:1px solid #AAA;}
 .tabla01__caption { font-size:1.25rem; font-weight:600; color:var(--neutro800); caption-side: top; position:sticky; left:0}
-.tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--gama600);}
+.tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--gama900);}
 .tabla01__theadTh div { display:flex; align-items:center; column-gap:.2rem; }
 .tabla01__tbodyTh,
 .tabla01__tbodyTd { padding:1rem .5rem; background:#FFF; font-weight:normal; vertical-align:top;}
@@ -47,6 +47,28 @@ td .pildora { width:100%;}
 
 /*TABLA 01 gris*/
 .tabla01--gris .tabla01__theadTh { background:var(--neutro400); color:var(--neutro800)}
+
+
+/* Estilo cebra para la tabla */
+.tabla01--tablaCebra tbody tr:nth-child(even) td,
+.tabla01--tablaCebra tbody tr:nth-child(even) th {background-color: #f3f3f3;}
+
+/* Contenedor del borde de la tabla */
+.tabla01--tablaCebra {
+  border: 1px solid var(--neutro500);
+  border-radius: .5rem;
+  overflow-x: auto;      /* mantiene el scroll */
+  background: #fff;
+}
+
+/* Primera columna fija al 5% */
+.w5 {
+  width: 5%;
+  min-width: 5%;
+  max-width: 5%;
+  text-align: center;
+}
+
 
 @media (max-width:650px) {
     .tabla__botonera { margin-top:1.5rem; flex-direction:column; row-gap:1rem; align-items:start;}
