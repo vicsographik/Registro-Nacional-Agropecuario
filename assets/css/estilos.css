@@ -5,7 +5,6 @@
 @import "base/_config.css";
 @import "base/_layout.css";
 @import "base/_filas-columnas.css";
-@import "base/_listas.css";
 
 /*COMPONENTES BÁSICOS*/
 @import "componentes/_boton.css";

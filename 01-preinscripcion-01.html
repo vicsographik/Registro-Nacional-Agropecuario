@@ -389,135 +389,52 @@
 
         <!-- MAIN -->
         <main id="mainContent">
-            <div class="ruta__cont">
-                <ul class="ruta__lista">
-                    <li class="ruta__li">
-                        <img src="assets/icons-base/home.svg" alt="" class="ruta__home" aria-hidden="true">
-                        <span class="oculto">Inicio</span>
-                    </li>
-                    <li class="ruta__li">Registro</li>
-                </ul>
-            </div>
+            <a href="#" class="boton__fantasma">
+                <img src="./assets/icons-base/arrow-left.svg" alt="">
+                Salir
+            </a>
             <div class="rowgap--24 mt--24">
-                <div class="cajaBasica--16">
-                    <div class="persona-tutor">
-                        <div class="persona-tutor--fotoYNombre">
-                            <div class="persona-tutor--foto"><img src="./assets/img/foto-tutor.jpg"
-                                    alt="Foto de Madre, padre o tutor"></div>
-                            <div class="rowgap--4">
-                                <p>Madre, padre o tutor</p>
-                                <h2 class="sh0m">María Guadalupe Soria Martínez</h2>
+                <div class="rowgap--16">
+                    <h2 class="sh0m">Preinscripción</h2>
+                    <p>Completa los 3 módulos de información, en el orden que prefieras. Al terminar, da clic en el
+                        botón “Continuar”</p>
+                    <p class="color--verde500">0/3 módulos completados</p>
+                </div>
+                <div class="preregistro-pasos rowgap--16">
+                    <div class="cajaBasica--16">
+                        <div class="sh1m mb--0">Datos del estudiante</div>
+                        <div>
+                            <div class="pildora--exito--dot">
+                                Completado
                             </div>
+                            <a href="#" class="boton__fantasma">
+                                Editar
+                                <img src="./assets/icons-base/edit.svg" alt="">
+                            </a>
                         </div>
+                    </div>
+                    <div class="cajaBasica--16">
+                        <div class="sh1m mb--0">Datos de preinscripción</div>
                         <a href="#" class="boton__fantasma">
-                            Ver datos
-                            <img class="--principal" src="./assets/icons-base/chevron--right.svg" alt="">
+                            Comenzar
+                            <img src="./assets/icons-base/chevron--right.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="cajaBasica--16">
+                        <div class="sh1m mb--0">Selección de escuelas</div>
+                        <a href="#" class="boton__fantasma">
+                            Comenzar
+                            <img src="./assets/icons-base/chevron--right.svg" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="registro-nuevo fila--mix-8-4">
-                    <details class="cajaBasica--16">
-                        <summary>¿Cómo registrar a un estudiante para preinscripción en la plataforma?<span
-                                class="details__flecha"></span>
-                        </summary>
-                        <div class="details__caja pt--24" style="height: 0px;">
-                            <img src="./assets/img/video-holder.jpg" alt="">
-                        </div>
-                    </details>
-                    <a href="#" class="boton__primario boton--sm100">
-                        <img src="./assets/icons-base/user-add.svg" alt="">
-                        Registrar nuevo estudiante
-                    </a>
+                <div class="botonera--end botonera--responsiva">
+                    <button type="submit" class="boton__primario" disabled>
+                        Continuar
+                        <img src="./assets/icons-base/arrow--right.svg" alt="">
+                    </button>
                 </div>
             </div>
-            <hr class="mt--24 mb--24">
-            <h3 class="b1r">4 estudiantes registrados</h3>
-            <ul class="fila--col3">
-                <li class="cajaBasica-- estudianteR">
-                    <div class="estudianteR-nombre p--16 b1sb"><img src="./assets/icons-base/child_care.svg" alt=""> Emil Guillermo Méndez Carranza</div>
-                    <div class="rowgap--16 p--16">
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Estatus</span><br>
-                            <div class="pildora--alerta">
-                                Pendiente
-                            </div>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">CURP</span><br>
-                            <strong class="b1sb">COFP911012HDFRGS09</strong>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Nivel educativo</span><br>
-                            <strong class="b1sb">Preescolar</strong>
-                        </div>
-                        <button class="boton__secundario">Ver información <img
-                                src="./assets/icons-base/chevron--right.svg" alt=""></button>
-                    </div>
-                </li>
-                <li class="cajaBasica-- estudianteR">
-                    <div class="estudianteR-nombre p--16 b1sb"><img src="./assets/icons-base/child_care.svg" alt=""> Gustavo Méndez Carranza</div>
-                    <div class="rowgap--16 p--16">
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Estatus</span><br>
-                            <div class="pildora--exito">
-                                Inscrito
-                            </div>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">CURP</span><br>
-                            <strong class="b1sb">COFP911012HDFRGS09</strong>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Nivel educativo</span><br>
-                            <strong class="b1sb">Preescolar</strong>
-                        </div>
-                        <button class="boton__secundario">Ver información <img
-                                src="./assets/icons-base/chevron--right.svg" alt=""></button>
-                    </div>
-                </li>
-                <li class="cajaBasica-- estudianteR">
-                    <div class="estudianteR-nombre p--16 b1sb"><img src="./assets/icons-base/child_care.svg" alt=""> Valeria Méndez Carraanza</div>
-                    <div class="rowgap--16 p--16">
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Estatus</span><br>
-                            <div class="pildora--purple--dot">
-                                Preinscrito
-                            </div>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">CURP</span><br>
-                            <strong class="b1sb">COFP911012HDFRGS09</strong>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Nivel educativo</span><br>
-                            <strong class="b1sb">Primaria</strong>
-                        </div>
-                        <button class="boton__secundario">Ver información <img
-                                src="./assets/icons-base/chevron--right.svg" alt=""></button>
-                    </div>
-                </li>
-                <li class="cajaBasica-- estudianteR">
-                    <div class="estudianteR-nombre p--16 b1sb"><img src="./assets/icons-base/child_care.svg" alt=""> Victor Gonzáles Reyes</div>
-                    <div class="rowgap--16 p--16">
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Estatus</span><br>
-                            <div class="pildora--alerta">
-                                Pendiente
-                            </div>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">CURP</span><br>
-                            <strong class="b1sb">COFP911012HDFRGS09</strong>
-                        </div>
-                        <div class="estudianteR--concepto">
-                            <span class="b1r">Nivel educativo</span><br>
-                            <strong class="b1sb">Secundaria</strong>
-                        </div>
-                        <button class="boton__secundario">Ver información <img
-                                src="./assets/icons-base/chevron--right.svg" alt=""></button>
-                    </div>
-                </li>
-            </ul>
 
             <!--VENTANILLA 24/7-->
             <section class="ventanilla247">
@@ -531,7 +448,6 @@
                     <img src="assets/icons-base/footer-flor.svg" alt="" aria-hidden="true" class="ventanilla247__flor">
                 </p>
             </section>
-
         </main>
 
         <!-- FOOTER -->
@@ -683,6 +599,27 @@
                 </div>
             </div>
         </footer>
+        <div>
+            <dialog class="aviso--top" id="aviso" open="">
+                <div class="aviso aviso--exito" role="alert" aria-live="polite">
+                    <img class="icono--verde500" src="./assets/icons-base/checkmark--outline.svg" alt="">
+                    <div class="aviso__cont">
+                        Módulo guardado y completado con éxito
+                    </div>
+                    <button type="button" class="aviso__cerrar" onclick="window.aviso.close();">
+                        <span class="oculto">
+                            cerrar
+                        </span>
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
+                            viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </dialog>
+        </div>
 
     </div>
 

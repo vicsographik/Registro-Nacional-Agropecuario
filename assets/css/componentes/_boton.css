@@ -65,7 +65,7 @@
 [class*="boton__secundario"]:focus-visible { outline:3px solid var(--principal); outline-offset:-1px;}
 [class*="boton__secundario"]:active { background:var(--gama200); border:solid 1px var(--gama200); outline-offset:-1px; }
 /*icono*/
-[class*="boton__secundario"] img {filter:invert(14%) sepia(10%) saturate(5762%) hue-rotate(135deg) brightness(98%) contrast(104%);}
+[class*="boton__secundario"] img {filter: var(--filtroPrimario);}
 /*deshabilitado*/
 [class*="boton__secundario"][class*="--disabled"],
 [class*="boton__secundario"][class*="--disabled"]:hover,
