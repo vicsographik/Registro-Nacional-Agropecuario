@@ -17,6 +17,7 @@
     border-radius: .5rem;
     overflow: hidden;
     margin-left: .35rem;
+    width: 6.9rem;
 }
 
 .persona-tutor--foto img {
@@ -26,7 +27,7 @@
 .registro-nuevo {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items:flex-start;
     width: 100%;
     justify-content: space-between;
 }
@@ -134,4 +135,47 @@
     align-items: center;
     gap: 0.75rem;
     width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+}
+.preregistro-pasos [class^="cajaBasica--"] {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+.preregistro-pasos [class^="boton__"] {
+    min-height: 0;
+}
+.estudianteR {
+    overflow: hidden;
+}
+.estudianteR-nombre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--neutro200);
+    column-gap: .5rem;
+}
+.estudianteR [class^="boton__"] {
+    width: 100%;
+}
+
+@media (max-width:767.5px) {
+    .persona-tutor, .persona-tutor--fotoYNombre {
+        flex-direction: column;
+        text-align: center;
+    }
+    .registro-nuevo {
+        flex-direction: column;
+    }
+    .registro-nuevo details {
+        width: 100%;
+    }
+    .preregistro-pasos .cajaBasica--16 {
+        flex-direction: column;
+    }
+    
 }
