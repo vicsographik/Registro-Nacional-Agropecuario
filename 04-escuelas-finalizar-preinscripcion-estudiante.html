@@ -394,25 +394,18 @@
                 <img src="./assets/icons-base/arrow-left.svg" alt="">
                 Salir
             </a>
-        <!--Vista previa de la preinscripción del estudiante-->
+        <!--Tu solicitud de preinscripción se registró con éxito-->
             <section class="caja__main mb--32">
-                <h1 class="sh0m f--semibold --center">Vista previa de la preinscripción del estudiante</h1>
+                <div class="dflex">
+                    <img src="./assets/icons/checkmark--outline.svg" class="ico--exito--91 m--auto" alt="" aria-hidden="true">
+                </div>
+                <h1 class="sh0m f--semibold --center">Tu solicitud de preinscripción se registró con éxito</h1>
+                <div>
+                    <p class="mb--4 --center">La información será revisada y validada para continuar con la asignación de escuela.</p>
+                    <p class="mb--4 --center">Consulta el estatus de tu solicitud en cualquier momento ingresando con tu LlaveMX.</p>
+                </div>
             </section>
 
-            <!--Mensaje Info-->
-            <div class="my--24">
-                <div class="aviso aviso--info borde--no" role="alert">
-                    <svg class="aviso__icon" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z">
-                        </path>
-                        <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z">
-                        </path>
-                    </svg>
-                    <div class="aviso__cont ">
-                        Antes de finalizar, asegúrate que los datos sean correctos.
-                    </div>
-                </div>
-            </div>
             <!-- Datos del estudiante-->
             <div class="cajaBasica--32 rowgap--24 mb--32">
                     <h3 class="sh0m">Datos del estudiante</h3>
@@ -538,15 +531,28 @@
                 </div>
             </div>
             </div>
+
+            <!--Mensaje Info-->
+            <div class="my--24">
+                <div class="aviso aviso--info borde--no" role="alert">
+                    <svg class="aviso__icon" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z">
+                        </path>
+                        <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z">
+                        </path>
+                    </svg>
+                    <div class="aviso__cont ">
+                        Si tienes problemas para ver el comprobante, descarga un lector de archivos PDF gratuito para tu computadora o dispositivo móvil.
+                    </div>
+                </div>
+            </div>
+
             <!--Botones-->     
             <div class="botonera botonera--responsiva">
                 <div>
-                    <button type="button" class="boton__secundario boton--2"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 26L15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26z">
-                            </path>
-                        </svg>Volver</button>
+                    <button type="button" class="boton__secundario boton--2">Volver al inicio</button>
                     <button type="button" class="boton__primario botton--1">
-                        Finalizar preinscripción
+                        Descargar comprobante <img src="./assets/icons/download.svg" alt="">
                     </button>
                 </div>
             </div>

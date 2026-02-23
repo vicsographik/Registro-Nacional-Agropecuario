@@ -69,6 +69,13 @@ td .pildora { width:100%;}
   text-align: center;
 }
 
+/* Segunda columna fija al 10% */
+.w10 {
+  width: 10%;
+  min-width: 10%;
+  max-width: 10%;
+
+}
 
 @media (max-width:650px) {
     .tabla__botonera { margin-top:1.5rem; flex-direction:column; row-gap:1rem; align-items:start;}

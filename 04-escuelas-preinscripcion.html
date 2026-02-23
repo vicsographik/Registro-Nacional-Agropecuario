@@ -394,28 +394,24 @@
                 <img src="./assets/icons-base/arrow-left.svg" alt="">
                 Salir
             </a>
-        <!--Vista previa de la preinscripción del estudiante-->
+        <!--preinscripción-->
             <section class="caja__main mb--32">
-                <h1 class="sh0m f--semibold --center">Vista previa de la preinscripción del estudiante</h1>
+                <h1 class="sh0m f--semibold">Preinscripción</h1>
             </section>
-
-            <!--Mensaje Info-->
-            <div class="my--24">
-                <div class="aviso aviso--info borde--no" role="alert">
-                    <svg class="aviso__icon" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z">
-                        </path>
-                        <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z">
-                        </path>
-                    </svg>
-                    <div class="aviso__cont ">
-                        Antes de finalizar, asegúrate que los datos sean correctos.
-                    </div>
-                </div>
-            </div>
-            <!-- Datos del estudiante-->
+            <!-- Selección de escuelas-->
             <div class="cajaBasica--32 rowgap--24 mb--32">
-                    <h3 class="sh0m">Datos del estudiante</h3>
+                    <h2 class="sh0m">Selección de escuelas</h2>
+                    <p>Busca y elige un mínimo de 1 a 3 escuelas. Puedes activar tu ubicación</p>
+
+                    <h3 class="sh1b">Buscador de escuelas</h3>
+                    <p>Usa tu ubicación para encontrar las escuelas más cercanas o ingresa los datos correspondientes.</p>
+
+                    <div class="botonera--start">
+                        <div>
+                            <button type="button" class="boton__secundario boton--2">Usar mi ubicación <img src="./assets/icons/ubicacion.svg" alt=""></button>
+                        </div>
+                    </div>
+
                     <ul class="fila--col3">
                         <li>Nombre (s)<br>
                             <span class="f--semibold">Emil Guillermo</span>
@@ -545,8 +541,9 @@
                             <path d="M14 26L15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26z">
                             </path>
                         </svg>Volver</button>
-                    <button type="button" class="boton__primario botton--1">
-                        Finalizar preinscripción
+                    <button type="submit" class="boton__primario" disabled="">
+                        Continuar
+                        <img src="./assets/icons-base/arrow--right.svg" alt="">
                     </button>
                 </div>
             </div>
