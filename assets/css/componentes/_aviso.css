@@ -27,8 +27,6 @@ dialog .aviso--verde500 .aviso__icon { color:var(--verde500); border-color:var(-
 
 .aviso--top { top:calc( var(--bodyTop) + 55px);}
 
-@media (max-width:767.9px){
-    dialog[class*="aviso--"] { width:95%;}
-}
+
 
 

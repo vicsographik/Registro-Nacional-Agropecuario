@@ -15,6 +15,7 @@
     border-radius: .5rem;
     overflow: hidden;
     margin-left: .35rem;
+    width: 6.9rem;
 }
 .persona-tutor--foto img {
     display: block;
@@ -54,4 +55,21 @@
 }
 .estudianteR [class^="boton__"] {
     width: 100%;
+}
+
+@media (max-width:767.5px) {
+    .persona-tutor, .persona-tutor--fotoYNombre {
+        flex-direction: column;
+        text-align: center;
+    }
+    .registro-nuevo {
+        flex-direction: column;
+    }
+    .registro-nuevo details {
+        width: 100%;
+    }
+    .preregistro-pasos .cajaBasica--16 {
+        flex-direction: column;
+    }
+    
 }
