@@ -178,5 +178,9 @@
     .preregistro-pasos .cajaBasica--16 {
         flex-direction: column;
     }
+    .registro-nuevo--video > * {
+        display: inline-block;
+        width: 100%;
+    }
     
 }
