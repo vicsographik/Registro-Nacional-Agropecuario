@@ -7,7 +7,7 @@ dialog::backdrop { background:rgba(0,0,0,0.25); backdrop-filter:blur(0.5px);}
 .dialog__medium { width:50vw; border-radius:1rem; padding:1.5rem 2rem;}
 
 /*MINI*/
-.dialog__dminimal { width:20rem; border-radius:1rem; padding:1rem;}
+.dialog__dminimal { width:20rem; border-radius:1rem; padding:1rem; margin: auto; }
 .dialog__dminimal button { width: 100%;}
 .dminimal__tit    { margin:1.25rem 0; font-size:1rem; font-weight:600}
 .dminimal__header { position:relative}
