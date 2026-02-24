@@ -153,6 +153,7 @@
 .color--neutro500 { color:var(--neutro500)}
 .color--neutro600 { color:var(--neutro600)}
 .color--neutro700 { color:var(--neutro700)}
+.color--neutro700 img { filter: invert(24%) sepia(1%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(89%);}
 .color--neutro800 { color:var(--neutro800)}
 .color--neutro800-56 { color:var(--neutro800-56)}
 .color--overlay { color:var(--neutro800-56)}
