@@ -7,8 +7,8 @@ body, body * {  font-family: "Noto Sans", sans-serif; }
 
 /*A LINK*/
 a, 
-a:focus,
-a img  { color:var(--principal); font-weight:600;}
+a:focus  { color:var(--principal); font-weight:600;}
+a img { filter: var(--filtroPrimario);}
 a:hover  { color:color-mix(in srgb, var(--principal) 80%, #FFF)}
 a:active { color:color-mix(in srgb, var(--principal) 70%, #FFF)}
 a:visited { color:color-mix(in srgb, var(--principal) 80%, #FFF)}

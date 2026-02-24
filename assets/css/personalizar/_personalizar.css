@@ -162,6 +162,7 @@
 .estudianteR [class^="boton__"] {
     width: 100%;
 }
+.search--field label {display: inline-block;}
 
 @media (max-width:767.5px) {
     .persona-tutor, .persona-tutor--fotoYNombre {

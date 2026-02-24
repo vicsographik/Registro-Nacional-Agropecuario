@@ -14,19 +14,22 @@
 .aviso--error a { color:var(--rojo500)}
 .aviso--exito  { background:var(--verde100); border:solid 1px var(--verde500);}
 .aviso--exito a  { color:var(--verde500);}
+.aviso--exito img { }
 .aviso--neutro  { background:var(--neutro400); color:var(--neutro700); border:solid 1px var(--neutro700);}
 .aviso--neutro a  { color:var(--neutro700)}
 
 
 /*flotante*/
 dialog[class*="aviso--"] { width:50%; background:none; padding:0; position:fixed; border:none; margin: auto;}
-dialog .aviso { box-shadow:0px 4px 8px rgba(0, 0, 0, .15); color:var(--neutro800); border-radius:4px; font-size:1rem; margin:auto;  margin:auto;}
+dialog .aviso { box-shadow:0px 4px 8px rgba(0, 0, 0, .15); color:var(--neutro800); border-radius:4px; font-size:1rem; margin:auto;}
 dialog .aviso--verde500 .aviso__icon { color:var(--verde500); border-color:var(--verde500);}
 .aviso__cerrar { border:none; background:none; padding:0; margin:0; line-height:0; font-weight:normal; border-radius:5rem; cursor: pointer;  align-self:flex-start;}
 .aviso__cerrar:hover { background:rgba(0, 0, 0, .05);}
 
 .aviso--top { top:calc( var(--bodyTop) + 55px);}
 
-
+@media (max-width:767.9px){
+    dialog[class*="aviso--"] { margin: 0 1rem;}
+}
 
 
