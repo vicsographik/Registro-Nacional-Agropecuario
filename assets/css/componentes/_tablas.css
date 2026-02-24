@@ -25,15 +25,16 @@ td .pildora { width:100%;}
 /*TABLA 01*/
 .tabla01  { border-collapse:separate; border-radius:.5rem; border-spacing: 0; border:1px solid #AAA;}
 .tabla01__caption { font-size:1.25rem; font-weight:600; color:var(--neutro800); caption-side: top; position:sticky; left:0}
-.tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--gama600);}
+.tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--principal);}
 .tabla01__theadTh div { display:flex; align-items:center; column-gap:.2rem; }
 .tabla01__tbodyTh,
 .tabla01__tbodyTd { padding:1rem .5rem; background:#FFF; font-weight:normal; vertical-align:top;}
 .tabla01__checkbox { min-width:1.5rem; }
 .tabla01__checkbox label { justify-content:center;}
 /*border radius*/
-.tabla01__theadTh:first-of-type { border-top-left-radius:.5rem;}
+.tabla01__theadTh:first-of-type { border-top-left-radius:.5rem; min-width: auto;}
 .tabla01__theadTh:last-of-type   { border-top-right-radius:.5rem}
+.tabla01__tbodyTr td { background-color: var(--neutro100)}
 .tabla01__tbodyTr:last-of-type [class*="tabla01__tbody"]:first-child { border-bottom-left-radius:.5rem}
 .tabla01__tbodyTr:last-of-type td:last-of-type  { border-bottom-right-radius:.5rem}
 

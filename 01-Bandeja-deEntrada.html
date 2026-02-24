@@ -323,8 +323,8 @@
 
                 <li class="menuMain__item">
                     <a href="#" class="menuMain__link menuMain__linkSm" aria-current="page">
-                        <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="menuMain__icono">
-                        <span class="menuMain__txt">Preinscripción</span>
+                        <img src="assets/icons-base/ico-file.svg" alt="" aria-hidden="true" class="menuMain__icono">
+                        <span class="menuMain__txt">Bandeja de entrada</span>
                     </a>
                 </li>
 
@@ -335,20 +335,11 @@
                     </a>
                 </li>
 
-                <li class="menuMain__item menuMain__item--mas">
-                    <button class="menuMain__link" id="menuMovil__gatillo" aria-expanded="false">
-                        <img src="assets/icons/overflow-menu--horizontal.svg" alt="" aria-hidden="true"
-                            class="menuMain__icono">
-                        <span class="menuMain__txt">Más</span>
-                    </button>
-                </li>
-
             </ul>
-
-            <div class="menuMovil menuMovil--colapsado" id="menuMovil">
+            <!--<div class="menuMovil menuMovil--colapsado" id="menuMovil">
                 <button type="button" class="menuMovil__gatilloTop" id="menuMovil__gatilloTop">
                     <span class="oculto">Cerrar</span>
-                    <img src="assets/icons/close.svg" alt="" aria-hidden="true" class="">
+                    <img src="assets/icons-base/ico-clear.svg" alt="" aria-hidden="true" class="">
                 </button>
                 <hr class="hr">
                 <div class="menuMovil__tit">Mi PNC</div>
@@ -384,70 +375,236 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div>-->
+
         </nav>
 
         <!-- MAIN -->
-        <main id="mainContent">
-            <a href="#" class="boton__fantasma">
-                <img src="./assets/icons-base/arrow-left.svg" alt="">
-                Salir
-            </a>
-            <div class="rowgap--24 mt--24">
-                <div class="rowgap--16">
-                    <h2 class="sh0m">Preinscripción</h2>
-                    <p>Completa los 3 módulos de información, en el orden que prefieras. Al terminar, da clic en el
-                        botón “Continuar”</p>
-                    <p class="color--verde500">0/3 módulos completados</p>
+        <main id="mainContent" class="rowgap--32">
+
+            <div class="cajaBasica--24">
+                <div class="head-title">
+                    <div class="head-title--txt">
+                        <h1>Bandeja de entrada</h1>
+                        <p>Gestiona aquí los trámites solicitados por los ciudadanos.</p>
+                    </div>
+                    <div class="head-title--button">
+                        <button class="boton__primario nowrap boton--sm100">Nuevo estudiante</button>
+                    </div>
                 </div>
-                <div class="preregistro-pasos rowgap--16">
-                    <div class="cajaBasica--16">
-                        <div class="sh1m mb--0">Datos del estudiante</div>
-                        <div>
-                            <div class="pildora--exito--dot">
-                                Completado
+                <hr class="mt--20">
+                <div class="filtros">
+                    <button class="boton__primario--borde boton--100sm close-filtros-btn ">
+                        Cerrar
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="32"
+                            height="32" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z">
+                            </path>
+                            <title>Close</title>
+                        </svg>
+                    </button>
+                    <div class="bandeja--params">
+                        <div class="fila">
+                            <div class="search">
+                                <div class="fila--col2 fila--colgap20">
+                                    <div class="search--field">
+                                        <label class="b1sb mb--8">Nombre del estudiante</label>
+                                        <div class="form-item-wrapper buscar">
+                                            <img src="./assets/icons-base/search.svg" alt="">
+                                            <input type="text" class="form-item buscar" placeholder="Buscar por nombre">
+                                            <button type="button" class="clear-button">
+                                                <img src="./assets/icons-base/ico-clear.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="search--field">
+                                        <label class="b1sb mb--8">CURP</label>
+                                        <div class="form-item-wrapper buscar">
+                                            <img src="./assets/icons-base/search.svg" alt="">
+                                            <input type="text" class="form-item buscar" placeholder="Buscar por CURP">
+                                            <button type="button" class="clear-button">
+                                                <img src="./assets/icons-base/ico-clear.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="boton__secundario--borde">Buscar</button>
                             </div>
-                            <a href="#" class="boton__fantasma">
-                                Editar
-                                <img src="./assets/icons-base/edit.svg" alt="">
-                            </a>
                         </div>
                     </div>
-                    <div class="cajaBasica--16">
-                        <div class="sh1m mb--0">Datos de preinscripción</div>
-                        <a href="#" class="boton__fantasma">
-                            Comenzar
-                            <img src="./assets/icons-base/chevron--right.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="cajaBasica--16">
-                        <div class="sh1m mb--0">Selección de escuelas</div>
-                        <a href="#" class="boton__fantasma">
-                            Comenzar
-                            <img src="./assets/icons-base/chevron--right.svg" alt="">
-                        </a>
-                    </div>
                 </div>
-                <div class="botonera--end botonera--responsiva">
-                    <button type="submit" class="boton__primario" disabled>
-                        Continuar
-                        <img src="./assets/icons-base/arrow--right.svg" alt="">
+                <div class="fila r-btns">
+                    <button id="toggleFiltrosBtn" class="boton__primario--borde boton--100sm">
+                        Filtros
                     </button>
                 </div>
             </div>
+            <div class="caja__main">
+                <div class="tablaResponsiva--horizontal">
+                    <table class="tabla01 tabla--100">
+                        <caption class="oculto">
+                            Bandeja de usuarios
+                        </caption>
+                        <thead class="tabla01__thead">
+                            <tr class="tabla01__theadTr">
+                                <th scope="col" class="tabla01__theadTh tabla01__theadTh--check">
+                                    <div class="form__grupo">
+                                        <input id="" type="checkbox" class="form__checkbox"
+                                            aria-label="Asignar permiso">
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabla01__theadTh tablaResponsiva__colFija">
+                                    <div>
+                                        <button type="button" class="tabla__ordenar">
+                                            <span class="oculto">Ordenar por folio</span>
+                                            <img src="assets/icons-base/tabla-ordenar.svg" alt="" aria-hidden="true">
+                                        </button>
+                                        Folio
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabla01__theadTh">
+                                    <div>
+                                        <button type="button" class="tabla__ordenar">
+                                            <span class="oculto">Ordenar por Nombre</span>
+                                            <img src="assets/icons-base/tabla-ordenar.svg" alt="" aria-hidden="true">
+                                        </button>
+                                        Nombre del estudiate
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabla01__theadTh">
+                                    <div>
+                                        <button type="button" class="tabla__ordenar">
+                                            <span class="oculto">Ordenar por CURP</span>
+                                            <img src="assets/icons-base/tabla-ordenar.svg" alt="" aria-hidden="true">
+                                        </button>
+                                        CURP
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabla01__theadTh">
+                                    <div>
+                                        <button type="button" class="tabla__ordenar">
+                                            <span class="oculto">Ordenar por correo electrónico</span>
+                                            <img src="assets/icons-base/tabla-ordenar.svg" alt="" aria-hidden="true">
+                                        </button>
+                                        Correo electrónico
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabla01__theadTh th--center">
+                                    <div>Acciones</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tabla01__tbodyTr">
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">
+                                    <div class="form__grupo">
+                                        <input id="" type="checkbox" class="form__checkbox"
+                                            aria-label="Asignar permiso">
+                                    </div>
+                                </th>
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">BRC2310240000000010
+                                </th>
+                                <td class="tabla01__tbodyTd">Emil Guillermo Méndez Carranza</td>
+                                <td class="tabla01__tbodyTd">COFP911012HDFRGS09</td>
+                                <td class="tabla01__tbodyTd">correo@ejemplo.com</td>
+                                <td class="td--center">
+                                    <a href="#" class="boton__vertical ">
+                                        <img src="./assets/icons-base/ico-verMas.svg" alt="">
+                                        Ver detalle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tabla01__tbodyTr">
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">
+                                    <div class="form__grupo">
+                                        <input id="" type="checkbox" class="form__checkbox"
+                                            aria-label="Asignar permiso">
+                                    </div>
+                                </th>
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">BRC2310240000000010
+                                </th>
+                                <td class="tabla01__tbodyTd">Emil Guillermo Méndez Carranza</td>
+                                <td class="tabla01__tbodyTd">COFP911012HDFRGS09</td>
+                                <td class="tabla01__tbodyTd">correo@ejemplo.com</td>
+                                <td class="td--center">
+                                    <a href="#" class="boton__vertical ">
+                                        <img src="./assets/icons-base/ico-verMas.svg" alt="">
+                                        Ver detalle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tabla01__tbodyTr">
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">
+                                    <div class="form__grupo">
+                                        <input id="" type="checkbox" class="form__checkbox"
+                                            aria-label="Asignar permiso">
+                                    </div>
+                                </th>
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">BRC2310240000000010
+                                </th>
+                                <td class="tabla01__tbodyTd">Emil Guillermo Méndez Carranza</td>
+                                <td class="tabla01__tbodyTd">COFP911012HDFRGS09</td>
+                                <td class="tabla01__tbodyTd">correo@ejemplo.com</td>
+                                <td class="td--center">
+                                    <a href="#" class="boton__vertical ">
+                                        <img src="./assets/icons-base/ico-verMas.svg" alt="">
+                                        Ver detalle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tabla01__tbodyTr">
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">
+                                    <div class="form__grupo">
+                                        <input id="" type="checkbox" class="form__checkbox"
+                                            aria-label="Asignar permiso">
+                                    </div>
+                                </th>
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">BRC2310240000000010
+                                </th>
+                                <td class="tabla01__tbodyTd">Emil Guillermo Méndez Carranza</td>
+                                <td class="tabla01__tbodyTd">COFP911012HDFRGS09</td>
+                                <td class="tabla01__tbodyTd">correo@ejemplo.com</td>
+                                <td class="td--center">
+                                    <a href="#" class="boton__vertical ">
+                                        <img src="./assets/icons-base/ico-verMas.svg" alt="">
+                                        Ver detalle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tabla01__tbodyTr">
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">
+                                    <div class="form__grupo">
+                                        <input id="" type="checkbox" class="form__checkbox"
+                                            aria-label="Asignar permiso">
+                                    </div>
+                                </th>
+                                <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">BRC2310240000000010
+                                </th>
+                                <td class="tabla01__tbodyTd">Emil Guillermo Méndez Carranza</td>
+                                <td class="tabla01__tbodyTd">COFP911012HDFRGS09</td>
+                                <td class="tabla01__tbodyTd">correo@ejemplo.com</td>
+                                <td class="td--center">
+                                    <a href="#" class="boton__vertical ">
+                                        <img src="./assets/icons-base/ico-verMas.svg" alt="">
+                                        Ver detalle
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="botonera--end botonera--responsiva mt--40">
+                        <button type="submit" class="boton__primario boton--1">
+                            Eliminar seleccionados
+                        </button>
+                    </div>
+                </div>
 
-            <!--VENTANILLA 24/7-->
-            <section class="ventanilla247">
-                <h2 class="ventanilla247__tit">
-                    <span class="patria">Ventanilla</span>
-                    24/7
-                </h2>
-                <p class="ventanilla247__079">
-                    079
-                    <span class="patria">te ayuda</span>
-                    <img src="assets/icons-base/footer-flor.svg" alt="" aria-hidden="true" class="ventanilla247__flor">
-                </p>
-            </section>
+                <button style="background:yellow;" onclick="window.aviso2.show();">Se eliminaron los registros correctamente</button><br>
+                <button style="background:yellow; margin:3rem;" onclick="window.modal_01.showModal();">Abrir ventana modal <b>¿Eliminar registros?</b></button>
+
+            </div>
         </main>
 
         <!-- FOOTER -->
@@ -599,17 +756,16 @@
                 </div>
             </div>
         </footer>
+
         <div>
-            <dialog class="aviso--top" id="aviso" open="">
+            <dialog class="aviso--top" id="aviso2">
                 <div class="aviso aviso--exito" role="alert" aria-live="polite">
-                    <img class="icono--verde500" src="./assets/icons-base/checkmark--outline.svg" alt="">
+                    <img class="icono--exito" src="./assets/icons-base/checkmark--outline.svg" alt="">
                     <div class="aviso__cont">
-                        Módulo guardado y completado con éxito
+                       Se eliminaron los registros correctamente
                     </div>
-                    <button type="button" class="aviso__cerrar" onclick="window.aviso.close();">
-                        <span class="oculto">
-                            cerrar
-                        </span>
+                    <button type="button" class="aviso__cerrar" onclick="window.aviso2.close();">
+                        <span class="oculto">cerrar</span>
                         <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
                             viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -620,6 +776,19 @@
                 </div>
             </dialog>
         </div>
+        <dialog class="dialog__dminimal dialog--center" id="modal_01">
+            <header class="dminimal__header dminimal__header--cerrar">
+                <img src="./assets/icons-base/warning.svg" style="width: 2em;" alt="" class="mb--16">
+            </header>
+            <div class="dminimal__body">
+                <p class="b1sb mb--8">¿Eliminar registros?</p>
+                <p class="m--0">Esta acción no se puede deshacer</p>
+            </div>
+            <footer class="dminimal__footer">
+                <button class="boton__primario boton--100" onclick="window.modal_01.close();">Si, eliminar</button>
+                <button class="boton__secundario boton--100" onclick="window.modal_01.close();">No, cancelar</button>
+            </footer>
+        </dialog>
 
     </div>
 
@@ -631,6 +800,7 @@
     <script src="assets/js/aside-movil-height.js"></script>
     <script src="assets/js/tabla-responsiva-sombreado.js"></script>
     <script src="assets/js/details-cierra-onclickout.js"></script>
+    <script src="assets/js/desplegable.js"></script>
     <script src="assets/js/accesibilidad-gobmx.js"></script>
     <script src="https://framework-gb.cdn.gob.mx/gm/accesibilidad/js/gobmx-accesibilidad.min.js"></script>
 

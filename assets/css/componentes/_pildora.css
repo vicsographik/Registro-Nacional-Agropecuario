@@ -1,30 +1,40 @@
-.pildora { font-size:0.875rem; border-radius:50rem; padding:4px 8px; color:var(--neutro700); white-space:nowrap; text-align:center; display:inline-block; width:fit-content; gap:8px;}
+[class*="pildora--"] {
+  font-size: 0.875rem;
+  border-radius: 1rem;
+  padding: 4px 12px;
+  color: var(--neutro700);
+  white-space: nowrap;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 8px;
+  border: 1px solid transparent;
+  line-height: 1;
+}
 .pildora--w100,
 .pildora--100,
 .pildora--100w { width:100%;}
 
-.pildora__dot { width:12px; height:12px; border-radius:5rem; display:inline-block; }
+[class*="pildora--exito"] { --pildora-color: var(--verde500); border-color: var(--pildora-color); background-color: var(--verde100);}
+[class*="pildora--error"] { --pildora-color: var(--rojo500); border-color: var(--pildora-color); background-color: var(--rojo100);}
+[class*="pildora--alerta"] { --pildora-color: var(--alerta); border-color: var(--pildora-color); background-color: var(--amarillo100);}
+[class*="pildora--info"] { --pildora-color: var(--info); border-color: var(--pildora-color); background-color: var(--azul100);}
+[class*="pildora--purple"] { --pildora-color: var(--purple); border-color: var(--pildora-color); background-color: var(--morado100);}
+[class*="pildora--neutro"] { --pildora-color: var(--neutro700); border-color: var(--pildora-color); background-color: var(--neutro300);}
+[class*="pildora--orange"] { --pildora-color: var(--orange); border-color: var(--pildora-color); background-color: var(--orange100);}
+[class*="pildora--naranja"] { --pildora-color: var(--naranja500); border-color: var(--pildora-color); background-color: var(--naranja100);}
+[class*="pildora--inactivo"] { --pildora-color: #434343; border-color: var(--pildora-color); background-color: #DDDDDD;}
 
-[class*="pildora--"]  { display: inline-flex; justify-content:center; align-items:center; border:solid 1px transparent}
-
-.pildora--exito  { border-color:var(--verde500); background:var(--verde100) }
-.pildora--error  { border-color:var(--rojo500); background:var(--rojo100) }
-.pildora--alerta { border-color:var(--alerta); background:var(--amarillo100)}
-.pildora--info   { border-color:var(--info); background:var(--azul100)}
-.pildora--purple { border-color:var(--purple); background:var(--morado100)}
-.pildora--neutro { border-color:var(--neutro700); background:var(--neutro300)}
-.pildora--orange { border-color:var(--orange); background:var(--orange100)}
-.pildora--naranja { border-color:var(--naranja500); background:var(--naranja100)}
-.pildora--inactivo { border-color:#434343; background:#DDDDDD}
-
-.pildora--exito .pildora__dot  { background:var(--verde500) }
-.pildora--error .pildora__dot  { background:var(--rojo500)}
-.pildora--alerta .pildora__dot { background:var(--dorado500)}
-.pildora--info .pildora__dot   { background:var(--azul500)}
-.pildora--purple .pildora__dot { background:var(--purple)}
-.pildora--neutro .pildora__dot { background:var(--neutro700)}
-.pildora--orange .pildora__dot { background:var(--orange)}
-.pildora--naranja .pildora__dot { background:var(--naranja500)}
+[class*="pildora--"][class*="--dot"]::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--pildora-color);
+  flex-shrink: 0;
+}
 
 /*Pildora filtro*/
 .pildoraFiltro { font-size:0.875rem; border-radius:50rem; border:solid 1px var(--btnColor); color:var(--btnColor); background:#FFF; padding:7px 16px; white-space:nowrap; text-align:center; width:fit-content; gap:8px; line-height:normal; cursor: pointer; display:flex; align-items:center;}

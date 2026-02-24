@@ -65,7 +65,11 @@
 [class*="boton__secundario"]:focus-visible { outline:3px solid var(--principal); outline-offset:-1px;}
 [class*="boton__secundario"]:active { background:var(--gama200); border:solid 1px var(--gama200); outline-offset:-1px; }
 /*icono*/
+<<<<<<< HEAD
 [class*="boton__secundario"] img {filter:var(--filtroPrimario);}
+=======
+[class*="boton__secundario"] img {filter: var(--filtroPrimario);}
+>>>>>>> main
 /*deshabilitado*/
 [class*="boton__secundario"][class*="--disabled"],
 [class*="boton__secundario"][class*="--disabled"]:hover,
@@ -119,8 +123,13 @@
 
 
 /*VARIANTES*/
+<<<<<<< HEAD
 .boton--vertical  { display:flex; flex-direction:column; margin:auto; font-size:.75rem;}
 .boton--wrap { white-space:wrap }
+=======
+.boton__vertical  { display:flex; flex-direction:column; margin:auto; font-size:.75rem;}
+.boton__vertical img { filter: var(--filtroPrimario);}
+>>>>>>> main
 
 /*movil*/ 
 @media (max-width:767.9px) {

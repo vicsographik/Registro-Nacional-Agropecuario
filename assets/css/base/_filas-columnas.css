@@ -5,6 +5,7 @@
     column-gap:var(--filaColGap); 
     row-gap:var(--filaRowGap); 
     align-items:start;
+    width: 100%;
     }
 
 .fila--colgap8 { column-gap:8px;}
