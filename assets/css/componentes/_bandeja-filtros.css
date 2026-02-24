@@ -285,9 +285,6 @@ button.close-filtros-btn {
     width: 100%;
     gap: 1rem;
 }
-.search--field {
-    width: 90%;
-}
 
 @media (max-width: 1200px) {
     .bandeja.width-contain {
@@ -309,7 +306,7 @@ button.close-filtros-btn {
     }
 
     button.close-filtros-btn {
-        color: var(--principal);
+        color: var(--neutro100);
         border-radius:0;
     }
 

@@ -198,7 +198,7 @@ a.footer__enlacesLink:visited { color:#FFF;}
 .menuMain__headerCont { padding:0 16px;}
 .menuMain__lista { list-style-type:none; margin:0; padding:0;}
 .menuMain__link { padding:1rem; font-weight:600; display:flex; align-items:center; line-height:normal; column-gap:.5rem; text-decoration:none; border:none; background:none; cursor: pointer;}
-.menuMain__icono { width:24px; color:#FFF; filter: brightness(0) invert(1);}
+.menuMain__icono { width:25px; color:#FFF; filter: brightness(0) invert(1);}
 .menuMain__link:visited,
 .menuMain__link:focus  { color:#FFF;}
 .menuMain__link:hover  { background:rgba(255,255,255,0.2); color:#FFF}

@@ -40,3 +40,5 @@
 
 /*PERSONALIZAR*/
 @import "personalizar/_personalizar.css";
+@import "personalizar/_formato-imprimible.css";
+@import "personalizar/_home.css";

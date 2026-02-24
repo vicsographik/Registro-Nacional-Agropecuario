@@ -9,6 +9,7 @@ body, body * {  font-family: "Noto Sans", sans-serif; }
 a, 
 a:focus,
 a img  { color:var(--principal); font-weight:600;}
+
 a:hover  { color:color-mix(in srgb, var(--principal) 80%, #FFF)}
 a:active { color:color-mix(in srgb, var(--principal) 70%, #FFF)}
 a:visited { color:color-mix(in srgb, var(--principal) 80%, #FFF)}

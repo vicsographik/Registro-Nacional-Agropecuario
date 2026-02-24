@@ -1,5 +1,5 @@
 /*CAJAS*/
-.caja__maxw { max-width:var(--MaxWidth); margin:0 auto;}
+.caja__maxw { max-width:var(--MaxWidth); margin:0 auto; padding-left:16px; padding-right:16px;}
 
 /*CAJA BÁSICA*/
 [class*="cajaBasica--"] { border-radius:16px; background:#FFF; border:solid 1px var(--neutro400);}

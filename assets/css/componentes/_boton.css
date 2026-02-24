@@ -120,6 +120,7 @@
 
 /*VARIANTES*/
 .boton__vertical  { display:flex; flex-direction:column; margin:auto; font-size:.75rem;}
+.boton__vertical img { filter: var(--filtroPrimario);}
 
 /*movil*/ 
 @media (max-width:767.9px) {

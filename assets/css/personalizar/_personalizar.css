@@ -162,6 +162,7 @@
 .estudianteR [class^="boton__"] {
     width: 100%;
 }
+.search--field label {display: inline-block;}
 
 @media (max-width:767.5px) {
     .persona-tutor, .persona-tutor--fotoYNombre {
@@ -176,6 +177,10 @@
     }
     .preregistro-pasos .cajaBasica--16 {
         flex-direction: column;
+    }
+    .registro-nuevo--video > * {
+        display: inline-block;
+        width: 100%;
     }
     
 }
