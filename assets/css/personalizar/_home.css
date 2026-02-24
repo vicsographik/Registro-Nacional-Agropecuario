@@ -1,0 +1,86 @@
+/*cajas*/
+.caja__w10cols,
+.caja__10colsw { margin:auto;}
+@media (min-width:768px) {
+    .caja__w10cols,
+    .caja__10colsw { width:83.33%; }
+}
+@media (max-width:767px) {
+    .caja__w10cols,
+    .caja__10colsw { width:100%;}
+}
+
+/*margen varios*/
+.homeParticipan,
+.homeParticipantes,
+.homePasoReq { margin-bottom:80px;}
+
+/*homeParticipan__fichas*/
+.homeParticipan__fichas { display:flex; flex-direction:row; list-style-type:none; margin:40px 0 0 0; padding:0; column-gap:40px;}
+.homeParticipan__ficha { border-radius:16px; padding:24px; background:#FFF; text-align:center; box-shadow:var(--dropLV1); width:100%;}
+.homeParticipan__a { text-decoration:none; color:var(--neutro800);}
+.homeParticipan__a * { color:var(--neutro800);} 
+@media (max-width:678px) {
+    .homeParticipan__fichas { flex-direction:column; row-gap:24px;}
+}
+
+/*homeParticipantes*/
+.homeParticipantes { border-radius:16px; background:#FFF; display:flex; align-items:stretch; box-shadow:var(--dropLV1)}
+.homeParticipantes__banner { border-radius:16px 0 0 16px; overflow:hidden;}
+.homeParticipantes__banner img { width:100%; height:100%; object-fit: cover;}
+.homeParticipantes__col2 { padding:24px; display:flex; flex-direction:column; row-gap:24px; justify-content:center;}
+@media (min-width:1320px) {
+    .homeParticipantes__banner { width:60%}
+    .homeParticipantes__col2 { padding-right:8.3%}
+}
+@media (max-width:1319px) {
+    .homeParticipantes__col2 { padding-right:16px}
+    .homeParticipantes__banner { width:80%;}
+}
+@media (max-width:767px) {
+    .homeParticipantes { flex-direction:column; text-align: center;}
+    .homeParticipantes__banner { width:100%; border-radius:16px 16px 0 0; height:200px;}
+}
+
+/*jumbotron*/
+.jumbotron { clip-path:polygon(0 0, 100% 0, 100% 100%, 0 85%); background-image:var(--degradado-right); height:452px; color:#FFF;}
+.jumbotron__cont { display:flex; flex-direction:row; margin: auto;}
+.jumbotron__txt { display:flex; align-items:start; justify-content:center; flex-direction:column; row-gap:32px;}
+.jumbotron__pildora { background:#FFF; border-radius:50px; font-size:1.5rem; font-weight:bold; color:var(--principal); padding:12px 32px; display:flex; align-items:center; column-gap:16px; text-align: left;}
+.jumbotron__img { position:relative; bottom:-20px;}
+@media (min-width:700px) and (max-width:950px) {
+    .jumbotron__txt { width:100%}
+    .jumbotron__img { width:350px; bottom:-110px; }
+}
+@media (max-width:767px) {
+    .jumbotron { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); margin-bottom:24px;}
+    .jumbotron__cont { flex-direction:column; text-align:center; padding:24px 16px; }
+    .jumbotron__pildora { margin:auto;}
+    .jumbotron__txt { row-gap:0px;}
+    .jumbotron__img { margin:-20px auto 0 auto; position:static; width:50%;}
+}
+@media (max-width:576px) {
+    .jumbotron__pildora { padding:12px 16px; column-gap:8px; }
+}
+
+/*homeDudas*/
+.homeDudas { background-image:var(--degradado-top); border-radius:16px; padding:40px 24px; align-items:center; }
+.homeDudas * { color:#FFF; text-decoration:none;}
+.homeDudas__desc { font-size:1.5rem; font-weight:500;}
+.homeDudas__col1 { display:flex; align-items:start; justify-content:center; flex-direction:column; }
+.homeDudas__ul { list-style-type:none; padding:0; margin:0;}
+.homeDudas__icono { width:24px; filter:invert(1);}
+
+/*homePasoReq*/
+.homePasoReq { background:url(./../../img/fondo-textura-guinda.png) no-repeat center / cover; padding: 80px 0; }
+.homePasoReq__fila { align-items:stretch ; }
+.homePasos { color:#FFF;}
+.homeReq { background:#FFF; border-radius:16px; padding:32px;}
+.homeReq__cont { display:flex; flex-direction:column; justify-content: space-between; }
+.homeReq__lista { font-size:1.25rem; margin-left:24px; line-height:34px;}
+@media (min-width:767.9px) {
+    .homeReq__cont { max-height:calc( 100% - 48px); height:calc( 100% - 32px); }
+}
+@media (max-width:768px) {
+    .homeReq__cont { row-gap:24px;}
+}
