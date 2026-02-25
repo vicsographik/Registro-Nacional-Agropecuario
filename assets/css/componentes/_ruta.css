@@ -1,5 +1,5 @@
 /*RUTA o BREADCRUMB*/
-.ruta__cont { margin:0px; padding:0; display:flex; align-items: center; justify-content:start;}
+.ruta__cont { margin:0px; padding:0; display:flex; align-items:center; justify-content:start; margin-bottom:40px;}
 .ruta__lista { display:flex; list-style-type:none; padding:0px; margin:auto; width:100%;}
 .ruta__li { display:flex; align-items:center; line-height:normal; color:var(--neutro8800); padding:4px 0;}
 .ruta__li:after { content:""; width:24px; height:24px; background-image:url(../../icons-base/chevron--right.svg); background-repeat:no-repeat; background-position:center; display:inline-block; opacity:0.55; margin:0 8px 0 16px; }
@@ -13,5 +13,8 @@ a.ruta__a:hover .ruta__home { opacity:0.8;}
 .ruta__cont--overflow { overflow-x:auto; width:100%; white-space:nowrap;  scrollbar-color:var(--neutro500) #FFF; scrollbar-width:thin; padding-bottom:8px;}
 
 .ruta__home { filter: var(--filtroPrimario);}
+@media (max-width:767.9px){
+    .ruta__cont { margin-bottom:20px;}
+}
 
 /*fata una ruta cuando va en fondo de color Primario, ej, sobre un jumbotron*/
