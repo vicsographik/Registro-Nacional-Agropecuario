@@ -25,7 +25,7 @@ td .pildora { width:100%;}
 /*TABLA 01*/
 .tabla01  { border-collapse:separate; border-radius:.5rem; border-spacing: 0; border:1px solid #AAA;}
 .tabla01__caption { font-size:1.25rem; font-weight:600; color:var(--neutro800); caption-side: top; position:sticky; left:0}
-.tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--gama600);}
+.tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--pguinda900);}
 .tabla01__theadTh div { display:flex; align-items:center; column-gap:.2rem; }
 .tabla01__tbodyTh,
 .tabla01__tbodyTd { padding:1rem .5rem; background:#FFF; font-weight:normal; vertical-align:top; text-align: left;}
@@ -53,6 +53,23 @@ td .pildora { width:100%;}
 /* Estilo cebra para la tabla */
 .tabla01--tablaCebra tbody tr:nth-child(even) td,
 .tabla01--tablaCebra tbody tr:nth-child(even) th {background-color: #f3f3f3;}
+
+/* ===== TABLA 01 | MODIFICADOR head ===== */
+.tabla01__thead--gris .tabla01__theadTh,
+.tabla01__thead--gris .tabla01__theadTd {
+  color: var(--neutro700);
+  background: #FFF;
+  border-bottom: 1px solid var(--neutro400);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ===== TABLA 01 | MODIFICADOR BOLD ===== */
+.tabla01--bold .tabla01__tbodyTh,
+.tabla01--bold .tabla01__tbodyTd {
+  font-weight: 700;
+}
+
 
 /* Contenedor del borde de la tabla */
 .tabla01--tablaCebra {

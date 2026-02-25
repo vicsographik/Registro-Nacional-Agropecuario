@@ -158,6 +158,8 @@
                                     </a>
                                 </li>
 
+
+
                                 <!-- BLOQUE CAMBIAR PERFIL-->
                                 <li class="usrperfil__li">
                                     <a href="#"
@@ -387,252 +389,178 @@
 
         <!-- MAIN -->
         <main id="mainContent">
-        <!-- Botón atrás con margin cuando hay heading -->
-            <a href="#" class="boton__link px--0 mt--16 mb--32">
-                <img src="./assets/icons-base/arrow-left.svg" alt="">
-                Salir
-            </a>
-        <!--preinscripción-->
-            <section class="caja__main mb--32">
-                <h1 class="sh0b">Preinscripción</h1>
-            </section>
-            <!-- Selección de escuelas-->
-            <div class="cajaBasica--32 rowgap--24 mb--16">
-                <div>
-                    <h2 class="sh0m mb--8">Selección de escuelas</h2>
-                    <p>Busca y elige un mínimo de 1 a 3 escuelas. Puedes activar tu ubicación</p>
-                </div>
-                <div>
-                    <h3 class="sh1b mb--10">Buscador de escuelas</h3>
-                    <p>Usa tu ubicación para encontrar las escuelas más cercanas o ingresa los datos correspondientes.</p>
-                </div>
-                <div class="botonera--start">
-                    <div>
-                        <button type="button" class="boton__secundario boton--2">Usar mi ubicación <img src="./assets/icons/ubicacion.svg" alt=""></button>
-                    </div>
-                </div>
+        <!-- Breadcrumb -->
+            <div class="ruta__cont mb--40">
+                <ul class="ruta__lista">
+                    <li class="ruta__li">
+                        <img src="assets/icons-base/home.svg" alt="" class="ruta__home" aria-hidden="true">
+                        <span class="oculto">Inicio</span>
+                    </li>
+                    <li class="ruta__li">Ver registro</li>
+                </ul>
+            </div>
+        <section class="rowgap--40">
 
-                <div class="fila--col5 fila--alignEnd">
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="mi_select1" class="form__label">
-                                Código postal
-                            </label>
-                        </div>
-                        <input type="text" id="mi_select1" class="form__control" placeholder="Ingresa los datos">
-  
-                    </div>
-                    <div class="form__grupo">
-                        <label for="mi_select2" class="form__label">Entidad federativa</label>
-                        <select name="ent" class="form__select" id="mi_select2">
-                            <option selected="">Selecciona una opción</option>
-                            <option>Entidad 01</option>
-                            <option>Entidad 02</option>
-                        </select>
-                    </div>
-
-                    <div class="form__grupo">
-                        <label for="mi_select3" class="form__label">Municipio</label>
-                        <select name="mun" class="form__select" id="mi_select3">
-                            <option selected="">Selecciona una opción</option>
-                            <option>Entidad municipio</option>
-                            <option>Entidad municipio</option>
-                        </select>
-                    </div>
-                    <button class="boton__primario inline">Buscar escuela <img src="./assets/icons-base/search.svg" alt=""></button>
-                    <button class="boton__fantasma inline">Borrar filtros
-                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
-                                        <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z">
-                                        </path>
-                                        <title>bote de basura</title>
-                        </svg>
-                    </button>
-                </div>
-
+            <!-- Datos de la madre, padre o tutor-->
+            <div class="cajaBasica--32">
+                    <h3 class="sh0m">Datos de la madre, padre o tutor</h3>
+                    <ul class="fila--col3">
+                        <li>Nombre (s)<br>
+                            <span class="f--semibold">Juan Carlos</span>
+                        </li>
+                        <li>Primer apellido<br>
+                            <span class="f--semibold">Méndez</span>
+                        </li>
+                        <li>Segundo apellido<br>
+                            <span class="f--semibold">Pérez</span>
+                        </li>
+                        <li>Teléfono<br>
+                            <span class="f--semibold">55 1234 5678</span>
+                        </li>
+                        <li>Correo electrónico<br>
+                            <span class="f--semibold">juanr@correo.com</span>
+                        </li>
+                        <li><abbr title="Clave Única de Registro de Población">CURP</abbr><br>
+                            <span class="f--semibold">COFP911012HDFRGS09</span>
+                        </li>
+                        <li>Nacionalidad<br>
+                            <span class="f--semibold">Mexicana</span>
+                        </li>
+                    </ul>
             </div>
 
-            <!--Lista de escuelas-->
-            <div class="cajaBasica--32 rowgap--24 mb--16">
-                <details>
-                    <summary class="summary--center sh1m mb--0">
-                        <span class="openHide"><span class="dflex"><img src="./assets/icons/escuela.svg" alt="" class="icono--dorado600 mr--4"> Mi lista de escuelas (0)</span></span>
-                        <span class="openShow"><span class="dflex"><img src="./assets/icons/escuela.svg" alt="" class="icono--dorado600 mr--4"> Mi lista de escuelas (5)</span></span>
-                        <svg class="usrperfil__summaryIcon details__flecha icono--pguinda600 ml--24" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                        </svg>
-                    </summary>
+            <!-- Datos del estudiante-->
+            <div class="cajaBasica--32">
+                    <h3 class="sh0m">Datos del estudiante</h3>
+                    <ul class="fila--col3">
+                        <li>Nombre (s)<br>
+                            <span class="f--semibold">Emil Guillermo</span>
+                        </li>
+                        <li>Primer apellido<br>
+                            <span class="f--semibold">Méndez</span>
+                        </li>
+                        <li>Segundo apellido<br>
+                            <span class="f--semibold">Carranza</span>
+                        </li>
+                        <li><abbr title="Clave Única de Registro de Población">CURP</abbr><br>
+                            <span class="f--semibold">COFP911012HDFRGS09</span>
+                        </li>
+                        <li>Folio<br>
+                            <span class="f--semibold">BRC2310240000000010</span>
+                        </li>
+                        <li>Nivel educativo<br>
+                            <span class="f--semibold">Primaria</span>
+                        </li>
+                        <li>Grado<br>
+                            <span class="f--semibold">1°</span>
+                        </li>
+                    </ul>
+            </div>
 
-                <hr class="my--8">
+            <!-- Datos de preinscripción-->
+            <div class="cajaBasica--32">
+                    <h3 class="sh0m">Datos de preinscripción</h3>
+                    <ul class="fila--col3">
+                        <li>¿El estudiante presenta documentación académica?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>Documento académico<br>
+                            <span class="f--semibold">Certificado de primaria</span>
+                        </li>
+                        <li>¿El estudiante presenta documentación de identidad ?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>Documento de identidad<br>
+                            <span class="f--semibold">Pasaporte</span>
+                        </li>
+                        <li>¿El estudiante es migrante extranjero?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>País de procedencia<br>
+                            <span class="f--semibold">Belice</span>
+                        </li>
+                        <li>Entidad<br>
+                            <span class="f--semibold">Belmopán</span>
+                        </li>
+                        <li>¿El estudiante se reconoce como persona indígena?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>¿Qué lenguas habla el estudiante?<br>
+                            <span class="f--semibold">Español, Náhuatl</span>
+                        </li>
+                        <li>¿El estudiante tiene alguna necesidad educativa?<br>
+                            <span class="f--semibold">Discapacidad</span>
+                        </li>
+                        <li>Tipo de discapacidad<br>
+                            <span class="f--semibold">Visual</span>
+                        </li>
+                    </ul>
+            </div>
 
-            <!--Mensaje Info-->
-            <div class="my--24">
-                <div class="aviso aviso--info borde--no" role="alert">
-                    <div class="aviso__cont">
-                        <span class="pb--8">Ordena las escuelas seleccionadas según tu preferencia. <b>La primera será considerada como tu opción prioritaria.</b></span>
-                        <span><img src="./assets/icons/ordenar-sm.svg" alt="" class="pr--8">Da clic en una de las opciones y arrastra hacia arriba o hacia abajo según el orden de tu preferencia.</span>
+            <!--Escuelas seleccionadas-->
+            <div class="cajaBasica--32">
+            <div class="caja__main">
+                <div class="tabla__section">
+                    <div class="tablaResponsiva--horizontal">
+                        <table class="tabla01--tablaCebra tabla01--bold borde--none">
+                            <caption class="sh0m --start mb--24">
+                                Escuelas seleccionadas
+                            </caption>
+                            <thead class="tabla01__thead tabla01__thead--gris">
+                                <tr class="tabla01__theadTr">
+                                    <th scope="col" class="tabla01__theadTh tablaResponsiva__colFija w10">
+                                        <div>
+                                            CCT
+                                        </div>
+                                    </th>
+
+                                    <th scope="col" class="tabla01__theadTh">
+                                        <div>
+                                            Nombre de la escuela
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Profesor Rafael Molina Bentancourt</td>
+                                </tr>
+
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Profesor Laureano Jiménez y Coria</td>
+                                </tr>
+                                
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Escuela Primaria Fuerte De Loreto</td>
+                                </tr>
+
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Victorio Rojas</td>
+                                </tr>
+
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Rabindranath Tagore</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
-                <div class="tabla__section rowgap--24">
-                <div class="tablaResponsiva--horizontal">
-                    <table class="tabla01--tablaCebra">
-                    <caption class="oculto">
-                        Escuelas seleccionadas
-                    </caption>
-                    <thead class="tabla01__thead">
-                        <tr class="tabla01__theadTr">
-
-                        <th scope="col" class="tabla01__theadTh tablaResponsiva__colFija w5">
-                            <div>
-   
-                            </div>
-                        </th>
-
-                        <th scope="col" class="tabla01__theadTh w10">
-                            <div>
-                            <button type="button" class="tabla__ordenar">
-                                <span class="oculto">Ordenar por rol</span>
-                                <img src="./assets/icons-base/tabla-ordenar.svg" alt="">
-                            </button>
-                            CCT
-                            </div>
-                        </th>
-
-                        <th scope="col" class="tabla01__theadTh">
-                            <div>
-                            <button type="button" class="tabla__ordenar">
-                                <span class="oculto">Ordenar por Ámbito de dependencia</span>
-                                <img src="./assets/icons-base/tabla-ordenar.svg" alt="">
-                            </button>
-                            Nombre de la  escuela
-                            </div>
-                        </th>
-
-
-                        <th scope="col" class="tabla01__theadTh th--center">
-                            <div>Acciones</div>
-                        </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="tabla01__tbodyTr">
-                        <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija td--center"><button class="tabla__ordenar--center"><img src="assets/icons/ordenar.svg" alt=""></button></th>
-                        <td class="tabla01__tbodyTd">09DPR3181Z</td>
-                        <td class="tabla01__tbodyTd">Profesor Rafael Molina Bentancourt</td>
-                        <td class="td--center">
-                            <button class="boton__vertical color--pguinda900">
-                               <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
-                                        <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z">
-                                        </path>
-                                        <title>bote de basura</title>
-                                </svg>
-                            Eliminar
-                            </button>
-                        </td>
-                        </tr>
-
-                        <tr class="tabla01__tbodyTr">
-                        <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija td--center"><button class="tabla__ordenar--center"><img src="assets/icons/ordenar.svg" alt=""></button></th>
-                        <td class="tabla01__tbodyTd">09DPR3181Z</td>
-                        <td class="tabla01__tbodyTd">Profesor Laureano Jiménez y Coria</td>
-                        <td class="td--center">
-                            <button class="boton__vertical color--pguinda900">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
-                                        <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z">
-                                        </path>
-                                        <title>bote de basura</title>
-                                </svg>
-                                Eliminar
-                            </button>
-                        </td>
-                        </tr>
-
-                        <tr class="tabla01__tbodyTr">
-                        <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija td--center"><button class="tabla__ordenar--center"><img src="assets/icons/ordenar.svg" alt=""></button></th>
-                        <td class="tabla01__tbodyTd">09DPR3181Z</td>
-                        <td class="tabla01__tbodyTd">Escuela Primaria Fuerte De Loreto</td>
-                        <td class="td--center">
-                            <button class="boton__vertical color--pguinda900">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
-                                        <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z">
-                                        </path>
-                                        <title>bote de basura</title>
-                                </svg>
-                                Eliminar
-                            </button>
-                        </td>
-                        </tr>
-
-                        <tr class="tabla01__tbodyTr">
-                        <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija td--center"><button class="tabla__ordenar--center"><img src="assets/icons/ordenar.svg" alt=""></button></th>
-                        <td class="tabla01__tbodyTd">09DPR3181Z</td>
-                        <td class="tabla01__tbodyTd">Victorio Rojas</td>
-                        <td class="td--center">
-                            <button class="boton__vertical color--pguinda900">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
-                                        <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z">
-                                        </path>
-                                        <title>bote de basura</title>
-                                </svg>
-                                Eliminar
-                            </button>
-                        </td>
-                        </tr>
-
-                        <tr class="tabla01__tbodyTr">
-                        <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija td--center"><button class="tabla__ordenar--center"><img src="assets/icons/ordenar.svg" alt=""></button></th>
-                        <td class="tabla01__tbodyTd">09DPR3181Z</td>
-                        <td class="tabla01__tbodyTd">Rabindranath Tagore</td>
-                        <td class="td--center">
-                            <button class="boton__vertical color--pguinda900">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
-                                        <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z">
-                                        </path>
-                                        <title>bote de basura</title>
-                                </svg>
-                                Eliminar
-                            </button>
-                        </td>
-                        </tr>
-
-                    </tbody>
-                    </table>
-                </div>
-                </div>
-                </details>
-            </div>
-
-            <!-- Mapa escuelas-->
-            <div class="cajaBasica--32 rowgap--24 mb--32">
-                <img src="./assets/img/ubicacion-escuelas.png" class="imgApoyo" alt="">
             </div>
             <!--Botones-->     
             <div class="botonera botonera--responsiva">
                 <div>
-                    <button type="button" class="boton__secundario boton--2"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 26L15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26z">
-                            </path>
-                        </svg>Volver</button>
-                    <button type="submit" class="boton__primario" disabled="">
-                        Continuar
-                        <img src="./assets/icons-base/arrow--right.svg" alt="">
-                    </button>
-
-                    <!--button type="submit" class="boton__primario">
-                        Guardar y continuar
-                        <img src="./assets/icons-base/arrow--right.svg" alt="">
-                    </button-->
+                    <button type="button" class="boton__secundario">Salir</button>
                 </div>
             </div>
 
-
+        </section>
 
 
             <!--VENTANILLA 24/7-->
