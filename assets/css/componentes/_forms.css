@@ -177,6 +177,17 @@ textarea.form__control { resize:vertical; min-height:3em;}
     100% { box-shadow:0px 0px 0px 2px #FFF inset;}
 }
 
+/*RADIO con CHECK*/
+/*normal*/
+.form__radioCheck { appearance:none; -webkit-appearance: none; height:40px; width:40px; border-radius:40px; border:solid 2px var(--neutro800); cursor:pointer; background:#FFF; flex-shrink:0;}
+.form__radioCheck:hover { border-color:var(--neutro800); background:var(--neutro400);}
+.form__radioCheck:active { border-color:var(--nativoGrisActive); background:var(--gama300);}
+/*checked*/
+.form__radioCheck:checked { border:solid 2px var(--nativoAzul); background:url(./../../icons-base/radioCheck.svg) no-repeat center}
+.form__radioCheck:checked:hover  {  background-color:var(--gama100);}
+.form__radioCheck:checked:active { background-color:var(--gama200);}
+
+
 /*FIELDSET*/
 .form__fieldset { margin:0; padding:0; border:none; }
 .form__legend { font-weight:600; margin-bottom:1rem;}

@@ -65,11 +65,7 @@
 [class*="boton__secundario"]:focus-visible { outline:3px solid var(--principal); outline-offset:-1px;}
 [class*="boton__secundario"]:active { background:var(--gama200); border:solid 1px var(--gama200); outline-offset:-1px; }
 /*icono*/
-<<<<<<< HEAD
-[class*="boton__secundario"] img {filter:var(--filtroPrimario);}
-=======
 [class*="boton__secundario"] img {filter: var(--filtroPrimario);}
->>>>>>> main
 /*deshabilitado*/
 [class*="boton__secundario"][class*="--disabled"],
 [class*="boton__secundario"][class*="--disabled"]:hover,
@@ -100,7 +96,7 @@
 [class*="boton__link"] { min-height:unset; min-width:unset; padding:0;}
 [class*="boton__link"],
 [class*="boton__link"]:focus,
-[class*="boton__link"]:visited { color:var(--principal);  background:transparent; text-decoration:underline;}
+[class*="boton__link"]:visited { color:var(--principal);  background:transparent; text-decoration:none;}
 [class*="boton__link"]:hover   { color:var(--gama500);}
 [class*="boton__link"]:focus-visible { outline:1px solid var(--gama400)}
 [class*="boton__link"]:active { color:var(--gama800); outline:none; }
@@ -114,9 +110,7 @@
 [class*="boton__link"][class*="--disabled"] img,
 [class*="boton__link"]:disabled img { filter: invert(73%) sepia(4%) saturate(11%) hue-rotate(55deg) brightness(94%) contrast(90%);}
 
-
-
-
+.boton__link--underline { text-decoration:underline;}
 
 
 

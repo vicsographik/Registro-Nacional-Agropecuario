@@ -84,3 +84,19 @@
 @media (max-width:768px) {
     .homeReq__cont { row-gap:24px;}
 }
+
+/*faq*/
+.homeFaq { margin-top:40px; margin-bottom:48px;}
+.homeFaq details { box-shadow:0 4px 4px rgba(152, 152, 152, 0.25); border:none;}
+
+/*Input Ficha*/
+.inputFicha__label { cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:8px; background:#FFF; border-radius:16px; padding:32px; border:solid 1px var(--neutro400); text-align:center; width:100%; user-select: none}
+.inputFicha__label:hover,
+.inputFicha__label:has(.inputFicha__input:focus-visible) { border:solid 1px var(--neutro600) }
+.inputFicha__label:has(.inputFicha__input:checked) {  background:var(--neutro200);}
+.inputFicha__input { align-self: flex-end; }
+.inputFicha__img { width:50px; height:50px;}
+
+/*nivelSeleccion*/
+.nivelSeleccion { align-items:stretch; display:grid; grid-template-columns:repeat(auto-fill, minmax(max(200px, 30%), 1fr)); justify-content: space-between; gap:16px;}
+.nivelSeleccion {}
