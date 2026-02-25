@@ -436,8 +436,8 @@
                     </div>
                 </div>
                 <div class="fila r-btns">
-                    <button id="toggleFiltrosBtn" class="boton__primario--borde boton--100sm">
-                        Filtros
+                    <button id="toggleFiltrosBtn" class="boton__secundario boton--100sm">
+                        Buscar
                     </button>
                 </div>
             </div>
@@ -601,8 +601,10 @@
                     </div>
                 </div>
 
-                <button style="background:yellow;" onclick="window.aviso2.show();">Se eliminaron los registros correctamente</button><br>
-                <button style="background:yellow; margin:3rem;" onclick="window.modal_01.showModal();">Abrir ventana modal <b>¿Eliminar registros?</b></button>
+                <button style="background:yellow;" onclick="window.aviso2.show();">Se eliminaron los registros
+                    correctamente</button><br>
+                <button style="background:yellow; margin:3rem;" onclick="window.modal_01.showModal();">Abrir ventana
+                    modal <b>¿Eliminar registros?</b></button>
 
             </div>
         </main>
@@ -762,7 +764,7 @@
                 <div class="aviso aviso--exito" role="alert" aria-live="polite">
                     <img class="icono--exito" src="./assets/icons-base/checkmark--outline.svg" alt="">
                     <div class="aviso__cont">
-                       Se eliminaron los registros correctamente
+                        Se eliminaron los registros correctamente
                     </div>
                     <button type="button" class="aviso__cerrar" onclick="window.aviso2.close();">
                         <span class="oculto">cerrar</span>
@@ -791,6 +793,22 @@
         </dialog>
 
     </div>
+    <script>
+        // Seleccionamos los elementos
+        const btnAbrir = document.getElementById('toggleFiltrosBtn');
+        const btnCerrar = document.querySelector('.close-filtros-btn');
+        const contenedorFiltros = document.querySelector('.filtros');
+
+        // Evento para ABRIR (Añade la clase)
+        btnAbrir.addEventListener('click', () => {
+            contenedorFiltros.classList.add('open');
+        });
+
+        // Evento para CERRAR (Quita la clase)
+        btnCerrar.addEventListener('click', () => {
+            contenedorFiltros.classList.remove('open');
+        });
+    </script>
 
     <script src="assets/js/header-footer-details.js"></script>
     <script src="assets/js/details-deskOpen.js"></script>

@@ -28,7 +28,7 @@ td .pildora { width:100%;}
 .tabla01__theadTh { color:#FFF; font-size:0.875rem; font-weight:600; padding:0.875rem .5rem; vertical-align:middle; min-width:7.5rem; background:var(--principal);}
 .tabla01__theadTh div { display:flex; align-items:center; column-gap:.2rem; }
 .tabla01__tbodyTh,
-.tabla01__tbodyTd { padding:1rem .5rem; background:#FFF; font-weight:normal; vertical-align:top;}
+.tabla01__tbodyTd { padding:1rem .5rem; background:#FFF; font-weight:normal; vertical-align:top; text-align: left;}
 .tabla01__checkbox { min-width:1.5rem; }
 .tabla01__checkbox label { justify-content:center;}
 /*border radius*/
