@@ -121,6 +121,7 @@
 /*VARIANTES*/
 .boton__vertical  { display:flex; flex-direction:column; margin:auto; font-size:.75rem;}
 .boton__vertical img { filter: var(--filtroPrimario);}
+.inline { min-height: 40px;}
 
 /*movil*/ 
 @media (max-width:767.9px) {
