@@ -591,7 +591,49 @@
                             </div>
                         </div>
                     </div>
-
+                    <!--Bloque migrante-->
+                    <div class="form-row">
+                        <fieldset class="radio-group">
+                            <div class="form-row__header">
+                                <legend class="form-row__question form-row__question--required">
+                                    <span class="required-indicator" aria-hidden="true">*</span>
+                                    ¿El estudiante es migrante extranjero?
+                                </legend>
+                                <div class="radio-options">
+                                    <label class="form__label">
+                                        <input class="form__radio" type="radio" name="migrante" value="si"
+                                            id="r-migrante-si" checked> Sí
+                                    </label>
+                                    <label class="form__label">
+                                        <input class="form__radio" type="radio" name="migrante" value="no"
+                                            id="r-migrante-no"> No
+                                    </label>
+                                    <span class="form__validar--false" id="val-migrante" role="alert">Mensaje de
+                                        error</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48" id="p-migrante"
+                            role="region">
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="select-pais-procedencia" class="form__label">
+                                        <span class="form__requerido" aria-hidden="true">*</span>
+                                        País de procedencia
+                                    </label>
+                                    <div class="form__headertools"></div>
+                                </div>
+                                <select name="pais-procedencia" class="form__select" id="select-pais-procedencia">
+                                    <option selected disabled>Selecciona una opción</option>
+                                    <option value="opcion1">Opción 1</option>
+                                    <option value="opcion2">Opción 2</option>
+                                    <option value="opcion3">Opción 3</option>
+                                </select>
+                                <span class="form__validar--false" id="val-select-pais-procedencia" role="alert">Mensaje
+                                    de error</span>
+                            </div>
+                        </div>
+                    </div>
                     <!--bloque persona indígena-->
                     <div class="form-row">
                         <fieldset class="radio-group">
