@@ -1,13 +1,6 @@
 /*BOTON ACCESIBILIDAD GOBMX*/
-/*BOTON ACCESIBILIDAD GOBMX*/
 nav.menu-container a.menu-btn { top:83px; width:2.5rem; left:auto; position:absolute;}
 .fad:after { opacity:1 !important; color:#81415B !important;}
-
-
-
-
-
-
 
 nav.menu-container a.menu-btn { right:170px;  top:83px; width:2.5rem; left:auto; position:fixed;}
 .fad:after { opacity:1 !important; color:#81415B !important;}
