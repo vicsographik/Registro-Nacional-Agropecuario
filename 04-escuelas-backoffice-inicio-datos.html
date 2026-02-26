@@ -311,7 +311,7 @@
                 class="menuMain__gatillo" id="menuMain__gatillo">
                 <span class="oculto">Mostrar menú</span>
                 <svg class="menuMain__gatilloIco" focusable="false" aria-hidden="true"
-                    preserveAspectRatio="xMidYMid meet" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"
+                    preserveAspectRatio="xMidYMid meet" fill="currentColor" viewBox="0 0 32 32"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path>
                 </svg>
@@ -344,90 +344,224 @@
                 </li>
 
             </ul>
+
+            <div class="menuMovil menuMovil--colapsado" id="menuMovil">
+                <button type="button" class="menuMovil__gatilloTop" id="menuMovil__gatilloTop">
+                    <span class="oculto">Cerrar</span>
+                    <img src="assets/icons/close.svg" alt="" aria-hidden="true" class="">
+                </button>
+                <hr class="hr">
+                <div class="menuMovil__tit">Mi PNC</div>
+                <ul class="menuMovil__list">
+                    <li class="menuMovil__item">
+                        <a href="#" class="menuMovil__link">
+                            <img src="assets/icons/money.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                            <span class="menuMain__txt">Central de Pagos</span>
+                        </a>
+                    </li>
+
+                    <li class="menuMovil__item">
+                        <a href="#" class="menuMovil__link">
+                            <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                            <span class="menuMain__txt">Ventanilla digital</span>
+                        </a>
+                    </li>
+
+                    <li class="menuMovil__item">
+                        <a href="#" class="menuMovil__link">
+                            <img src="assets/icons/folder.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                            <span class="menuMain__txt">Expediente</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr class="hr">
+                <div class="menuMovil__tit">Plataforma nacional de catastrro</div>
+                <ul class="menuMovil__list">
+                    <li class="menuMovil__item">
+                        <a href="#" class="menuMovil__link">
+                            <img src="assets/icons/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                            <span class="menuMain__txt">Inicio</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
         <!-- MAIN -->
         <main id="mainContent">
-            <div class="ruta__cont">
+        <!-- Breadcrumb -->
+            <div class="ruta__cont mb--40">
                 <ul class="ruta__lista">
                     <li class="ruta__li">
                         <img src="assets/icons-base/home.svg" alt="" class="ruta__home" aria-hidden="true">
                         <span class="oculto">Inicio</span>
                     </li>
-                    <li class="ruta__li">Datos de la madre, padre o tutor</li>
+                    <li class="ruta__li">Ver registro</li>
                 </ul>
             </div>
-            <div class="cajaBasica--3248 rowgap--32 mt--40">
-                <h2 class="sh0m">Datos de la madre, padre o tutor</h2>
-                <div class="fila--col3">
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="nombre">
-                                Nombre (s)
-                            </label>
-                        </div>
-                        <p class="mt--10" id="nombre"><strong>Juan Carlos</strong></p>
-                    </div>
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="apellido-1">
-                                Primer apellido
-                            </label>
-                        </div>
-                        <p class="mt--10" id="apellido-1"><strong>Méndez</strong></p>
-                    </div>
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="apellido-2">
-                                Segundo apellido
-                            </label>
-                        </div>
-                        <p class="mt--10" id="apellido-2"><strong>Pérez</strong></p>
-                    </div>
+        <section class="rowgap--40">
 
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="telefono">
-                                Teléfono
-                            </label>
-                        </div>
-                        <p class="mt--10" id="telefono"><strong><a href="tel:+525512345678">55 1234 5678</a></strong>
-                        </p>
-                    </div>
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="email">
-                                Correo electrónico
-                            </label>
-                        </div>
-                        <p class="mt--10" id="email"><strong>
-                            <a href="mailto:tutor@ejemplo.com">juanr@correo.com</a></strong></p>
-                    </div>
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="curp">
-                                CURP
-                            </label>
-                        </div>
-                        <p class="mt--10" id="curp"><strong>COFP911012HDFRGS09</strong></p>
-                    </div>
+            <!-- Datos de la madre, padre o tutor-->
+            <div class="cajaBasica--32">
+                    <h3 class="sh0m">Datos de la madre, padre o tutor</h3>
+                    <ul class="fila--col3">
+                        <li>Nombre (s)<br>
+                            <span class="f--semibold">Juan Carlos</span>
+                        </li>
+                        <li>Primer apellido<br>
+                            <span class="f--semibold">Méndez</span>
+                        </li>
+                        <li>Segundo apellido<br>
+                            <span class="f--semibold">Pérez</span>
+                        </li>
+                        <li>Teléfono<br>
+                            <span class="f--semibold">55 1234 5678</span>
+                        </li>
+                        <li>Correo electrónico<br>
+                            <span class="f--semibold">juanr@correo.com</span>
+                        </li>
+                        <li><abbr title="Clave Única de Registro de Población">CURP</abbr><br>
+                            <span class="f--semibold">COFP911012HDFRGS09</span>
+                        </li>
+                        <li>Nacionalidad<br>
+                            <span class="f--semibold">Mexicana</span>
+                        </li>
+                    </ul>
+            </div>
 
-                    <div class="form__grupo">
-                        <div class="form__header">
-                            <label for="nacionalidad">
-                                Nacionalidad
-                            </label>
-                        </div>
-                        <p class="mt--10" id="nacionalidad"><strong>Mexicana</strong></p>
+            <!-- Datos del estudiante-->
+            <div class="cajaBasica--32">
+                    <h3 class="sh0m">Datos del estudiante</h3>
+                    <ul class="fila--col3">
+                        <li>Nombre (s)<br>
+                            <span class="f--semibold">Emil Guillermo</span>
+                        </li>
+                        <li>Primer apellido<br>
+                            <span class="f--semibold">Méndez</span>
+                        </li>
+                        <li>Segundo apellido<br>
+                            <span class="f--semibold">Carranza</span>
+                        </li>
+                        <li><abbr title="Clave Única de Registro de Población">CURP</abbr><br>
+                            <span class="f--semibold">COFP911012HDFRGS09</span>
+                        </li>
+                        <li>Folio<br>
+                            <span class="f--semibold">BRC2310240000000010</span>
+                        </li>
+                        <li>Nivel educativo<br>
+                            <span class="f--semibold">Primaria</span>
+                        </li>
+                        <li>Grado<br>
+                            <span class="f--semibold">1°</span>
+                        </li>
+                    </ul>
+            </div>
+
+            <!-- Datos de preinscripción-->
+            <div class="cajaBasica--32">
+                    <h3 class="sh0m">Datos de preinscripción</h3>
+                    <ul class="fila--col3">
+                        <li>¿El estudiante presenta documentación académica?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>Documento académico<br>
+                            <span class="f--semibold">Certificado de primaria</span>
+                        </li>
+                        <li>¿El estudiante presenta documentación de identidad ?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>Documento de identidad<br>
+                            <span class="f--semibold">Pasaporte</span>
+                        </li>
+                        <li>¿El estudiante es migrante extranjero?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>País de procedencia<br>
+                            <span class="f--semibold">Belice</span>
+                        </li>
+                        <li>Entidad<br>
+                            <span class="f--semibold">Belmopán</span>
+                        </li>
+                        <li>¿El estudiante se reconoce como persona indígena?<br>
+                            <span class="f--semibold">Sí</span>
+                        </li>
+                        <li>¿Qué lenguas habla el estudiante?<br>
+                            <span class="f--semibold">Español, Náhuatl</span>
+                        </li>
+                        <li>¿El estudiante tiene alguna necesidad educativa?<br>
+                            <span class="f--semibold">Discapacidad</span>
+                        </li>
+                        <li>Tipo de discapacidad<br>
+                            <span class="f--semibold">Visual</span>
+                        </li>
+                    </ul>
+            </div>
+
+            <!--Escuelas seleccionadas-->
+            <div class="cajaBasica--32">
+            <div class="caja__main">
+                <div class="tabla__section">
+                    <div class="tablaResponsiva--horizontal">
+                        <table class="tabla01--tablaCebra tabla01--bold borde--none">
+                            <caption class="sh0m --start mb--24">
+                                Escuelas seleccionadas
+                            </caption>
+                            <thead class="tabla01__thead tabla01__thead--gris">
+                                <tr class="tabla01__theadTr">
+                                    <th scope="col" class="tabla01__theadTh tablaResponsiva__colFija w10">
+                                        <div>
+                                            CCT
+                                        </div>
+                                    </th>
+
+                                    <th scope="col" class="tabla01__theadTh">
+                                        <div>
+                                            Nombre de la escuela
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Profesor Rafael Molina Bentancourt</td>
+                                </tr>
+
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Profesor Laureano Jiménez y Coria</td>
+                                </tr>
+                                
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Escuela Primaria Fuerte De Loreto</td>
+                                </tr>
+
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Victorio Rojas</td>
+                                </tr>
+
+                                <tr class="tabla01__tbodyTr">
+                                    <th scope="row" class="tabla01__tbodyTh tablaResponsiva__colFija">09DPR3181Z</th>
+                                    <td class="tabla01__tbodyTd">Rabindranath Tagore</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <div class="botonera--end botonera--responsiva mt--32">
-                <button type="submit" class="boton__secundario">
-                    <img src="./assets/icons-base/arrow-left.svg" alt="">
-                    Volver
-                </button>
             </div>
+            <!--Botones-->     
+            <div class="botonera botonera--responsiva">
+                <div>
+                    <button type="button" class="boton__secundario">Salir</button>
+                </div>
+            </div>
+
+        </section>
+
 
             <!--VENTANILLA 24/7-->
             <section class="ventanilla247">

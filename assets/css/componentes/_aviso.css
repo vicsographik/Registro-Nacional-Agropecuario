@@ -6,7 +6,7 @@
 .aviso__cont { display:flex; flex-direction:column; width:90%; }
 .aviso__txt *  { margin:0; line-height:normal; display:flex; row-gap:1rem}
 .aviso__txt    {  display:grid; row-gap:.5rem; flex-grow:1; }
-.aviso--info   { background:var(--azul100); border:solid 1px var(--azul500);}
+.aviso--info   { background:var(--azul100); color:var(--azul500); border:solid 1px var(--azul500);}
 .aviso--info a { color:var(--azul500);}
 .aviso--alerta { background:var(--amarillo100); color:var(--neutro800); border:solid 1px var(--dorado500);}
 .aviso--alerta a { color:var(--alerta); }
