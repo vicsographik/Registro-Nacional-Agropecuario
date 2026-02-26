@@ -397,14 +397,15 @@
 
             <!-- MAIN -->
             <main id="mainContent">
-                <a href="#" class="boton__fantasma p--0 mb--16 ">
-                    <img src="assets/icons-base/arrow-left.svg" alt="">
+                <a href="#" class="boton__link">
+                    <img src="./assets/icons-base/arrow-left.svg" alt="">
                     Salir
                 </a>
 
                 <!--mensajes de error-->
-                <div class="dblock mx--auto cols--6">
-                    <div class="aviso aviso--error borde--no mb--32" role="alert">
+
+                <dialog class="aviso--top" id="aviso" open="">
+                    <div class="aviso aviso--error" role="alert" aria-live="polite">
                         <svg class="aviso__icon color--rojo500" focusable="false" preserveAspectRatio="xMidYMid meet"
                             fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg">
@@ -413,309 +414,325 @@
                             </path>
                             <path d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"></path>
                         </svg>
-                        <div class="aviso__cont color--rojo500">
+                        <div class="aviso__cont">
                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.</span>
 
                             <b>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                                 nulla pariatur.</b>
                         </div>
+                        <button type="button" class="aviso__cerrar" onclick="window.aviso.close();">
+                            <span class="oculto">
+                                cerrar
+                            </span>
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
+                                viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z">
+                                </path>
+                            </svg>
+                        </button>
                     </div>
-                </div>
+                </dialog>
 
                 <!--terminan mensajes de error-->
-
-                <h1 class="sh0b">Preinscripción</h1>
-                <div class="cajaBasica-- p--32 mb--32">
-                    <div class="preinscripcion__card">
-                        <h2 class="sh0m">Datos de preinscripción</h2>
-                        <p class="b1r">Responde las siguientes preguntas sobre el estudiante.</p>
-                        <p class="sdit"><span class="color--rojo500">*</span> Campos obligatorios</p>
-                        <div class="preinscripcion__col-headers " aria-hidden="true">
-                            <span
-                                class="preinscripcion__header preinscripcion__header--question mt--8 mb--16">Pregunta</span>
-                            <span
-                                class="preinscripcion__header preinscripcion__header--answer mt--8 mb--16">Respuesta</span>
+                <div class="mt--40">
+                    <h1 class="sh0b mb--32">Preinscripción</h1>
+                    <div class="cajaBasica-- p--32 mb--32">
+                        <div class="preinscripcion__card">
+                            <h2 class="sh0m">Datos de preinscripción</h2>
+                            <p class="b1r">Responde las siguientes preguntas sobre el estudiante.</p>
+                            <p class="sdit"><span class="color--rojo500">*</span> Campos obligatorios</p>
+                            <div class="preinscripcion__col-headers " aria-hidden="true">
+                                <span
+                                    class="preinscripcion__header preinscripcion__header--question mt--8 mb--16">Pregunta</span>
+                                <span
+                                    class="preinscripcion__header preinscripcion__header--answer mt--8 mb--16">Respuesta</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!--Documentación académica-->
-                    <div class="form-row">
-                        <fieldset class="radio-group">
-                            <div class="form-row__header">
-                                <legend class="form-row__question form-row__question--required">
-                                    <span class="required-indicator" aria-hidden="true">*</span>
-                                    ¿El estudiante presenta documentación académica ?
-                                </legend>
-                                <div class="radio-options">
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="doc-aca" value="si"
-                                            id="r-doc-aca-si" checked> Sí
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="doc-aca" value="no"
-                                            id="r-doc-aca-no"> No
-                                    </label>
-                                    <span class="form__validar--false" id="val-doc-aca" role="alert">Mensaje de
+                        <!--Documentación académica-->
+                        <div class="form-row">
+                            <fieldset class="radio-group">
+                                <div class="form-row__header">
+                                    <legend class="form-row__question form-row__question--required">
+                                        <span class="required-indicator" aria-hidden="true">*</span>
+                                        ¿El estudiante presenta documentación académica ?
+                                    </legend>
+                                    <div class="radio-options">
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="doc-aca" value="si"
+                                                id="r-doc-aca-si" checked> Sí
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="doc-aca" value="no"
+                                                id="r-doc-aca-no"> No
+                                        </label>
+                                        <span class="form__validar--false" id="val-doc-aca" role="alert">Mensaje de
+                                            error</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48" id="p-doc-aca"
+                                role="region">
+                                <div class="form__grupo">
+                                    <div class="form__header">
+                                        <label for="select-doc-aca" class="form__label">
+                                            <span class="form__requerido" aria-hidden="true">*</span>
+                                            Documento académico
+                                        </label>
+                                        <div class="form__headertools"></div>
+                                    </div>
+                                    <select name="doc-aca" class="form__select" id="select-doc-aca">
+                                        <option selected="" disabled>Selecciona una opción</option>
+                                        <optgroup label="Documentos oficiales">
+                                            <option value="opcion1">Opción 1</option>
+                                            <option value="opcion2">Opción 2</option>
+                                            <option value="opcion3">Opción 3</option>
+                                        </optgroup>
+                                    </select>
+                                    <span class="form__validar--false" id="val-select-doc-aca" role="alert">Mensaje de
                                         error</span>
                                 </div>
                             </div>
-                        </fieldset>
-                        <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48" id="p-doc-aca"
-                            role="region">
-                            <div class="form__grupo">
-                                <div class="form__header">
-                                    <label for="select-doc-aca" class="form__label">
-                                        <span class="form__requerido" aria-hidden="true">*</span>
-                                        Documento académico
-                                    </label>
-                                    <div class="form__headertools"></div>
+                        </div>
+
+                        <!--Documentación de identidad-->
+                        <div class="form-row">
+                            <fieldset class="radio-group">
+                                <div class="form-row__header">
+                                    <legend class="form-row__question form-row__question--required">
+                                        <span class="required-indicator" aria-hidden="true">*</span>
+                                        ¿El estudiante presenta documentación de identidad?
+                                    </legend>
+                                    <div class="radio-options">
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="doc-ident" value="si"
+                                                id="r-doc-ident-si" checked> Sí
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="doc-ident" value="no"
+                                                id="r-doc-ident-no"> No
+                                        </label>
+                                        <span class="form__validar--false" id="val-doc-ident" role="alert">Mensaje de
+                                            error</span>
+                                    </div>
                                 </div>
-                                <select name="doc-aca" class="form__select" id="select-doc-aca">
-                                    <option selected="" disabled>Selecciona una opción</option>
-                                    <optgroup label="Documentos oficiales">
+                            </fieldset>
+                            <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48"
+                                id="p-doc-ident" role="region">
+                                <div class="form__grupo">
+                                    <div class="form__header">
+                                        <label for="select-doc-ident" class="form__label">
+                                            <span class="form__requerido" aria-hidden="true">*</span>
+                                            Documento de identidad
+                                        </label>
+                                        <div class="form__headertools"></div>
+                                    </div>
+                                    <select name="doc-ident" class="form__select" id="select-doc-ident">
+                                        <option selected="" disabled>Selecciona una opción</option>
+                                        <optgroup label="Documentos oficiales">
+                                            <option value="CURP">CURP</option>
+                                            <option value="INE">INE</option>
+                                            <option value="Acta de nacimiento">Acta de nacimiento</option>
+                                        </optgroup>
+                                    </select>
+                                    <span class="form__validar--false" id="val-select-doc-ident" role="alert">Mensaje de
+                                        error</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Lugar de nacimiento-->
+                        <div class="form-row">
+                            <fieldset class="radio-group">
+                                <div class="form-row__header">
+                                    <legend class="form-row__question form-row__question--required">
+                                        <span class="required-indicator" aria-hidden="true">*</span>
+                                        ¿El estudiante nació en el extranjero?
+                                    </legend>
+                                    <div class="radio-options">
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="lugar-nacimiento" value="si"
+                                                id="r-lugar-nacimiento-si" checked> Sí
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="lugar-nacimiento" value="no"
+                                                id="r-lugar-nacimiento-no"> No
+                                        </label>
+                                        <span class="form__validar--false" id="val-lugar-nacimiento"
+                                            role="alert">Mensaje de
+                                            error</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="fila--col2 form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48"
+                                id="p-lugar-nacimiento" role="region">
+                                <div class="form__grupo">
+                                    <div class="form__header">
+                                        <label for="select-pais" class="form__label">
+                                            <span class="form__requerido" aria-hidden="true">*</span>
+                                            País de nacimiento
+                                        </label>
+                                        <div class="form__headertools"></div>
+                                    </div>
+                                    <select name="lista-paises" class="form__select" id="select-pais">
+                                        <option selected="" disabled>Selecciona una opción</option>
                                         <option value="opcion1">Opción 1</option>
                                         <option value="opcion2">Opción 2</option>
                                         <option value="opcion3">Opción 3</option>
-                                    </optgroup>
-                                </select>
-                                <span class="form__validar--false" id="val-select-doc-aca" role="alert">Mensaje de
-                                    error</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Documentación de identidad-->
-                    <div class="form-row">
-                        <fieldset class="radio-group">
-                            <div class="form-row__header">
-                                <legend class="form-row__question form-row__question--required">
-                                    <span class="required-indicator" aria-hidden="true">*</span>
-                                    ¿El estudiante presenta documentación de identidad?
-                                </legend>
-                                <div class="radio-options">
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="doc-ident" value="si"
-                                            id="r-doc-ident-si" checked> Sí
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="doc-ident" value="no"
-                                            id="r-doc-ident-no"> No
-                                    </label>
-                                    <span class="form__validar--false" id="val-doc-ident" role="alert">Mensaje de
+                                    </select>
+                                    <span class="form__validar--false" id="val-select-pais" role="alert">Mensaje de
                                         error</span>
                                 </div>
-                            </div>
-                        </fieldset>
-                        <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48" id="p-doc-ident"
-                            role="region">
-                            <div class="form__grupo">
-                                <div class="form__header">
-                                    <label for="select-doc-ident" class="form__label">
-                                        <span class="form__requerido" aria-hidden="true">*</span>
-                                        Documento de identidad
-                                    </label>
-                                    <div class="form__headertools"></div>
-                                </div>
-                                <select name="doc-ident" class="form__select" id="select-doc-ident">
-                                    <option selected="" disabled>Selecciona una opción</option>
-                                    <optgroup label="Documentos oficiales">
-                                        <option value="CURP">CURP</option>
-                                        <option value="INE">INE</option>
-                                        <option value="Acta de nacimiento">Acta de nacimiento</option>
-                                    </optgroup>
-                                </select>
-                                <span class="form__validar--false" id="val-select-doc-ident" role="alert">Mensaje de
-                                    error</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Lugar de nacimiento-->
-                    <div class="form-row">
-                        <fieldset class="radio-group">
-                            <div class="form-row__header">
-                                <legend class="form-row__question form-row__question--required">
-                                    <span class="required-indicator" aria-hidden="true">*</span>
-                                    ¿El estudiante nació en el extranjero?
-                                </legend>
-                                <div class="radio-options">
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="lugar-nacimiento" value="si"
-                                            id="r-lugar-nacimiento-si" checked> Sí
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="lugar-nacimiento" value="no"
-                                            id="r-lugar-nacimiento-no"> No
-                                    </label>
-                                    <span class="form__validar--false" id="val-lugar-nacimiento" role="alert">Mensaje de
-                                        error</span>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="fila--col2 form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48"
-                            id="p-lugar-nacimiento" role="region">
-                            <div class="form__grupo">
-                                <div class="form__header">
-                                    <label for="select-pais" class="form__label">
-                                        <span class="form__requerido" aria-hidden="true">*</span>
-                                        País de nacimiento
-                                    </label>
-                                    <div class="form__headertools"></div>
-                                </div>
-                                <select name="lista-paises" class="form__select" id="select-pais">
-                                    <option selected="" disabled>Selecciona una opción</option>
-                                    <option value="opcion1">Opción 1</option>
-                                    <option value="opcion2">Opción 2</option>
-                                    <option value="opcion3">Opción 3</option>
-                                </select>
-                                <span class="form__validar--false" id="val-select-pais" role="alert">Mensaje de
-                                    error</span>
-                            </div>
-                            <div class="form__grupo">
-                                <div class="form__header">
-                                    <label for="select-entidad" class="form__label">
-                                        <span class="form__requerido" aria-hidden="true">*</span>
-                                        Entidad
-                                    </label>
-                                    <div class="form__headertools"></div>
-                                </div>
-                                <select name="lista-entidades" class="form__select" id="select-entidad">
-                                    <option selected="" disabled>Selecciona una opción</option>
-                                    <option value="opcion1">Opción 1</option>
-                                    <option value="opcion2">Opción 2</option>
-                                    <option value="opcion3">Opción 3</option>
-                                </select>
-                                <span class="form__validar--false" id="val-select-entidad" role="alert">Mensaje de
-                                    error</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Bloque migrante-->
-                    <div class="form-row">
-                        <fieldset class="radio-group">
-                            <div class="form-row__header">
-                                <legend class="form-row__question form-row__question--required">
-                                    <span class="required-indicator" aria-hidden="true">*</span>
-                                    ¿El estudiante es migrante extranjero?
-                                </legend>
-                                <div class="radio-options">
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="migrante" value="si"
-                                            id="r-migrante-si" checked> Sí
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="migrante" value="no"
-                                            id="r-migrante-no"> No
-                                    </label>
-                                    <span class="form__validar--false" id="val-migrante" role="alert">Mensaje de
-                                        error</span>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48" id="p-migrante"
-                            role="region">
-                            <div class="form__grupo">
-                                <div class="form__header">
-                                    <label for="select-pais-procedencia" class="form__label">
-                                        <span class="form__requerido" aria-hidden="true">*</span>
-                                        País de procedencia
-                                    </label>
-                                    <div class="form__headertools"></div>
-                                </div>
-                                <select name="pais-procedencia" class="form__select" id="select-pais-procedencia">
-                                    <option selected disabled>Selecciona una opción</option>
-                                    <option value="opcion1">Opción 1</option>
-                                    <option value="opcion2">Opción 2</option>
-                                    <option value="opcion3">Opción 3</option>
-                                </select>
-                                <span class="form__validar--false" id="val-select-pais-procedencia" role="alert">Mensaje
-                                    de error</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--bloque persona indígena-->
-                    <div class="form-row">
-                        <fieldset class="radio-group">
-                            <div class="form-row__header">
-                                <legend class="form-row__question form-row__question--required">
-                                    <span class="required-indicator" aria-hidden="true">*</span>
-                                    ¿El estudiante se reconoce como persona indígena?
-                                </legend>
-                                <div class="radio-options">
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="persona-indigena" value="si"
-                                            id="r-persona-indigena-si" checked> Sí
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__radio" type="radio" name="persona-indigena" value="no"
-                                            id="r-persona-indigena-no"> No
-                                    </label>
-                                    <span class="form__validar--false" id="val-persona-indigena" role="alert">Mensaje de
-                                        error</span>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <!--bloque lenguas-->
-                    <div class="form-row">
-                        <fieldset class="radio-group">
-                            <div class="form-row__header form-row__header--vertical">
-                                <legend class="form-row__question form-row__question--required">
-                                    <span class="required-indicator" aria-hidden="true">*</span>
-                                    ¿Qué lenguas habla el estudiante?
-                                </legend>
-                                <p class="sdit">Selecciona una opción y hasta un máximo de tres.</p>
-                                <div class="checkbox-options">
-                                    <label class="form__label">
-                                        <input class="form__checkbox" type="checkbox" name="lenguas" value="espanol"
-                                            id="chk-lengua-espanol"> Español
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__checkbox" type="checkbox" name="lenguas" value="nahuatl"
-                                            id="chk-lengua-nahuatl"> Nahuatl
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__checkbox" type="checkbox" name="lenguas" value="zapoteca"
-                                            id="chk-lengua-zapoteca"> Zapoteca
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__checkbox" type="checkbox" name="lenguas" value="mixteca"
-                                            id="chk-lengua-mixteca"> Mixteca
-                                    </label>
-                                    <label class="form__label">
-                                        <input class="form__checkbox" type="checkbox" name="lenguas" value="purepecha"
-                                            id="chk-lengua-purepecha"> Purépecha
-                                    </label>
-                                    <div class="checkbox-options__otra">
-                                        <label class="form__label">
-                                            <input class="form__checkbox" type="checkbox" name="lenguas" value="otra"
-                                                id="chk-lengua-otra"> Otra
+                                <div class="form__grupo">
+                                    <div class="form__header">
+                                        <label for="select-entidad" class="form__label">
+                                            <span class="form__requerido" aria-hidden="true">*</span>
+                                            Entidad
                                         </label>
-                                        <select name="lengua-otra" class="form__select" id="select-lengua-otra">
-                                            <option selected disabled>Seleccionar opción</option>
-                                            <optgroup label="Otras lenguas">
-                                                <option value="opcion1">Opción 1</option>
-                                                <option value="opcion2">Opción 2</option>
-                                            </optgroup>
-                                        </select>
+                                        <div class="form__headertools"></div>
+                                    </div>
+                                    <select name="lista-entidades" class="form__select" id="select-entidad">
+                                        <option selected="" disabled>Selecciona una opción</option>
+                                        <option value="opcion1">Opción 1</option>
+                                        <option value="opcion2">Opción 2</option>
+                                        <option value="opcion3">Opción 3</option>
+                                    </select>
+                                    <span class="form__validar--false" id="val-select-entidad" role="alert">Mensaje de
+                                        error</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Bloque migrante-->
+                        <div class="form-row">
+                            <fieldset class="radio-group">
+                                <div class="form-row__header">
+                                    <legend class="form-row__question form-row__question--required">
+                                        <span class="required-indicator" aria-hidden="true">*</span>
+                                        ¿El estudiante es migrante extranjero?
+                                    </legend>
+                                    <div class="radio-options">
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="migrante" value="si"
+                                                id="r-migrante-si" checked> Sí
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="migrante" value="no"
+                                                id="r-migrante-no"> No
+                                        </label>
+                                        <span class="form__validar--false" id="val-migrante" role="alert">Mensaje de
+                                            error</span>
                                     </div>
                                 </div>
-                                <span class="form__validar--false" id="val-lenguas" role="alert">Mensaje de error</span>
+                            </fieldset>
+                            <div class="form-row__panel cajaNeutro-- my--16 pt--16 pb--16 pl--16 pr--48" id="p-migrante"
+                                role="region">
+                                <div class="form__grupo">
+                                    <div class="form__header">
+                                        <label for="select-pais-procedencia" class="form__label">
+                                            <span class="form__requerido" aria-hidden="true">*</span>
+                                            País de procedencia
+                                        </label>
+                                        <div class="form__headertools"></div>
+                                    </div>
+                                    <select name="pais-procedencia" class="form__select" id="select-pais-procedencia">
+                                        <option selected disabled>Selecciona una opción</option>
+                                        <option value="opcion1">Opción 1</option>
+                                        <option value="opcion2">Opción 2</option>
+                                        <option value="opcion3">Opción 3</option>
+                                    </select>
+                                    <span class="form__validar--false" id="val-select-pais-procedencia"
+                                        role="alert">Mensaje
+                                        de error</span>
+                                </div>
                             </div>
-                        </fieldset>
-                    </div>
+                        </div>
+                        <!--bloque persona indígena-->
+                        <div class="form-row">
+                            <fieldset class="radio-group">
+                                <div class="form-row__header">
+                                    <legend class="form-row__question form-row__question--required">
+                                        <span class="required-indicator" aria-hidden="true">*</span>
+                                        ¿El estudiante se reconoce como persona indígena?
+                                    </legend>
+                                    <div class="radio-options">
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="persona-indigena" value="si"
+                                                id="r-persona-indigena-si" checked> Sí
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__radio" type="radio" name="persona-indigena" value="no"
+                                                id="r-persona-indigena-no"> No
+                                        </label>
+                                        <span class="form__validar--false" id="val-persona-indigena"
+                                            role="alert">Mensaje de
+                                            error</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!--bloque lenguas-->
+                        <div class="form-row">
+                            <fieldset class="radio-group">
+                                <div class="form-row__header form-row__header--vertical">
+                                    <legend class="form-row__question form-row__question--required">
+                                        <span class="required-indicator" aria-hidden="true">*</span>
+                                        ¿Qué lenguas habla el estudiante?
+                                    </legend>
+                                    <p class="sdit">Selecciona una opción y hasta un máximo de tres.</p>
+                                    <div class="checkbox-options">
+                                        <label class="form__label">
+                                            <input class="form__checkbox" type="checkbox" name="lenguas" value="espanol"
+                                                id="chk-lengua-espanol"> Español
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__checkbox" type="checkbox" name="lenguas" value="nahuatl"
+                                                id="chk-lengua-nahuatl"> Nahuatl
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__checkbox" type="checkbox" name="lenguas"
+                                                value="zapoteca" id="chk-lengua-zapoteca"> Zapoteca
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__checkbox" type="checkbox" name="lenguas" value="mixteca"
+                                                id="chk-lengua-mixteca"> Mixteca
+                                        </label>
+                                        <label class="form__label">
+                                            <input class="form__checkbox" type="checkbox" name="lenguas"
+                                                value="purepecha" id="chk-lengua-purepecha"> Purépecha
+                                        </label>
+                                        <div class="checkbox-options__otra">
+                                            <label class="form__label">
+                                                <input class="form__checkbox" type="checkbox" name="lenguas"
+                                                    value="otra" id="chk-lengua-otra"> Otra
+                                            </label>
+                                            <select name="lengua-otra" class="form__select" id="select-lengua-otra">
+                                                <option selected disabled>Seleccionar opción</option>
+                                                <optgroup label="Otras lenguas">
+                                                    <option value="opcion1">Opción 1</option>
+                                                    <option value="opcion2">Opción 2</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <span class="form__validar--false" id="val-lenguas" role="alert">Mensaje de
+                                        error</span>
+                                </div>
+                            </fieldset>
+                        </div>
 
-                </div>
-                <div class="dflex--acenter dflex--gap--16 dflex--end mt--32">
-                    <a href="#" class="boton__secundario">
-                        <img src="./assets/icons-base/arrow-left.svg" alt="" class="icono--pguinda900">
-                        Volver
-                    </a>
-                    <button class="boton__primario">
-                        Guardar y continuar
-                        <img src="./assets/icons-base/arrow--right.svg" alt="" class="icono--blanco">
-                    </button>
+                    </div>
+                    <div class="dflex--acenter dflex--gap--16 dflex--end mt--32">
+                        <a href="#" class="boton__secundario">
+                            <img src="./assets/icons-base/arrow-left.svg" alt="" class="icono--pguinda900">
+                            Volver
+                        </a>
+                        <button class="boton__primario">
+                            Guardar y continuar
+                            <img src="./assets/icons-base/arrow--right.svg" alt="" class="icono--blanco">
+                        </button>
+                    </div>
                 </div>
                 <!--VENTANILLA 24/7-->
                 <section class="ventanilla247">
