@@ -1,0 +1,37 @@
+/*BOTON ACCESIBILIDAD GOBMX*/
+/*BOTON ACCESIBILIDAD GOBMX*/
+nav.menu-container a.menu-btn { top:83px; width:2.5rem; left:auto; position:absolute;}
+.fad:after { opacity:1 !important; color:#81415B !important;}
+
+
+
+
+
+
+
+nav.menu-container a.menu-btn { right:170px;  top:83px; width:2.5rem; left:auto; position:fixed;}
+.fad:after { opacity:1 !important; color:#81415B !important;}
+
+.menu-container .menu-slide {  left:initial; right: -270px;}
+@media (min-width:2401px)  {
+    .menu-container:hover .menu-slide { transform:none; right:26vw}
+}
+@media (min-width:2101px) and (max-width:2400px) {
+    .menu-container:hover .menu-slide { transform:none; right:16vw}
+}
+@media (min-width:1801px) and (max-width:2100px) {
+    .menu-container:hover .menu-slide { transform:none; right:11vw}
+}
+@media (min-width:1669px) and (max-width:1800px) {
+    .menu-container:hover .menu-slide { transform:none; right:80px}
+}
+@media (max-width:1670px) {
+    .menu-container:hover .menu-slide { transform:none; right:0}
+}
+
+@media (max-width:1440px) {
+nav.menu-container a.menu-btn { right:290px; }
+}
+@media (max-width:768px) {
+nav.menu-container a.menu-btn { top:65px; right:16px;  }
+}

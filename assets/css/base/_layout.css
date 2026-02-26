@@ -5,6 +5,7 @@ html, body { height: 100%; background-color:var(--neutro200); color:var(--neutro
 :root {
 	--MaxWidth:1440px; /*anchura máxima*/
     --bodyTop:75px; /*padding para librar el header sticky*/
+    --subheaderTop:52px; /*padding para librar el subheader sticky*/
     --sndAside:146px; /*ancho del menú del SND*/
     --sndMenucont:225px; /*ancho del menu contextual de SND*/
 }
@@ -72,7 +73,7 @@ a.mexico__a:visited { color:#FFF; text-decoration:none;}
 .mexico__summary { list-style-type:none;}
 
 /* SUBHEADER */
-.subheader { min-height:52px; padding:4px 16px; background:var(--gama950); }
+.subheader { min-height:52px; padding:4px 16px; background:var(--gama950); position:fixed; width:100%; z-index: 4; }
 .subheader__contenedor { max-width:var(--MaxWidth); margin:0 auto; padding:0; display:flex; flex-direction:row; justify-content: flex-end; column-gap:16px; position: relative;}
 .subheader__contenedor--betweeen { justify-content:space-between;}
 .subheader__marca { flex-grow:1; display:flex; align-items: center; justify-content:flex-start; }
@@ -105,7 +106,7 @@ nav.menu-container a.menu-btn { right:2rem; top:83px; width:2.5rem; left:auto;}
 
 /*MAIN*/
 main { height:100%; width:100%; margin:auto;}
-.wrapper--aside main { padding:24px 16px 48px;}
+.wrapper--aside main { padding:calc( 24px + var(--subheaderTop)) 16px 48px;}
 
 /*FOOTER*/
 .footer { color:#FFF; display:flex; margin-top:auto; }
@@ -187,7 +188,7 @@ a.footer__enlacesLink:visited { color:#FFF;}
 
 /*ASIDE*/
 .menuMain * { color:#FFF }
-.menuMain {  width:256px; position:relative; transition: all .1s;}
+.menuMain {  width:256px; position:relative; top:var(--subheaderTop); transition: all .1s;}
 .menuMain,
 .menuMain__gatillo { background-image:var(--degradado-bottom)}
 .menuMain__gatillo { border:none; border-radius:0 20px 20px 0; padding:24px 0; position:absolute; right:-16px; top:calc( 40vh - var(--bodyTop)); cursor: pointer;}
@@ -239,7 +240,7 @@ a.footer__enlacesLink:visited { color:#FFF;}
     
     /*menuMovil*/
     .menuMovil {  position: absolute; right:0px; bottom:79px; z-index:4; width:75vw; transition:all .05s; padding:16px; display:flex; flex-direction:column; gap:16px; overflow-y:auto;}
-    .menuMovil--colapsado { right:-75vw;}
+    .menuMovil--colapsado { right:-75vw; display:none;}
     .menuMovil__tit { font-size:1.25rem; font-weight:500;}
     .menuMovil__list { padding:0; margin:0; list-style-type:none}
     .menuMovil__list > li:not(:last-child) { margin-bottom:18px;}
@@ -391,16 +392,6 @@ background-image:var(--degradado-top); position: relative; z-index:1; height:var
     .navMain__ul { justify-content:start; gap:0;} 
 }
 
-/*BOTON ACCESIBILIDAD GOBMX*/
-nav.menu-container a.menu-btn { right:20px;  top:83px; width:2.5rem; left:auto; position:absolute;}
-.fad:after { opacity:1 !important; color:#81415B !important;}
-
-@media (max-width:1440px) {
-nav.menu-container a.menu-btn { right:290px; }
-}
-@media (max-width:768px) {
-nav.menu-container a.menu-btn { top:65px; right:210px;  }
-}
 
 
 

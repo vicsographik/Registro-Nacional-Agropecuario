@@ -388,6 +388,7 @@
 
         <!-- MAIN -->
         <main id="mainContent">
+
             <a href="#" class="boton__link mb--40 ">
                 <img src="assets/icons-base/arrow-left.svg" alt="">
                 Salir
@@ -396,90 +397,251 @@
             <h1 class="sh0b">Preinscripción</h1>
             <div class="cajaBasica--32">
                 <h2 class="sh0m mb--32">Datos del estudiante</h2>
-                <p class="b1r">Ingresar la CURP del estudiante para obtener sus datos.</p>
-                <p class="sdit"><span class="color--rojo500">*</span> Campos obligatorios</p>
+                <p class="b1r">Puedes ingresar los datos del estudiante mediante tu CURP o de forma manual.</p>
 
-                <div class="caja__w6cols mb--32">
+                <!-- Pestañas -->
+                <div class="pestana">
 
-                    <div class="form__grupo mt--24">
-                        <label for="form-001" class="form__label">
-                            <span class="form__requerido" aria-hidden="true">*</span>
-                            CURP (Clave Única de Registro de Población)
-                            <span class="oculto"> - Campo obligatorio</span>
-                        </label>
+                    <div role="tablist" class="pestana__lista" aria-label="Opciones para ingresar CURP">
+                        <input class="pestana__radio--1" type="radio" id="tab1" name="tab" checked="">
+                        <label role="tab" class="pestana__label" for="tab1" id="pestana1"
+                            aria-controls="pestana__cont--1">Buscar por CURP</label>
 
-                        <!-- aria-describedby="val-001" asocia input con mensaje de asistencia -->
-                        <input type="text" id="form-001" class="form__control" placeholder="Ingresa los 18 caracteres"
-                            aria-required="true" aria-describedby="val--001" required="true">
-                        <span class="form__validar--false" id="val-001" role="alert">Menasaje de asistencia</span>
+                        <input class="pestana__radio--2" type="radio" id="tab2" name="tab">
+                        <label role="tab" class="pestana__label" for="tab2" id="pestana2"
+                            aria-controls="pestana__cont--2">Ingresar de manera manual</label>
                     </div>
 
-                    <!-- EJEMPLO VALIDADO-->
-                    <div class="form__grupo mt--24">
-                        <label for="form-001" class="form__label">
-                            <span class="form__requerido" aria-hidden="true">*</span>
-                            CURP (Clave Única de Registro de Población)
-                            <span class="oculto"> - Campo obligatorio</span>
-                        </label>
+                    <!-- Contenido 1 -->
+                    <div role="tabpanel" class="pestana__cont--1" id="pestana__cont--1" aria-labelledby="pestana1">
+                        <p class="sdit"><span class="color--rojo500">*</span> Campos obligatorios</p>
 
-                        <!-- aria-describedby="val-001" asocia input con mensaje de asistencia -->
-                        <input type="text" id="form-001" class="form__control form__control--exito"
-                            placeholder="Ingresa los 18 caracteres" aria-required="true" aria-describedby="val--001"
-                            required="true">
+                        <div class="caja__w6cols mb--32">
+
+                            <div class="form__grupo mt--24">
+                                <label for="form-001" class="form__label">
+                                    <span class="form__requerido" aria-hidden="true">*</span>
+                                    CURP (Clave Única de Registro de Población)
+                                    <span class="oculto"> - Campo obligatorio</span>
+                                </label>
+
+                                <!-- aria-describedby="val-001" asocia input con mensaje de asistencia -->
+                                <input type="text" id="form-001" class="form__control"
+                                    placeholder="Ingresa los 18 caracteres" aria-required="true"
+                                    aria-describedby="val--001" required="true">
+                                <span class="form__validar--false" id="val-001" role="alert">Mensaje de
+                                    asistencia</span>
+                            </div>
+
+                            <!-- EJEMPLO VALIDADO-->
+                            <div class="form__grupo mt--24">
+                                <label for="form-001" class="form__label">
+                                    <span class="form__requerido" aria-hidden="true">*</span>
+                                    CURP (Clave Única de Registro de Población)
+                                    <span class="oculto"> - Campo obligatorio</span>
+                                </label>
+
+                                <!-- aria-describedby="val-001" asocia input con mensaje de asistencia -->
+                                <input type="text" id="form-001" class="form__control form__control--exito"
+                                    placeholder="Ingresa los 18 caracteres" aria-required="true"
+                                    aria-describedby="val--001" required="true">
+                            </div>
+
+                            <div class="mt--24">
+                                <div class="tooltipContenedor4">
+                                    <button type="button" class="tooltip__button4" aria-expanded="false"
+                                        aria-controls="tt4-topRight-9" data-tooltip-trigger4="">
+                                        ¿No conoces tu CURP?
+                                    </button>
+                                    <div id="tt4-topRight-9" class="tooltipBubble4 tooltip4--bottomLeft tooltip4--lg"
+                                        role="tooltip">
+                                        <span style="font-size:28px;">&#128512;</span> La CURP es un documento de 18
+                                        caracteres que viene en el acta de nacimiento o credencial del estudiante.
+                                    </div>
+                                </div>
+                                <a href="#">Consúltala aquí</a>
+                            </div>
+
+                        </div>
+
+                        <div class="dflex--acenter dflex--gap--16 dflex--wrap">
+                            <div>
+                                <img src="assets/img/captcha.png" alt="">
+                            </div>
+                            <button type="button" class="boton__secundario">Validar CURP</button>
+                        </div>
+
+                        <div class="mt--32">
+                            <h2 class="b1r">1 resultado</h2>
+                            <hr class="mt--16 mb--32">
+                            <ul class="lista--sinBullets fila--col3">
+                                <li>
+                                    <span class="color--neutro700 dblock">Nombre (s)</span>
+                                    <span class="b1sb">Emil Guillermo</span>
+                                </li>
+
+                                <li>
+                                    <span class="color--neutro700 dblock">Primer apellido</span>
+                                    <span class="b1sb">Méndez</span>
+                                </li>
+
+                                <li>
+                                    <span class="color--neutro700 dblock">Segundo apellido</span>
+                                    <span class="b1sb">Carranza</span>
+                                </li>
+
+                                <li>
+                                    <span class="color--neutro700 dblock">Fecha de nacimiento</span>
+                                    <span class="b1sb">16/04/2009</span>
+                                </li>
+
+                                <li>
+                                    <span class="color--neutro700 dblock">Edad</span>
+                                    <span class="b1sb">6 años</span>
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mt--24">
-                        <div class="tooltipContenedor4">
-                            <button type="button" class="tooltip__button4" aria-expanded="false" aria-controls="tt4-topRight-9" data-tooltip-trigger4="">
-                                ¿No conoces tu CURP?
-                            </button>
-                            <div id="tt4-topRight-9" class="tooltipBubble4 tooltip4--bottomLeft tooltip4--lg" role="tooltip">
-                                <span style="font-size:28px;">&#128512;</span> La CURP es un documento de 18 caracteres que viene en el acta de nacimiento o credencial del estudiante.
+                    <!-- Contenido 2 -->
+                    <div role="tabpanel" class="pestana__cont--2" id="pestana__cont--2" aria-labelledby="pestana2">
+                        <p class="sdit"><span class="color--rojo500">*</span> Campos obligatorios</p>
+
+                        <div class="fila--col3 mb--24">
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-11" class="form__label">
+                                        CURP
+                                    </label>
+                                    <div class="form__headertools">
+                                        <span class="form__opcional">Opcional</span>
+                                    </div>
+                                </div>
+                                <input type="text" id="form-11" class="form__control" placeholder="Ingresa los datos">
                             </div>
                         </div>
-                        <a href="#">Consúltala aquí</a>
+
+                        <div class="fila--col3">
+
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-12" class="form__label">
+                                        <span class="form__requerido" aria-hidden="true">*</span>
+                                        Nombre(s)
+                                        <span class="oculto"> - Campo obligatorio</span>
+                                    </label>
+                                </div>
+                                <!-- aria-describedby="val-12" cuando es requerido, asocia input con mensaje de validación-->
+                                <input type="text" id="form-12" class="form__control" placeholder="Ingresa los datos"
+                                    aria-required="true" aria-describedby="val--12" required="">
+
+                                <span class="form__validar--false" id="val-12" role="alert">Mensaje de asistencia</span>
+                                <!--
+                                <span class="form__validar--true" id="val-12">Mensaje de acierto</span>
+                                -->
+                            </div>
+
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-13" class="form__label">
+                                        <span class="form__requerido" aria-hidden="true">*</span>
+                                        Primer apellido
+                                        <span class="oculto"> - Campo obligatorio</span>
+                                    </label>
+                                </div>
+                                <!-- aria-describedby="val-13" cuando es requerido, asocia input con mensaje de validación-->
+                                <input type="text" id="form-13" class="form__control" placeholder="Ingresa los datos"
+                                    aria-required="true" aria-describedby="val--13" required="">
+
+                                <span class="form__validar--false" id="val-13" role="alert">Mensaje de asistencia</span>
+                                <!--
+                                <span class="form__validar--true" id="val-13">Mensaje de acierto</span>
+                                -->
+                            </div>
+
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-14" class="form__label">
+                                        Segundo apellido
+                                    </label>
+                                    <div class="form__headertools">
+                                        <span class="form__opcional">Opcional</span>
+                                    </div>
+                                </div>
+                                <input type="text" id="form-14" class="form__control" placeholder="Ingresa los datos">
+                            </div>
+
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-15" class="form__label">
+                                        <span class="form__requerido" aria-hidden="true">*</span>
+                                        Fecha de nacimiento
+                                        <span class="oculto"> - Campo obligatorio</span>
+                                    </label>
+                                </div>
+                                <!-- aria-describedby="val-15" cuando es requerido, asocia input con mensaje de validación-->
+                                <input type="date" id="form-15" class="form__control" placeholder="Ingresa los datos"
+                                    aria-required="true" aria-describedby="val--15" required="">
+
+                                <span class="form__validar--false" id="val-15" role="alert">Mensaje de asistencia</span>
+                                <!--
+                                <span class="form__validar--true" id="val-15">Mensaje de acierto</span>
+                                -->
+                            </div>
+
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-16" class="form__label">
+                                        <span class="form__requerido" aria-hidden="true">*</span>
+                                        Sexo
+                                        <span class="oculto"> - Campo obligatorio</span>
+                                    </label>
+                                </div>
+                                <!-- aria-describedby="val-16" cuando es requerido, asocia input con mensaje de validación-->
+                                <select name="sexo" class="form__select" id="form-16" aria-required="true" aria-describedby="val--16" required="">
+                                    <option selected="">Selecciona una opción</option>
+                                </select>
+
+                                <span class="form__validar--false" id="val-16" role="alert">Mensaje de asistencia</span>
+                                <!--
+                                <span class="form__validar--true" id="val-16">Mensaje de acierto</span>
+                                -->
+                            </div>
+
+                            <div class="form__grupo">
+                                <div class="form__header">
+                                    <label for="form-17" class="form__label">
+                                        <span class="form__requerido" aria-hidden="true">*</span>
+                                        Entidad de nacimiento
+                                        <span class="oculto"> - Campo obligatorio</span>
+                                    </label>
+                                </div>
+                                <!-- aria-describedby="val-17" cuando es requerido, asocia input con mensaje de validación-->
+                                <select name="sexo" class="form__select" id="form-17" aria-required="true" aria-describedby="val--17" required="">
+                                    <option selected="">Selecciona una opción</option>
+                                </select>
+
+                                <span class="form__validar--false" id="val-17" role="alert">Mensaje de asistencia</span>
+                                <!--
+                                <span class="form__validar--true" id="val-17">Mensaje de acierto</span>
+                                -->
+                            </div>
+
+
+                        </div>
+
                     </div>
-
                 </div>
 
-                <div class="dflex--acenter dflex--gap--16 dflex--wrap">
-                    <div>
-                        <img src="assets/img/captcha.png" alt="">
-                    </div>
-                    <button type="button" class="boton__secundario">Validar CURP</button>
-                </div>
 
-                <div class="mt--32">
-                    <h2 class="b1r">1 resultado</h2>
-                    <hr class="mt--16 mb--32">
-                    <ul class="lista--sinBullets fila--col3">
-                        <li>
-                            <span class="color--neutro700 dblock">Nombre (s)</span>
-                            <span class="b1sb">Emil Guillermo</span>
-                        </li>
 
-                        <li>
-                            <span class="color--neutro700 dblock">Primer apellido</span>
-                            <span class="b1sb">Méndez</span>
-                        </li>
 
-                        <li>
-                            <span class="color--neutro700 dblock">Segundo apellido</span>
-                            <span class="b1sb">Carranza</span>
-                        </li>
 
-                        <li>
-                            <span class="color--neutro700 dblock">Fecha de nacimiento</span>
-                            <span class="b1sb">16/04/2009</span>
-                        </li>
 
-                        <li>
-                            <span class="color--neutro700 dblock">Edad</span>
-                            <span class="b1sb">6 años</span>
-                        </li>
 
-                    </ul>
-                </div>
+
+
 
 
             </div>
@@ -512,6 +674,89 @@
                         <span class="sh1b mb--0">Secundaria</span>
                         <span class="b1m mb--0">Niñas y niños egresados de primaria</span>
                     </label>
+
+                </div>
+
+            </div>
+
+            <div class="cajaBasica--32 mt--32">
+                <h2 class="sh0m">Medios de contacto</h2>
+                <p class="b1r color--neutro700">Ingresa el correo electrónico y un número de teléfono del tutor.</p>
+                <p class="sdit"><span class="color--rojo500">*</span> Campos obligatorios</p>
+
+                <div class="fila--col3">
+
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="form-21" class="form__label">
+                                <span class="form__requerido" aria-hidden="true">*</span>
+                                Teléfono
+                                <span class="oculto"> - Campo obligatorio</span>
+                            </label>
+                        </div>
+                        <!-- aria-describedby="val-21" cuando es requerido, asocia input con mensaje de validación-->
+                        <input type="tel" id="form-21" class="form__control" placeholder="Ingresa los datos" aria-required="true" aria-describedby="val--21" required="">
+                        
+                        <span class="form__validar--false" id="val-21" role="alert">Mensaje de asistencia</span>
+                        <!--
+                        <span class="form__validar--true" id="val-21">Mensaje de acierto</span>
+                        -->
+                    </div>
+
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="form-22" class="form__label">
+                                <span class="form__requerido" aria-hidden="true">*</span>
+                                Correo electrónico
+                                <span class="oculto"> - Campo obligatorio</span>
+                            </label>
+                        </div>
+                        <!-- aria-describedby="val-22" cuando es requerido, asocia input con mensaje de validación-->
+                        <input type="email" id="form-22" class="form__control" placeholder="Ingresa los datos" aria-required="true" aria-describedby="val--22" required="">
+                        
+                        <span class="form__validar--false" id="val-22" role="alert">Mensaje de asistencia</span>
+                        <!--
+                        <span class="form__validar--true" id="val-22">Mensaje de acierto</span>
+                        -->
+                    </div>
+
+                </div>
+                
+                <div class="fila--col3">
+
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="form-21" class="form__label">
+                                <span class="form__requerido" aria-hidden="true">*</span>
+                                Teléfono
+                                <span class="oculto"> - Campo obligatorio</span>
+                            </label>
+                        </div>
+                        <!-- aria-describedby="val-21" cuando es requerido, asocia input con mensaje de validación-->
+                        <input type="tel" id="form-21" class="form__control" placeholder="Ingresa los datos" aria-required="true" aria-describedby="val--21" required="">
+                        <!--
+                        <span class="form__validar--false" id="val-21" role="alert">Mensaje de asistencia</span>
+                        -->
+                        <span class="form__validar--true" id="val-21"></span>
+                        
+                    </div>
+
+                    <div class="form__grupo">
+                        <div class="form__header">
+                            <label for="form-22" class="form__label">
+                                <span class="form__requerido" aria-hidden="true">*</span>
+                                Correo electrónico
+                                <span class="oculto"> - Campo obligatorio</span>
+                            </label>
+                        </div>
+                        <!-- aria-describedby="val-22" cuando es requerido, asocia input con mensaje de validación-->
+                        <input type="email" id="form-22" class="form__control" placeholder="Ingresa los datos" aria-required="true" aria-describedby="val--22" required="">
+                        <!--
+                        <span class="form__validar--false" id="val-22" role="alert">Mensaje de asistencia</span>
+                        -->
+                        <span class="form__validar--true" id="val-22"></span>
+                        
+                    </div>
 
                 </div>
 
@@ -692,7 +937,6 @@
         </footer>
 
     </div>
-
     <script src="assets/js/header-footer-details.js"></script>
     <script src="assets/js/details-deskOpen.js"></script>
     <script src="assets/js/dialog.js"></script>
@@ -700,6 +944,7 @@
     <script src="assets/js/aside-movil-height.js"></script>
     <script src="assets/js/tabla-responsiva-sombreado.js"></script>
     <script src="assets/js/details-cierra-onclickout.js"></script>
+    <script src="assets/js/form-label-altura.js"></script>
     <script src="assets/js/accesibilidad-gobmx.js"></script>
     <script src="https://framework-gb.cdn.gob.mx/gm/accesibilidad/js/gobmx-accesibilidad.min.js"></script>
 

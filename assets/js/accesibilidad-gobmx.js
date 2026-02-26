@@ -8,7 +8,7 @@ function actualizarPosicionMenu() {
     
     if (window.innerWidth > 1441) {
         const anchoVentana = window.innerWidth;
-        const calculo = ((anchoVentana - 1440) / 2) + 190;
+        const calculo = ((anchoVentana - 1440) / 2) + 270;
         
         elementosMenu.forEach(elemento => {
             elemento.style.right = `${calculo}px`;
