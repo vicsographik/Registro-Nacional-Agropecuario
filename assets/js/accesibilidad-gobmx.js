@@ -1,50 +1,66 @@
-// E S T E. E S. E L. A R C H I V O. O R I G I N A L
-
 function actualizarPosicionMenu() {
-    const elementosMenu = document.querySelectorAll('a.menu-btn');
-    
-    if (elementosMenu.length === 0) {
-        console.warn('No se encontraron elementos con clase "menu-btn"');
-        return;
-    }
-    
-    if (window.innerWidth > 1441) {
-        const anchoVentana = window.innerWidth;
-        const calculo = ((anchoVentana - 1440) / 2) + 270;
-        
-        elementosMenu.forEach(elemento => {
-            elemento.style.right = `${calculo}px`;
-        });
-        
-        console.log(`Aplicado: ${calculo}px a ${elementosMenu.length} elementos`);
-    } else {
-        elementosMenu.forEach(elemento => {
-            elemento.style.right = '';
-        });
-    }
-}
+            const menuCompleto = document.getElementById('accessibility');
+            const miContenedor = document.getElementById('accesibilidadGob');
 
-// Ejecutar inmediatamente
-actualizarPosicionMenu();
+            if (!menuCompleto) return;
 
-// Ejecutar cada 100ms durante 2 segundos hasta que los elementos existan
-let intentos = 0;
-const intervalo = setInterval(() => {
-    const elementosMenu = document.querySelectorAll('a.menu-btn');
-    if (elementosMenu.length > 0 || intentos >= 20) {
-        clearInterval(intervalo);
-        if (elementosMenu.length > 0) {
-            actualizarPosicionMenu();
+            // 1. MUDANZA
+            if (miContenedor && menuCompleto.parentNode !== miContenedor) {
+                miContenedor.appendChild(menuCompleto);
+                console.log('Menú integrado y listo para el click.');
+
+                // --- AQUÍ ACTIVAMOS EL CLICK ---
+                // Lo hacemos solo cuando el menú entra al contenedor por primera vez
+                configurarClickMenu(menuCompleto);
+            }
+
+            // 2. NEUTRALIZACIÓN
+            menuCompleto.style.position = 'relative';
+            menuCompleto.style.right = 'auto';
+            menuCompleto.style.top = 'auto';
+            menuCompleto.style.display = 'block';
+
+            const btn = menuCompleto.querySelector('.menu-btn');
+            if (btn) {
+                btn.style.position = 'relative';
+                btn.style.right = 'auto';
+            }
         }
-    }
-    intentos++;
-}, 100);
 
-// Redimensionamiento
-window.addEventListener('resize', actualizarPosicionMenu);
+        // Nueva función auxiliar para que el código sea limpio
+        function configurarClickMenu(contenedorPadre) {
+            const btn = contenedorPadre.querySelector('.menu-btn');
+            const menuContainer = contenedorPadre.querySelector('.menu-container');
 
-// Cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', actualizarPosicionMenu);
+            if (btn && menuContainer) {
+                // Usamos un nombre de función para que no se dupliquen eventos si se llama varias veces
+                btn.onclick = function (e) {
+                    e.preventDefault();
+                    e.stopPropagation(); // Evita que el click llegue al document inmediatamente
+                    menuContainer.classList.toggle('is-active');
+                    console.log('Clase is-active alternada!');
+                };
+            }
+        }
 
-// Cuando todo esté cargado
-window.addEventListener('load', actualizarPosicionMenu);
+        // Cerrar si hacen click fuera (esto sí puede ir en el document)
+        document.addEventListener('click', function (e) {
+            const menuContainer = document.querySelector('.menu-container');
+            if (menuContainer && !menuContainer.contains(e.target)) {
+                menuContainer.classList.remove('is-active');
+            }
+        });
+
+        // Tu lógica de intervalos se mantiene igual
+        let intentos = 0;
+        const intervalo = setInterval(() => {
+            const existe = document.getElementById('accessibility');
+            if (existe || intentos >= 20) {
+                clearInterval(intervalo);
+                actualizarPosicionMenu();
+            }
+            intentos++;
+        }, 100);
+
+        window.addEventListener('resize', actualizarPosicionMenu);
+        window.addEventListener('load', actualizarPosicionMenu);

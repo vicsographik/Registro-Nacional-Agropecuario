@@ -23,51 +23,6 @@
         rel="stylesheet">
     <link href="https://framework-gb.cdn.gob.mx/gm/accesibilidad/css/gobmx-accesibilidad.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/estilos.css">
-    <style>
-        #accessibility,
-        .menu-btn {
-            position: relative !important;
-            right: auto !important;
-            top: auto !important;
-        }
-
-        .menu-container .menu-btn {
-            z-index: inherit;
-        }
-
-        #accessibility,
-        .menu-btn {
-            position: relative !important;
-            right: auto !important;
-            top: auto !important;
-        }
-
-        #accessibility,
-        .menu-btn {
-            position: relative !important;
-            right: auto !important;
-            top: auto !important;
-        }
-
-        /* 1. Anulamos el hover original para que no interfiera */
-        .menu-container:hover .menu-slide {
-            transform: translate(0, 0) !important;
-            /* O el valor que tenga por defecto cuando está oculto */
-            opacity: 0 !important;
-            pointer-events: none;
-            /* Evita que se pueda clickear si está invisible */
-        }
-
-        /* 2. Definimos el estado ACTIVO mediante click */
-        .menu-container.is-active .menu-slide {
-            transform: translate(270px, 0) !important;
-            /* El valor original de tu hover */
-            opacity: 1 !important;
-            pointer-events: auto;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            /* Para que sea suave */
-        }
-    </style>
 </head>
 
 <body>
@@ -108,7 +63,7 @@
                     <div class="subheader__marca">
                         <img src="assets/img/sep-logo.svg" alt="Secretaría de Educación Pública"
                             class="subheader__marcaImg">
-                        <div id="contenedor-accesibilidad-fijo">
+                        <div id="accesibilidadGob">
                         </div>
                     </div>
 
@@ -393,11 +348,11 @@
 
         <!-- MAIN -->
         <main id="mainContent">
-            <a href="#" class="boton__link">
+            <a href="#" class="boton__link mb--32 mt--16">
                 <img src="./assets/icons-base/arrow-left.svg" alt="">
                 Salir
             </a>
-            <div class="rowgap--24 mt--40">
+            <div class="rowgap--24">
                 <div class="rowgap--16">
                     <h2 class="sh0m">Preinscripción</h2>
                     <p>Completa los 3 módulos de información, en el orden que prefieras. Al terminar, da clic en el
@@ -626,74 +581,6 @@
         </div>
 
     </div>
-    <script>
-        function actualizarPosicionMenu() {
-            const menuCompleto = document.getElementById('accessibility');
-            const miContenedor = document.getElementById('contenedor-accesibilidad-fijo');
-
-            if (!menuCompleto) return;
-
-            // 1. MUDANZA
-            if (miContenedor && menuCompleto.parentNode !== miContenedor) {
-                miContenedor.appendChild(menuCompleto);
-                console.log('Menú integrado y listo para el click.');
-
-                // --- AQUÍ ACTIVAMOS EL CLICK ---
-                // Lo hacemos solo cuando el menú entra al contenedor por primera vez
-                configurarClickMenu(menuCompleto);
-            }
-
-            // 2. NEUTRALIZACIÓN
-            menuCompleto.style.position = 'relative';
-            menuCompleto.style.right = 'auto';
-            menuCompleto.style.top = 'auto';
-            menuCompleto.style.display = 'block';
-
-            const btn = menuCompleto.querySelector('.menu-btn');
-            if (btn) {
-                btn.style.position = 'relative';
-                btn.style.right = 'auto';
-            }
-        }
-
-        // Nueva función auxiliar para que el código sea limpio
-        function configurarClickMenu(contenedorPadre) {
-            const btn = contenedorPadre.querySelector('.menu-btn');
-            const menuContainer = contenedorPadre.querySelector('.menu-container');
-
-            if (btn && menuContainer) {
-                // Usamos un nombre de función para que no se dupliquen eventos si se llama varias veces
-                btn.onclick = function (e) {
-                    e.preventDefault();
-                    e.stopPropagation(); // Evita que el click llegue al document inmediatamente
-                    menuContainer.classList.toggle('is-active');
-                    console.log('Clase is-active alternada!');
-                };
-            }
-        }
-
-        // Cerrar si hacen click fuera (esto sí puede ir en el document)
-        document.addEventListener('click', function (e) {
-            const menuContainer = document.querySelector('.menu-container');
-            if (menuContainer && !menuContainer.contains(e.target)) {
-                menuContainer.classList.remove('is-active');
-            }
-        });
-
-        // Tu lógica de intervalos se mantiene igual
-        let intentos = 0;
-        const intervalo = setInterval(() => {
-            const existe = document.getElementById('accessibility');
-            if (existe || intentos >= 20) {
-                clearInterval(intervalo);
-                actualizarPosicionMenu();
-            }
-            intentos++;
-        }, 100);
-
-        window.addEventListener('resize', actualizarPosicionMenu);
-        window.addEventListener('load', actualizarPosicionMenu);
-    </script>
 
     <script src="assets/js/header-footer-details.js"></script>
     <script src="assets/js/details-deskOpen.js"></script>
