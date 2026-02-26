@@ -76,7 +76,7 @@ a.mexico__a:visited { color:#FFF; text-decoration:none;}
 .subheader { min-height:52px; padding:4px 16px; background:var(--gama950); position:fixed; width:100%; z-index: 4; }
 .subheader__contenedor { max-width:var(--MaxWidth); margin:0 auto; padding:0; display:flex; flex-direction:row; justify-content: flex-end; column-gap:16px; position: relative;}
 .subheader__contenedor--betweeen { justify-content:space-between;}
-.subheader__marca { flex-grow:1; display:flex; align-items: center; justify-content:flex-start; }
+.subheader__marca { flex-grow:1; display:flex; align-items: center; justify-content:space-between; }
 nav.menu-container a.menu-btn { right:2rem; top:83px; width:2.5rem; left:auto;}
 .iniciarSesion { display:flex; align-items:center;}
 .iniciarSesion__a, 
