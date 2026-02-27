@@ -1,66 +1,68 @@
-function actualizarPosicionMenu() {
-            const menuCompleto = document.getElementById('accessibility');
-            const miContenedor = document.getElementById('accesibilidadGob');
+(function() { 
+    "use strict";
 
-            if (!menuCompleto) return;
+    /**
+     * Sanitiza y configura el menú de accesibilidad
+     */
+    function actualizarPosicionMenu() {
+        const menuCompleto = document.getElementById('accessibility');
+        const miContenedor = document.getElementById('accesibilidadGob');
 
-            // 1. MUDANZA
-            if (miContenedor && menuCompleto.parentNode !== miContenedor) {
-                miContenedor.appendChild(menuCompleto);
-                console.log('Menú integrado y listo para el click.');
+        if (!menuCompleto || !miContenedor) return;
 
-                // --- AQUÍ ACTIVAMOS EL CLICK ---
-                // Lo hacemos solo cuando el menú entra al contenedor por primera vez
-                configurarClickMenu(menuCompleto);
-            }
+        if (menuCompleto.parentNode !== miContenedor) {
 
-            // 2. NEUTRALIZACIÓN
-            menuCompleto.style.position = 'relative';
-            menuCompleto.style.right = 'auto';
-            menuCompleto.style.top = 'auto';
-            menuCompleto.style.display = 'block';
-
-            const btn = menuCompleto.querySelector('.menu-btn');
-            if (btn) {
-                btn.style.position = 'relative';
-                btn.style.right = 'auto';
-            }
+            miContenedor.appendChild(menuCompleto);
+            configurarClickMenu(menuCompleto);
         }
 
-        // Nueva función auxiliar para que el código sea limpio
-        function configurarClickMenu(contenedorPadre) {
-            const btn = contenedorPadre.querySelector('.menu-btn');
-            const menuContainer = contenedorPadre.querySelector('.menu-container');
-
-            if (btn && menuContainer) {
-                // Usamos un nombre de función para que no se dupliquen eventos si se llama varias veces
-                btn.onclick = function (e) {
-                    e.preventDefault();
-                    e.stopPropagation(); // Evita que el click llegue al document inmediatamente
-                    menuContainer.classList.toggle('is-active');
-                    console.log('Clase is-active alternada!');
-                };
-            }
-        }
-
-        // Cerrar si hacen click fuera (esto sí puede ir en el document)
-        document.addEventListener('click', function (e) {
-            const menuContainer = document.querySelector('.menu-container');
-            if (menuContainer && !menuContainer.contains(e.target)) {
-                menuContainer.classList.remove('is-active');
-            }
+        Object.assign(menuCompleto.style, {
+            position: 'relative',
+            right: 'auto',
+            top: 'auto',
+            display: 'block'
         });
 
-        // Tu lógica de intervalos se mantiene igual
-        let intentos = 0;
-        const intervalo = setInterval(() => {
-            const existe = document.getElementById('accessibility');
-            if (existe || intentos >= 20) {
-                clearInterval(intervalo);
-                actualizarPosicionMenu();
-            }
-            intentos++;
-        }, 100);
+        const btn = menuCompleto.querySelector('.menu-btn');
+        if (btn) {
+            btn.style.position = 'relative';
+            btn.style.right = 'auto';
+        }
+    }
 
-        window.addEventListener('resize', actualizarPosicionMenu);
-        window.addEventListener('load', actualizarPosicionMenu);
+    function configurarClickMenu(contenedorPadre) {
+        const btn = contenedorPadre.querySelector('.menu-btn');
+        const menuContainer = contenedorPadre.querySelector('.menu-container');
+
+        if (btn && menuContainer) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                menuContainer.classList.toggle('is-active');
+            }, false);
+        }
+    }
+
+    document.addEventListener('click', function (e) {
+        const menuContainer = document.querySelector('.menu-container');
+        if (menuContainer && menuContainer.classList.contains('is-active') && !menuContainer.contains(e.target)) {
+            menuContainer.classList.remove('is-active');
+        }
+    }, { passive: true });
+
+    let intentos = 0;
+    const intervalo = setInterval(() => {
+        const existe = document.getElementById('accessibility');
+        intentos++;
+        if (existe) {
+            clearInterval(intervalo);
+            actualizarPosicionMenu();
+        } else if (intentos >= 20) {
+            clearInterval(intervalo);
+        }
+    }, 100);
+
+    window.addEventListener('resize', actualizarPosicionMenu, { passive: true });
+    window.addEventListener('load', actualizarPosicionMenu, { passive: true });
+
+})();
