@@ -1,0 +1,19 @@
+# Extensiones de Sistema (Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Dependencias (Si usas npm)
+node_modules/
+dist/
+
+# Archivos de Sass/Cache
+.sass-cache/
+*.css.map
+*.sass.map
+
+# Logs y temporales
+*.log
+npm-debug.log*
+.eslintcache
