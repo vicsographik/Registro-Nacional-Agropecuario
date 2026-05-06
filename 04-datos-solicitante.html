@@ -60,44 +60,26 @@
             </section>
             <section class="subheader">
                 <div class="subheader__contenedor">
+                 <details class="mexico__details navHeader__details">
+                        <summary class="mexico__summary">
+                            <span class="mexico__span">Menú</span>
+                        </summary>
+                        <nav class="navHeader">
+                            <ul class="navHeader__ul mexico__detailsCont">
+                                <li class="navHeader__li">
+                                    <a href="#" class="navHeader__a">Inicio</a>
+                                </li>
+                                <li class="navHeader__li">
+                                    <a href="#" class="navHeader__a" aria-current="page">Trámites y servicios</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </details>
 
-                    <div class="idioma">
-                        <div class="idioma__cont idioma--sm">
-                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
-                            <select class="idioma__select" id="idioma-select">
-                                <option lang="es">Es</option>
-                                <option lang="en">En</option>
-                                <option lang="de">De</option>
-                                <option lang="it">It</option>
-                                <option lang="fr">Fr</option>
-                                <option lang="pt">Pt</option>
-                            </select>
-                            <div class="idioma__marker" aria-hidden="true">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="idioma__cont idioma--lg">
-                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
-                            <select class="idioma__select" id="idioma-select">
-                                <option lang="es">Español</option>
-                                <option lang="en">English</option>
-                                <option lang="de">Deutsch</option>
-                                <option lang="it">Italiano</option>
-                                <option lang="fr">Français</option>
-                                <option lang="pt">Português</option>
-                            </select>
-                            <div class="idioma__marker" aria-hidden="true">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </div>
+                    <button type="button" class="boton__limpio">
+                        <img src="assets/icons-base/accesibilidad.svg" alt="" aria-hidden="true" class="icono--32">
+                        <span class="oculto">Opciones de accesibilidad</span>
+                    </button>
 
                     <!-- class=detailsClickOut cierra Details si se cliquea fuera-->
                     <!-- temaVerde o temaRojo según sea el caso -->
@@ -352,7 +334,7 @@
             </button>
             <div class="menuMain__header">
                 <div class="menuMain__headerCont">Registro Nacional Agropecuario</div>
-                <div>Ventanilla de trámites</div>
+                <div class="menuMain__txt ">Ventanilla de trámites</div>
             </div>
             <ul class="menuMain__lista">
                 <li class="menuMain__item">
@@ -376,35 +358,21 @@
                     <img src="assets/icons/close.svg" alt="" aria-hidden="true" class="">
                 </button>
                 <hr class="hr">
-                <div class="menuMovil__tit">Mi PNC</div>
+                <div class="menuMovil__tit">Mis trámites y servicios</div>
                 <ul class="menuMovil__list">
-                    <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/money.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Central de Pagos</span>
-                    </a>
-                </li>
-
                 <li class="menuMovil__item">
                     <a href="#" class="menuMovil__link">
                         <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="ico--blanco--24">
                         <span class="menuMain__txt">Ventanilla digital</span>
                     </a>
                 </li>
-
-                <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/folder.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Expediente</span>
-                    </a>
-                </li>
                 </ul>
                 <hr class="hr">
-                <div class="menuMovil__tit">Plataforma nacional de catastrro</div>
+                <div class="menuMovil__tit">Registro Nacional Agropecuario</div>
                 <ul class="menuMovil__list">
                     <li class="menuMovil__item">
                     <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                        <img src="assets/icons-base/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
                         <span class="menuMain__txt">Inicio</span>
                     </a>
                 </li>
@@ -414,6 +382,7 @@
 
         <!-- MAIN -->
         <main id="mainContent">
+        <form action="">
         <!-- Bóton cancelar -->
         <a href="#" class="boton__link mb--32 mt--16">
             <img src="./assets/icons-base/arrow-left.svg" alt="">
@@ -421,8 +390,12 @@
         </a>
         <!-- Pasos para completar el trámite -->
         <section class="progresoPasos">
+            <div class="cajaAvance__info mb--8">
+                <span class="cajaAvance__subtit b1sb">AGRICULTURA-02-003</span>
+                <img src="assets/icons/circulo--gris.svg" class="p--8" alt="">
+                <span class="cajaAvance__subtit b1sb">Registro Nacional Agropecuario</span>
+              </div>
             <div class="progresoPasos__header">
-                <h1 class="progresoPasos__desc">AGRICULTURA-02-003  Registro Nacional Agropecuario</h1>
                 <p class="progresoPasos__tit">Aviso previo de constitución de una organización ganadera</p>
             </div>
             <div class="progresoPasos__pasos">
@@ -498,102 +471,175 @@
                 </label>
             </div>
             <div class="cajaForm__fila--col3">
+
                 <div class="form__grupo">
-                    <label for="form-001" class="cajaBasico__celdaBold">
-                        <span class="cajaBase__obligatorio--rojo"> * </span>
-                        Correo electrónico
-                    </label>
-                    <input id="form-001" class="form__control" name="form-001" placeholder="Ingresa los datos" type="text">
-                </div>
-                <div class="form__grupo">
-                    <div class="label--opcional">
-                        <label for="form-002" class="cajaBasico__celdaBold">
-                        Número celular
+                    <div class="form__header">
+                        <label for="form-001" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Correo electrónico
+                            <span class="oculto"> - Campo obligatorio</span>
                         </label>
-                        <span class="form__opcional"> Opcional </span>
+                        <div class="form__headertools">
+                        </div>
                     </div>
-                    <input id="form-002" class="form__control" name="form-002" placeholder="Ingresa los datos" type="tel">
+                    <input type="text" id="form-001" class="form__control" placeholder="Ingresa los datos" aria-required="true"
+                        aria-describedby="val--001" required="">
+                    <!--span class="form__validar--false" id="val-001" role="alert"></span-->
                 </div>
                 <div class="form__grupo">
-                    <div class="label--opcional">
-                        <label for="form-003" class="cajaBasico__celdaBold">
+                    <div class="form__header">
+                        <label for="form-002" class="form__label">
+                            Número celular
+                        </label>
+                        <div class="form__headertools">
+                            <span class="form__opcional">Opcional</span>
+                        </div>
+                    </div>
+                    <input id="form-002" type="tel" class="form__control" name="form-002" placeholder="Ingresa los datos">
+                    <!--Error: form__validar--false -->
+                    <!--Acierto: form__validar--true -->
+                    <!--span class="form__validar--false">Mensaje de error</span-->
+                </div>
+                <div class="form__grupo">
+                    <div class="form__header">
+                        <label for="form-003" class="form__label">
                             Teléfono fijo
                         </label>
-                        <span class="form__opcional"> Opcional </span>
+                        <div class="form__headertools">
+                            <span class="form__opcional">Opcional</span>
+                        </div>
                     </div>
-                    <input id="form-003" class="form__control" name="form-003" placeholder="Ingresa los datos" type="tel">
+                    <input id="form-003" type="tel" class="form__control" name="form-003" placeholder="Ingresa los datos">
                 </div>
             </div>
             <hr>
             <div class="cajaForm__fila--col3">
                 <div class="form__grupo">
-                    <label for="form-004" class="cajaBasico__celdaBold">
-                        <span class="cajaBase__obligatorio--rojo"> * </span>
-                        Código postal
-                    </label>
-                    <input id="form-004" class="form__control" name="form-004" placeholder="Ingresa los datos" type="text">
+                    <div class="form__header">
+                        <label for="form-004" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Código postal
+                            <span class="oculto">Campo obligatorio</span>
+                        </label>
+                        <div class="form__headertools">
+                            <span class="form__opcional">Opcional</span>
+                        </div>
+                    </div>
+                    <input type="text" id="form-004" class="form__control" name="form-004" placeholder="Ingresa los datos">
+                    <!--Error: form__validar--false -->
+                    <!--Acierto: form__validar--true -->
+                    <!--span class="form__validar--false">Mensaje de error</span-->
                 </div>
+
                 <div class="form__grupo">
-                    <label for="form-005" class="cajaBasico__celdaBold">
-                        <span class="cajaBase__obligatorio--rojo"> * </span>
-                        Estado
-                    </label>
-                    <select id="form-005" class="form__control" name="form-005">
+                    <div class="form__header">
+                        <label for="form-005" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Estado
+                            <span class="oculto"> - Campo obligatorio</span>
+                        </label>
+                    </div>
+                    <select class="form__select" id="form-005" aria-describedby="valsel--005" required="">
                         <option selected="">Selecciona una opción</option>
-                        <option>Aquí va la opción 01</option>
+                        <option value="Opción 1">Opción 1</option>
+                        <option value="Opción 2">Opción 2</option>
                     </select>
+                    <!--span class="form__validar--false" id="valsel--005" role="alert">Menasaje de
+                        asistencia</span-->
                 </div>
+
                 <div class="form__grupo">
-                    <label for="form-006" class="form__label">
-                        <span class="cajaBase__obligatorio--rojo">*</span> Municipio/Alcaldía
-                    </label>
-                    <select id="form-006" class="form__control" name="form-006">
+                    <div class="form__header">
+                        <label for="form-006" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Municipio/Alcaldía
+                            <span class="oculto"> - Campo obligatorio</span>
+                        </label>
+                    </div>
+                    <select class="form__select" id="form-006" aria-describedby="valsel--006" required="">
                         <option selected="">Selecciona una opción</option>
-                        <option>Aquí va la opción 01</option>
+                        <option value="Opción 1">Opción 1</option>
+                        <option value="Opción 2">Opción 2</option>
                     </select>
+                    <!--span class="form__validar--false" id="valsel--006" role="alert">Menasaje de
+                        asistencia</span-->
                 </div>
+
                 <div class="form__grupo">
-                    <label for="form-007" class="cajaBasico__celdaBold">
-                        <span class="cajaBase__obligatorio--rojo"> * </span>
-                        Colonia
-                    </label>
-                    <select id="form-007" class="form__control" name="form-007">
+                    <div class="form__header">
+                        <label for="form-007" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Colonia
+                            <span class="oculto"> - Campo obligatorio</span>
+                        </label>
+                    </div>
+                    <select class="form__select" id="form-007" aria-describedby="valsel--007" required="">
                         <option selected="">Selecciona una opción</option>
-                        <option>Aquí va la opción 01</option>
+                        <option value="Opción 1">Opción 1</option>
+                        <option value="Opción 2">Opción 2</option>
                     </select>
+                    <!--span class="form__validar--false" id="valsel--007" role="alert">Menasaje de
+                        asistencia</span-->
                 </div>
+
                 <div class="form__grupo">
-                    <label for="form-008" class="cajaBasico__celdaBold">
-                        <span class="cajaBase__obligatorio--rojo"> * </span>
-                        Calle
-                    </label>
-                    <input id="form-008" class="form__control" name="form-008" placeholder="Ingresa los datos" type="text">
+                    <div class="form__header">
+                        <label for="form-008" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Calle
+                            <span class="oculto"> - Campo obligatorio</span>
+                        </label>
+                        <div class="form__headertools">
+                        </div>
+                    </div>
+                    <input type="text" id="form-008" class="form__control" placeholder="Ingresa los datos" aria-required="true"
+                        aria-describedby="val--008" required="">
+                    <!--span class="form__validar--false" id="val-008" role="alert"></span-->
                 </div>
+
                 <div class="form__grupo">
-                    <label for="form-009" class="cajaBasico__celdaBold">
-                        <span class="cajaBase__obligatorio--rojo"> * </span>
-                        Número exterior
-                    </label>
-                    <input id="form-009" class="form__control" name="form-009" placeholder="Ingresa los datos" type="text">
+                    <div class="form__header">
+                        <label for="form-009" class="form__label">
+                            <span class="form__requerido" aria-hidden="true">*</span>
+                            Número exterior
+                            <span class="oculto"> - Campo obligatorio</span>
+                        </label>
+                        <div class="form__headertools">
+                        </div>
+                    </div>
+                    <input id="form-009" type="text" class="form__control" name="form-009" placeholder="Ingresa los datos" aria-required="true"
+                        aria-describedby="val--009" required="">
+                    <!--span class="form__validar--false" id="val-009" role="alert"></span-->
                 </div>
+
                 <div class="form__grupo">
-                    <div class="label--opcional">
-                        <label class="cajaBasico__celdaBold" for="numInt">
+                    <div class="form__header">
+                        <label for="form-010" class="form__label">
                             No. Interior
                         </label>
-                        <span class="form__opcional"> Opcional </span>
+                        <div class="form__headertools">
+                            <span class="form__opcional">Opcional</span>
+                        </div>
                     </div>
-                    <input class="form__control" id="numInt" name="numInt" placeholder="Ingresa los datos" type="text">
+                    <input id="form-010" type="text" class="form__control" name="form-010" placeholder="Ingresa los datos">
+                    <!--Error: form__validar--false -->
+                    <!--Acierto: form__validar--true -->
+                    <!--span class="form__validar--false">Mensaje de error</span-->
                 </div>
+
                 <div class="form__grupo">
-                    <div class="label--opcional">
-                        <label class="cajaBasico__celdaBold" for="vialOpcional">
+                    <div class="form__header">
+                        <label for="form-011" class="form__label">
                             Entre calles
                         </label>
-                        <span class="form__opcional"> Opcional </span>
+                        <div class="form__headertools">
+                            <span class="form__opcional">Opcional</span>
+                        </div>
                     </div>
-                    <input class="form__control" id="vialOpcional" name="vialOpcional" placeholder="Ingresa los datos"
-                        type="text">
+                    <input id="form-011" type="text" class="form__control" name="form-011" placeholder="Ingresa los datos">
+                    <!--Error: form__validar--false -->
+                    <!--Acierto: form__validar--true -->
+                    <!--span class="form__validar--false">Mensaje de error</span-->
                 </div>
             </div>
         </div>
@@ -613,6 +659,9 @@
                 <img src="./assets/icons-base/arrow--right.svg" alt="">
             </button>
         </div>
+        
+    
+        </form>
         </main>
 
         <!-- FOOTER -->

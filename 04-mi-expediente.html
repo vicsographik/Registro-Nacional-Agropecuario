@@ -60,44 +60,26 @@
             </section>
             <section class="subheader">
                 <div class="subheader__contenedor">
+                 <details class="mexico__details navHeader__details">
+                        <summary class="mexico__summary">
+                            <span class="mexico__span">Menú</span>
+                        </summary>
+                        <nav class="navHeader">
+                            <ul class="navHeader__ul mexico__detailsCont">
+                                <li class="navHeader__li">
+                                    <a href="#" class="navHeader__a">Inicio</a>
+                                </li>
+                                <li class="navHeader__li">
+                                    <a href="#" class="navHeader__a" aria-current="page">Trámites y servicios</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </details>
 
-                    <div class="idioma">
-                        <div class="idioma__cont idioma--sm">
-                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
-                            <select class="idioma__select" id="idioma-select">
-                                <option lang="es">Es</option>
-                                <option lang="en">En</option>
-                                <option lang="de">De</option>
-                                <option lang="it">It</option>
-                                <option lang="fr">Fr</option>
-                                <option lang="pt">Pt</option>
-                            </select>
-                            <div class="idioma__marker" aria-hidden="true">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="idioma__cont idioma--lg">
-                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
-                            <select class="idioma__select" id="idioma-select">
-                                <option lang="es">Español</option>
-                                <option lang="en">English</option>
-                                <option lang="de">Deutsch</option>
-                                <option lang="it">Italiano</option>
-                                <option lang="fr">Français</option>
-                                <option lang="pt">Português</option>
-                            </select>
-                            <div class="idioma__marker" aria-hidden="true">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </div>
+                    <button type="button" class="boton__limpio">
+                        <img src="assets/icons-base/accesibilidad.svg" alt="" aria-hidden="true" class="icono--32">
+                        <span class="oculto">Opciones de accesibilidad</span>
+                    </button>
 
                     <!-- class=detailsClickOut cierra Details si se cliquea fuera-->
                     <!-- temaVerde o temaRojo según sea el caso -->
@@ -352,7 +334,7 @@
             </button>
             <div class="menuMain__header">
                 <div class="menuMain__headerCont">Registro Nacional Agropecuario</div>
-                <div>Ventanilla de trámites</div>
+                <div class="menuMain__txt ">Ventanilla de trámites</div>
             </div>
             <ul class="menuMain__lista">
                 <li class="menuMain__item">
@@ -376,35 +358,21 @@
                     <img src="assets/icons/close.svg" alt="" aria-hidden="true" class="">
                 </button>
                 <hr class="hr">
-                <div class="menuMovil__tit">Mi PNC</div>
+                <div class="menuMovil__tit">Mis trámites y servicios</div>
                 <ul class="menuMovil__list">
-                    <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/money.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Central de Pagos</span>
-                    </a>
-                </li>
-
                 <li class="menuMovil__item">
                     <a href="#" class="menuMovil__link">
                         <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="ico--blanco--24">
                         <span class="menuMain__txt">Ventanilla digital</span>
                     </a>
                 </li>
-
-                <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/folder.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Expediente</span>
-                    </a>
-                </li>
                 </ul>
                 <hr class="hr">
-                <div class="menuMovil__tit">Plataforma nacional de catastrro</div>
+                <div class="menuMovil__tit">Registro Nacional Agropecuario</div>
                 <ul class="menuMovil__list">
                     <li class="menuMovil__item">
                     <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                        <img src="assets/icons-base/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
                         <span class="menuMain__txt">Inicio</span>
                     </a>
                 </li>
