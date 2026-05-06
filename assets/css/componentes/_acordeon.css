@@ -30,3 +30,70 @@
   .acordeon__soloMovil [class^="acordeon__gatillo"]:after { content:none;}
 }
 
+/* CONTENEDOR */
+.acordeon {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ITEM */
+.acordeon__item {
+  background: #f5f5f5;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* BOTÓN */
+.acordeon__btn {
+  width: 100%;
+  border: none;
+  background: #f1f1f1;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1d3557;
+  cursor: pointer;
+  position: relative;
+}
+
+/* HOVER */
+.acordeon__btn:hover {
+  background: #e9ecef;
+}
+
+/* ICONO (tu SVG) */
+.acordeon__btn::after {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("assets/icons-base/select-down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+/* GIRO */
+.acordeon__btn[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+/* PANEL */
+.acordeon__panel {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  background: #fff;
+}
+
+/* CONTENIDO */
+.acordeon__body {
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+

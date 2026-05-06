@@ -105,7 +105,7 @@ nav.menu-container a.menu-btn { right:2rem; top:83px; width:2.5rem; left:auto;}
 }
 
 /*MAIN*/
-main { height:100%; width:100%; margin:auto;}
+.main {padding:24px 56px 0 24px; background-color:var(--blanco); max-width:var(--MaxWidth); width:100%; margin:0 auto} 
 .wrapper--aside main { padding:calc( 24px + var(--subheaderTop)) 16px 48px;}
 
 /*FOOTER*/

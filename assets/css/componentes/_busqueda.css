@@ -31,3 +31,352 @@
 @media (max-width:1300px) {
     .buscar01__botonera { flex-direction:column; align-items:start;}
 }
+
+.bandeja--params {
+    padding: 1rem 0 0;
+}
+
+/* ---------------- HEAD ---------------- */
+
+.head-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.head-title--txt {
+    flex-grow: 1;
+    margin-bottom: 1.4rem;
+}
+
+.head-title--txt h1 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 .9rem;
+}
+
+.head-title--button {
+    text-align: right;
+}
+
+/* ---------------- SEARCH ---------------- */
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    width: 100%;
+    gap: 1rem;
+    margin: .5rem 0 1.5rem;
+    line-height: 150%;
+}
+
+/* ---------------- FORM ---------------- */
+
+.form-item-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--neutro400);
+    background: var(--neutro200);
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0 16px;
+    margin: .5rem 0 0;
+}
+
+.form-item-wrapper:focus-within {
+    outline: 1px solid var(--primario);
+    border-color: var(--primario);
+}
+
+.form-item {
+    width: 100%;
+    padding: .5em 2.5em .5em .5em;
+    box-sizing: border-box;
+    color: rgb(186, 183, 183);
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.form-item:focus {
+    outline: 2px solid var(--primario);
+}
+
+.clear-button {
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    color: var(--primario);
+    margin-top: 2px;
+    display: none;
+}
+
+.form-item.buscar:not(:placeholder-shown) + .clear-button {
+    display: block;
+}
+
+.clear-button:hover {
+    opacity: 0.8;
+}
+
+.clear-button:focus {
+    outline: 2px solid var(--primario);
+}
+
+/* ---------------- BOTONES ---------------- */
+
+.btn-blanco {
+    background: #FFF;
+    border: 1px solid var(--primario);
+    color: var(--primario) !important;
+}
+
+.btn-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    cursor: not-allowed !important;
+    filter: grayscale(1);
+}
+
+/* ---------------- FILTROS ---------------- */
+
+.filtro-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.filtro-menu > li {
+    position: relative;
+}
+
+.filtro-menu--concept,
+.limpiar-filtros {
+    position: relative;
+    padding: .6rem 2.5rem .6em 1rem;
+    background-color: #FFF;
+    border: 1px solid var(--neutro500);
+    border-radius: 2rem;
+    min-width: 6.5rem;
+    cursor: pointer;
+}
+
+.filtro-menu--concept {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .8rem center;
+    background-size: 1.2em;
+}
+
+.filtro-menu--concept:focus,
+.dateSelected:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 4px;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.filtro-menu--concept:focus {
+    border-radius: 2rem;
+}
+
+.limpiar-filtros {
+    background-image: none;
+    padding: 0 1rem !important;
+    border: none !important;
+}
+
+.filtro-menu .limpiar-filtros button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* ---------------- DROPDOWN ---------------- */
+
+.boxSelector {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid var(--primario);
+    min-width: 19rem;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------- UTILIDADES ---------------- */
+
+.d-none {
+    display: none !important;
+}
+
+/* ---------------- CHECKBOX ---------------- */
+
+.form__checkbox,
+.filtro-menu--concept-container input[type="checkbox"] {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* ---------------- CALENDARIO ---------------- */
+
+.infoNavegacion {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.dia:focus {
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.infoNavegacion .iconBox:focus {
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    outline: 2px solid #007bff !important;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.grid-dias-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: .75em;
+    text-align: center;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.grid-dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-dias .dia {
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: .75em;
+    margin: .05rem;
+    width: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-dias .dia:hover:not(.empty-day):not(.selected) {
+    background-color: var(--neutro300);
+}
+
+.grid-dias .dia.selected {
+    background-color: var(--primario);
+    color: white;
+}
+
+.grid-dias .dia.empty-day {
+    visibility: hidden;
+    cursor: default;
+}
+
+.dia.in-range {
+    background-color: color-mix(in srgb, var(--primario) 20%, white);
+}
+
+.grid-dias .dia.other-month {
+    opacity: 0.5;
+}
+
+.range {
+    background-color: var(--primario100);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1200px) {
+
+    .bandeja.width-contain {
+        padding: 6rem 0 6rem 1rem;
+        width: 70%;
+    }
+
+    .bandeja--params .fila {
+        flex-direction: column;
+    }
+
+    button.close-filtros-btn,
+    #toggleFiltrosBtn {
+        display: flex;
+    }
+
+    .filtros {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        overflow-y: auto;
+        background-color: #FFF;
+        border-top: 1px solid #ccc;
+        z-index: 1000;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-out;
+        padding: 50px 20px 15px;
+    }
+
+    .filtros.open {
+        transform: translateY(0);
+        box-shadow: 0px -10px 40px rgba(0, 0, 0, 0.41);
+    }
+}
+
+@media (max-width: 939px) {
+
+    .filtro-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bandeja.width-contain {
+        padding: 3rem 0 6rem 1rem;
+        width: 90%;
+    }
+}
+
+@media (max-width:768px) {
+
+    .head-title {
+        flex-direction: column;
+    }
+
+    .head-title--button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .filtros .fila.r-btns {
+        flex-direction: column;
+    }
+}

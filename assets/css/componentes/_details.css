@@ -15,3 +15,9 @@ details[open] .openHide { display:none;}    /*Oculto en Details open / Mostrado 
 
 /*Linea entre summary y contenido*/
 .details__hr { border-top:solid 1px var(--neutro400); margin:16px 0;}
+
+
+.details__tit {
+  font-size: 1.25rem;
+  font-weight: 500;
+}

@@ -1,20 +1,116 @@
-/*RUTA o BREADCRUMB*/
-.ruta__cont { margin:0px; padding:0; display:flex; align-items:center; justify-content:start; margin-bottom:40px;}
-.ruta__lista { display:flex; list-style-type:none; padding:0px; margin:auto; width:100%;}
-.ruta__li { display:flex; align-items:center; line-height:normal; color:var(--neutro8800); padding:4px 0;}
-.ruta__li:after { content:""; width:24px; height:24px; background-image:url(../../icons-base/chevron--right.svg); background-repeat:no-repeat; background-position:center; display:inline-block; opacity:0.55; margin:0 8px 0 16px; }
-.ruta__li:last-of-type::after { content:none;}
-.ruta__li[aria-current] { }
-.ruta__home { width:24px; filter:var(--filtroPrimario);}
-.ruta__a { display:flex; align-items:center; text-decoration:none; color:var(--neutro800); font-weight:600; }
-a.ruta__a:hover { text-decoration:underline; color:var(--neutro800)}
-a.ruta__a:hover .ruta__home { opacity:0.8;}
+/* =========================
+   BREADCRUMB (RUTA)
+========================= */
 
-.ruta__cont--overflow { overflow-x:auto; width:100%; white-space:nowrap;  scrollbar-color:var(--neutro500) #FFF; scrollbar-width:thin; padding-bottom:8px;}
-
-.ruta__home { filter: var(--filtroPrimario);}
-@media (max-width:767.9px){
-    .ruta__cont { margin-bottom:20px;}
+.ruta {
+  width: 100%;
 }
 
-/*fata una ruta cuando va en fondo de color Primario, ej, sobre un jumbotron*/
+/* contenedor con scroll en mobile */
+.ruta__cont {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutro500) #fff;
+}
+
+/* lista */
+.ruta__lista {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* item */
+.ruta__li {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--neutro800);
+  line-height: 1.2;
+}
+
+/* separador */
+/* .ruta__li::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url(../../icons-base/chevron--right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  margin: 0 10px;
+} */
+
+/* quitar separador al último */
+/* .ruta__li:last-of-type::after {
+  content: none;
+} */
+
+/* link */
+.ruta__a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--neutro800);
+  font-weight: 500;
+  gap: 6px;
+}
+
+/* hover */
+.ruta__a:hover {
+  text-decoration: underline;
+}
+
+/* icono home */
+.ruta__home {
+  width: 20px;
+  height: 20px;
+  filter: var(--filtroPrimario);
+}
+
+/* estado actual */
+.ruta__li[aria-current="page"] {
+  font-weight: 600;
+  color: var(--neutro900);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 767.9px) {
+  .ruta__cont {
+    margin-bottom: 20px;
+  }
+
+  .ruta__li {
+    font-size: 0.85rem;
+  }
+
+  .ruta__li::after {
+    margin: 0 6px;
+  }
+}
+
+/* =========================
+   VARIANTE SOBRE FONDO OSCURO
+========================= */
+.ruta--invertida .ruta__li,
+.ruta--invertida .ruta__a {
+  color: #fff;
+}
+
+.ruta--invertida .ruta__li::after {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.ruta--invertida .ruta__home {
+  filter: brightness(0) invert(1);
+}

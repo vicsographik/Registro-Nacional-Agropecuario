@@ -9,6 +9,7 @@
 .cajaBasica--20 { padding:20px;}
 .cajaBasica--24 { padding:24px;}
 .cajaBasica--32 { padding:32px;}
+.cajaBasica--3224 { padding:32px 24px;}
 .cajaBasica--3248 { padding:32px 48px;}
 .caja__tit { font-size:1.5rem; font-weight:600;}
 .caja__desc { color:var(--neutro700);}
@@ -46,6 +47,11 @@
 .cajaFont--32 { padding:32px;}
 .cajaFont--40 { padding:40px;}
 .cajaFont--3248 { padding:32px 48px;}
+
+.cajaSombra {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+  border-radius: 16px;
+}
 
 @media (max-width:767.9px) {
     [class*="cajaFont--"] { padding:16px;}

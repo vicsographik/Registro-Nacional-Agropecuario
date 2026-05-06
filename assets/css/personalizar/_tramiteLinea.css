@@ -1,0 +1,32 @@
+
+.cajaAvance__info {
+  display: flex;
+  align-items: center;
+}
+
+.cajaAvance__info .cajaAvance__subtit {
+  color: var(--neutro700);
+  margin: 0 8px;
+}
+
+.cajAvance__img{
+  height: 6px;
+  width: 6px;
+}
+
+.detalle__botonera {
+  display: flex;
+  justify-content: end;
+  color: var(--pguinda900);
+  margin-bottom: 24px;
+}
+
+.detalle__botonera--img {
+  filter: var(--filtroPrimario);
+}
+
+
+.requisitos--ul {
+  list-style-type: disc;
+}
+

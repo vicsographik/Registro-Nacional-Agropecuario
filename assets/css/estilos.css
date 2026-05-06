@@ -15,6 +15,7 @@
 @import "componentes/_aviso.css";
 @import "componentes/_bandeja-filtros.css";
 @import "componentes/_bandeja-filtro-calendario.css";
+@import "componentes/_busqueda.css";
 @import "componentes/_botonera.css";
 @import "componentes/_cajas.css";
 @import "componentes/_cargar.css";
@@ -24,9 +25,11 @@
 @import "componentes/_idioma.css";
 @import "componentes/_pildora.css";
 @import "componentes/_progresos.css";
+@import "componentes/_paginacion.css";
 @import "componentes/_tablas.css";
 @import "componentes/_timeline.css";
 @import "componentes/_titulares.css";
+@import "componentes/_tab.css";
 @import "componentes/_tooltip.css";
 @import "componentes/_tooltip1.css";
 @import "componentes/_tooltip2.css";
@@ -40,6 +43,4 @@
 @import "base/_helpers.css";
 
 /*PERSONALIZAR*/
-@import "personalizar/_personalizar.css";
-@import "personalizar/_formato-imprimible.css";
-@import "personalizar/_home.css";
+@import "personalizar/_tramiteLinea.css";

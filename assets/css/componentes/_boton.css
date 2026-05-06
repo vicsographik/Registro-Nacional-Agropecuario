@@ -117,7 +117,7 @@
 
 
 /*VARIANTES*/
-.boton__vertical  { display:flex; flex-direction:column; margin:auto; font-size:.75rem;}
+.boton__vertical  { display:flex; flex-direction:column; margin:auto; font-size:.75rem; color: var(--pguinda900);}
 .boton__vertical img { filter: var(--filtroPrimario);}
 .inline { min-height: 40px;}
 
