@@ -728,6 +728,159 @@
                 </div>
               </div>
             </div>
+            <ul
+              class="filtro-menu mt--24"
+              style="justify-content: flex-end; gap: 2rem"
+            >
+              <li class="filtro-menu-li filtro-menu--tramite">
+                Fecha de solicitud
+                <div
+                  class="submenu boxSelector rowgap--16"
+                  style="display: none"
+                >
+                  <div class="form__grupo">
+                    <label
+                      for="mi_check31"
+                      class="form__label form__label--normal"
+                    >
+                      <input
+                        class="form__checkbox"
+                        type="checkbox"
+                        id="mi_check31"
+                      />
+                      Tipo 1
+                    </label>
+                  </div>
+
+                  <div class="form__grupo">
+                    <label
+                      for="mi_check32"
+                      class="form__label form__label--normal"
+                    >
+                      <input
+                        class="form__checkbox"
+                        type="checkbox"
+                        id="mi_check32"
+                      />
+                      Tipo 2
+                    </label>
+                  </div>
+
+                  <div class="form__grupo">
+                    <label
+                      for="mi_check33"
+                      class="form__label form__label--normal"
+                    >
+                      <input
+                        class="form__checkbox"
+                        type="checkbox"
+                        id="mi_check33"
+                      />
+                      Tipo 3
+                    </label>
+                  </div>
+
+                  <hr />
+
+                  <div class="calendar-actions">
+                    <button class="boton__primario confirm" disabled>
+                      Aplicar
+                    </button>
+                    <button class="boton__primario--borde reset">
+                      Restablecer
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="filtro-menu-li filtro-menu--estatus">
+                Estatus
+                <div
+                  class="submenu boxSelector rowgap--16"
+                  style="display: none"
+                >
+                  <div class="form__grupo">
+                    <label
+                      for="mi_check21"
+                      class="form__label form__label--normal"
+                    >
+                      <input
+                        class="form__checkbox"
+                        type="checkbox"
+                        id="mi_check21"
+                      />
+                      En revisión
+                    </label>
+                  </div>
+
+                  <div class="form__grupo">
+                    <label
+                      for="mi_check22"
+                      class="form__label form__label--normal"
+                    >
+                      <input
+                        class="form__checkbox"
+                        type="checkbox"
+                        id="mi_check22"
+                      />
+                      Aprobada
+                    </label>
+                  </div>
+
+                  <div class="form__grupo">
+                    <label
+                      for="mi_check23"
+                      class="form__label form__label--normal"
+                    >
+                      <input
+                        class="form__checkbox"
+                        type="checkbox"
+                        id="mi_check23"
+                      />
+                      Rechazada
+                    </label>
+                  </div>
+
+                  <hr />
+
+                  <div class="calendar-actions">
+                    <button
+                      id="confirm-date-range"
+                      class="boton__primario confirm"
+                      disabled
+                    >
+                      Aplicar
+                    </button>
+                    <button
+                      id="reset-date-range"
+                      class="boton__primario--borde reset"
+                    >
+                      Restablecer
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="limpiar-filtros">
+                <button>
+                  Borrar filtros &nbsp;<svg
+                    focusable="false"
+                    preserveAspectRatio="xMidYMid meet"
+                    fill="currentColor"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 12H14V24H12zM18 12H20V24H18z"></path>
+                    <path
+                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                    ></path>
+                    <title>Trash can</title>
+                  </svg>
+                </button>
+              </li>
+            </ul>
           </div>
 
           <div class="fila r-btns">
@@ -1396,6 +1549,7 @@
     <script src="assets/js/header-footer-details.js"></script>
     <script src="assets/js/details-deskOpen.js"></script>
     <script src="assets/js/dialog.js"></script>
+    <script src="assets/js/desplegable.js"></script>
     <script src="assets/js/aside-show-hide.js"></script>
     <script src="assets/js/aside-movil-height.js"></script>
     <script src="assets/js/tabla-responsiva-sombreado.js"></script>
