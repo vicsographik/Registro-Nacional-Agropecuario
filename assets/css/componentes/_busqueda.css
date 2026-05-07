@@ -87,8 +87,8 @@
 }
 
 .form-item-wrapper:focus-within {
-    outline: 1px solid var(--primario);
-    border-color: var(--primario);
+    outline: 1px solid var(--principal);
+    border-color: var(--principal);
 }
 
 .form-item {
@@ -105,7 +105,7 @@
 }
 
 .form-item:focus {
-    outline: 2px solid var(--primario);
+    outline: 2px solid var(--principal);
 }
 
 .clear-button {
@@ -113,7 +113,7 @@
     cursor: pointer;
     padding: 0;
     border: none;
-    color: var(--primario);
+    color: var(--principal);
     margin-top: 2px;
     display: none;
 }
@@ -127,15 +127,15 @@
 }
 
 .clear-button:focus {
-    outline: 2px solid var(--primario);
+    outline: 2px solid var(--principal);
 }
 
 /* ---------------- BOTONES ---------------- */
 
 .btn-blanco {
     background: #FFF;
-    border: 1px solid var(--primario);
-    color: var(--primario) !important;
+    border: 1px solid var(--principal);
+    color: var(--principal) !important;
 }
 
 .btn-disabled {
@@ -213,7 +213,7 @@
     width: max-content;
     padding: 15px;
     background-color: white;
-    border: 1px solid var(--primario);
+    border: 1px solid var(--principal);
     min-width: 19rem;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -290,7 +290,7 @@
 }
 
 .grid-dias .dia.selected {
-    background-color: var(--primario);
+    background-color: var(--principal);
     color: white;
 }
 
@@ -300,7 +300,7 @@
 }
 
 .dia.in-range {
-    background-color: color-mix(in srgb, var(--primario) 20%, white);
+    background-color: color-mix(in srgb, var(--principal) 20%, white);
 }
 
 .grid-dias .dia.other-month {
@@ -308,7 +308,7 @@
 }
 
 .range {
-    background-color: var(--primario100);
+    background-color: var(--pguinda100);
 }
 
 /* ---------------- RESPONSIVE ---------------- */

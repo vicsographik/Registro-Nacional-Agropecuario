@@ -99,28 +99,40 @@ p.bandeja-ficha—-titulo {
     display: flex;
     justify-content: space-around;
 }
-
-.filtro-menu>li {
+.li-filtro {
     position: relative;
     cursor: pointer;
-    padding: .6rem 2.5rem .6em 1rem;
+    padding: .6rem 2.5rem .6rem 1rem;
     background-color: #FFF;
     border: 1px solid var(--neutro500);
     border-radius: 2rem;
+
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+
     background-repeat: no-repeat;
     background-position: right .8rem center;
     background-size: 1.2em;
-    transition: background-image 0.3s ease-in-out;
+
+    transition:
+        background-image .3s ease-in-out,
+        border-color .2s ease,
+        box-shadow .2s ease;
 }
 
-.filtro-menu>li:focus-within {
+.li-filtro:focus-within {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
 }
 
-.filtro-menu li input[type="text"],
-.filtro-menu li .filtro-select {
+/* Inputs */
+.li-filtro input[type="text"],
+.li-filtro .filtro-select {
     font-size: 100%;
+}
+
+.li-filtro input[type="text"],
+.li-filtro input[type="text"]:focus-visible {
+    outline: none;
+    border: none;
 }
 
 .filtro-menu li input[type="text"],

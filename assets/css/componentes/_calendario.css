@@ -112,3 +112,111 @@
     color: #fff;
   }
   .dp-day.selected:hover { background: var(--principal); }
+
+
+  /* Nueva versión */
+
+  .customdate {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+}
+
+.customdate .dateSelected {
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    transition: 0.5s;
+    border: 1px solid var(--neutro400);
+    height: 2.5em;
+    font-size: 1em;
+    padding: 6px 32px 6px 12px;
+    width: 100%;
+}
+
+.customdate .dateSelected img, .customdate .dateSelected i {
+    position: absolute;
+    right: 8px;
+}
+
+.boxSelector {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 2.6rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid var(--neutro400);
+    min-width: 19rem;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.customdate .boxSelector .infoAnio {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.customdate .boxSelector .infoAnio .iconBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.5s;
+}
+
+.customdate .boxSelector .infoAnio .textAnio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.customdate .boxSelector .anioSelector {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    min-height: 100px;
+    max-height: 500px;
+    border-radius: 0 0 15px 15px;
+    background: white;
+    overflow-y: auto;
+}
+
+.infoMes {
+    margin: 0 0 1rem;
+}
+
+.infoMes .row {
+    margin-top: .5rem;
+}
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: .75em;
+    text-align: center;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.grid-dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}

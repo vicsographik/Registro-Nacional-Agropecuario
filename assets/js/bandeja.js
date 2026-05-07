@@ -1,584 +1,528 @@
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // --- CONSTANTES GLOBALES DE RANGO ---
-        const HOY = new Date();
-        HOY.setHours(0, 0, 0, 0);
-
-        // Límites estrictos de navegación (1er día del mes)
-        const PRIMER_DIA_MES_ACTUAL = new Date(HOY.getFullYear(), HOY.getMonth(), 1);
-        const LIMITE_PASADO_MES = new Date(HOY.getFullYear() - 1, HOY.getMonth(), 1);
-
-        // Límite de día para deshabilitación de celdas (la fecha exacta de hace un año)
-        const UN_ANIO_ATRAS = new Date(HOY.getFullYear() - 1, HOY.getMonth(), HOY.getDate());
-        // --- FIN CONSTANTES GLOBALES DE RANGO ---
-
-        const calendarContainer = document.querySelector('.customdate.date-start');
-
-        if (!calendarContainer) return;
-
-        // --- SELECTORES GLOBALES ---
-        const boxSelector = calendarContainer.querySelector('.boxSelector');
-        const arrowLeft = calendarContainer.querySelector('.infoNavegacion .left-arrow');
-        const arrowRight = calendarContainer.querySelector('.infoNavegacion .right-arrow');
-
-        // SELECTORES DE BOTONES NUEVOS
-        const confirmButton = calendarContainer.querySelector('#confirm-date-range');
-        const resetButton = calendarContainer.querySelector('#reset-date-range');
-
-        const dateStartElement = calendarContainer.querySelector('.dateSelected');
-        const startMes = dateStartElement.querySelector('.date .mes');
-        const startDia = dateStartElement.querySelector('.date .dia');
-        const startAnio = dateStartElement.querySelector('.date .anio');
-        const startPlaceholder = dateStartElement.querySelector('.placeholder');
-        const startDisplay = dateStartElement.querySelector('.date');
-
-        const dateEndElement = document.querySelector('.customdate.date-end .dateSelected');
-        let endMes, endDia, endAnio, endPlaceholder, endDisplay;
-
-        if (dateEndElement) {
-            endMes = dateEndElement.querySelector('.date .mes');
-            endDia = dateEndElement.querySelector('.date .dia');
-            endAnio = dateEndElement.querySelector('.date .anio');
-            endPlaceholder = dateEndElement.querySelector('.placeholder');
-            endDisplay = dateEndElement.querySelector('.date');
+document.addEventListener('DOMContentLoaded', function () {
+    // Guardamos los nombres originales antes de que nada los cambie
+    document.querySelectorAll('filtro-menu--concept, .customdate').forEach(contenedor => {
+        const header = contenedor.querySelector('.dateSelected, .filtro-menu--concept');
+        if (header) {
+            // Guardamos el texto real (ej: "Estatus", "Tipo de trámite")
+            contenedor.dataset.originalText = header.textContent.trim();
         }
+    });
+    // 1. GLOBALES (Para que otros scripts no den error)
+    window.HOY = new Date();
+    window.HOY.setHours(0, 0, 0, 0);
+    window.RANGO_MINIMO = new Date(1970, 0, 1);
+    window.RANGO_MAXIMO = window.HOY;
+    window.rangeSelected = { start: null, end: null };
 
-        const mesDisplay1 = calendarContainer.querySelector('.month-one .mes-display-1');
-        const anioDisplay1 = calendarContainer.querySelector('.month-one .anio-display-1');
-        const gridDias1 = calendarContainer.querySelector('.month-one .grid-dias-1');
+    let currentDisplayDate = new Date(window.HOY.getFullYear(), window.HOY.getMonth(), 1);
 
-        const meses = [
-            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-        ];
+    // 2. SELECTORES DEL CALENDARIO
+    const calendarContainer = document.querySelector('.customdate.date-start');
+    if (!calendarContainer) return;
 
-        let currentDisplayDate = new Date(HOY.getFullYear(), HOY.getMonth(), 1);
+    const boxSelector = calendarContainer.querySelector('.boxSelector');
+    const dateStartElement = calendarContainer.querySelector('.dateSelected');
+    const gridDias1 = calendarContainer.querySelector('.grid-dias-1');
+    const arrowLeft = calendarContainer.querySelector('.infoNavegacion .iconBox:first-child');
+    const arrowRight = calendarContainer.querySelector('.infoNavegacion .iconBox:last-child');
+    const mesDisplay1 = calendarContainer.querySelector('.mes-display-1');
+    const anioDisplay1 = calendarContainer.querySelector('.anio-display-1');
 
-        // Variables para almacenar las fechas SELECCIONADAS visualmente
-        let rangeSelected = {
-            start: null,
-            end: null
-        };
-        // Variables para almacenar las fechas CONFIRMADAS en el input
-        let rangeConfirmed = {
-            start: null,
-            end: null
-        };
+    [arrowLeft, arrowRight].forEach(arrow => {
+        if (arrow) {
+            // 1. FORZAR FOCO: Sin esto, el Tab se las brinca
+            arrow.tabIndex = 0;
+            arrow.setAttribute('role', 'button');
 
+            // 2. EVENTO DE TECLADO: Enter y Espacio
+            arrow.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault(); // Evita que la página salte
+                    arrow.click();      // Dispara la navegación del mes
 
-        // --- LÓGICA DE DÍAS Y VISTAS (Se mantiene igual) ---
-
-        function createDateFromDataset(diaElement) {
-            const dia = parseInt(diaElement.dataset.dia);
-            const mes = parseInt(diaElement.dataset.mes);
-            const anio = parseInt(diaElement.dataset.anio);
-            const newDate = new Date(anio, mes, dia);
-            newDate.setHours(0, 0, 0, 0);
-            return newDate;
-        }
-
-        // APROXIMADAMENTE LÍNEA 157
-        // Formatea la fecha para el display (CAMBIADO para dd/mm/aaaa)
-        function formatRangeDate(date) {
-            if (!date) return { dia: 'Día', mes: 'Mes', anio: 'Año', full: false };
-
-            // Obtener componentes de la fecha, asegurando dos dígitos con .padStart(2, '0')
-            const dia = String(date.getDate()).padStart(2, '0');
-            const mes = String(date.getMonth() + 1).padStart(2, '0'); // +1 porque getMonth() es base 0
-            const anio = date.getFullYear();
-
-            // El formato deseado es dd/mm/aaaa
-            const fullFormattedText = `${dia}/${mes}/${anio}`;
-
-            // Retornamos también los componentes por separado, aunque ya no se usen.
-            // Usamos el texto de mes y año directamente del Date para consistencia si se usa.
-            return { dia: dia, mes: mes, anio: anio, full: fullFormattedText };
-        }
-
-        // Actualiza el texto en los campos de fecha (Ahora usa rangeConfirmed)
-        function updateDateDisplays() {
-            const startDateInfo = formatRangeDate(rangeConfirmed.start);
-            const endDateInfo = formatRangeDate(rangeConfirmed.end);
-
-            // Display de INICIO
-            if (rangeConfirmed.start) {
-                startPlaceholder.style.display = 'none';
-                startDisplay.style.display = 'inline';
-                startMes.textContent = startDateInfo.full;
-                // Ocultar elementos sobrantes
-                startDia.style.display = 'none';
-                startAnio.style.display = 'none';
-                startDisplay.querySelector('span:nth-child(2)').style.display = 'none';
-                startDisplay.querySelector('span:nth-child(4)').style.display = 'none';
-            } else {
-                startPlaceholder.style.display = 'inline';
-                startDisplay.style.display = 'none';
-                // Restablecer texto visible (QUITAMOS EL CÓDIGO QUE RESTAURABA LOS TEXTOS 'Mes', 'Día', 'Año')
-                startMes.textContent = ''; // Limpiar el contenido por si acaso
-                startDia.textContent = ''; // Limpiar el contenido por si acaso
-                startAnio.textContent = ''; // Limpiar el contenido por si acaso
-                startDia.style.display = 'inline';
-                startAnio.style.display = 'inline';
-                startDisplay.querySelector('span:nth-child(2)').style.display = 'inline';
-                startDisplay.querySelector('span:nth-child(4)').style.display = 'inline';
-            }
-
-            // Display de FIN
-            if (dateEndElement) {
-                if (rangeConfirmed.end) {
-                    endPlaceholder.style.display = 'none';
-                    endDisplay.style.display = 'inline';
-                    endMes.textContent = endDateInfo.full;
-                    // Ocultar elementos sobrantes
-                    endDia.style.display = 'none';
-                    endAnio.style.display = 'none';
-                    endDisplay.querySelector('span:nth-child(2)').style.display = 'none';
-                    endDisplay.querySelector('span:nth-child(4)').style.display = 'none';
-                } else {
-                    endPlaceholder.style.display = 'inline';
-                    endDisplay.style.display = 'none';
-                    // Restablecer texto visible (QUITAMOS EL CÓDIGO QUE RESTAURABA LOS TEXTOS 'Mes', 'Día', 'Año')
-                    endMes.textContent = ''; // Limpiar el contenido por si acaso
-                    endDia.textContent = ''; // Limpiar el contenido por si acaso
-                    endAnio.textContent = ''; // Limpiar el contenido por si acaso
-                    endDia.style.display = 'inline';
-                    endAnio.style.display = 'inline';
-                    endDisplay.querySelector('span:nth-child(2)').style.display = 'inline';
-                    endDisplay.querySelector('span:nth-child(4)').style.display = 'inline';
-                }
-            }
-        }
-
-        // Aplica estilos visuales a los días (Usa rangeSelected)
-        function applyRangeVisuals() {
-            calendarContainer.querySelectorAll('.grid-dias .dia').forEach(el => {
-                el.classList.remove('selected', 'range-start', 'range-end', 'in-range');
-            });
-            if (!rangeSelected.start) return;
-
-            const grids = [gridDias1];
-
-            grids.forEach(grid => {
-                const startDay = grid.querySelector(`.dia[data-dia="${rangeSelected.start.getDate()}"][data-mes="${rangeSelected.start.getMonth()}"][data-anio="${rangeSelected.start.getFullYear()}"]`);
-                if (startDay) {
-                    startDay.classList.add('selected', 'range-start');
-                }
-                if (rangeSelected.end) {
-                    const endDay = grid.querySelector(`.dia[data-dia="${rangeSelected.end.getDate()}"][data-mes="${rangeSelected.end.getMonth()}"][data-anio="${rangeSelected.end.getFullYear()}"]`);
-                    if (endDay) {
-                        endDay.classList.add('selected', 'range-end');
-                    }
+                    // Mantenemos el foco después del clic para que no se pierda al redibujar
+                    setTimeout(() => arrow.focus(), 10);
                 }
             });
 
-            if (rangeSelected.end) {
-                const allDays = calendarContainer.querySelectorAll('.grid-dias .dia:not(.empty-day):not(.disabled-day)');
-
-                allDays.forEach(diaElement => {
-                    const dayDate = createDateFromDataset(diaElement);
-
-                    const olderDate = Math.min(rangeSelected.start.getTime(), rangeSelected.end.getTime());
-                    const newerDate = Math.max(rangeSelected.start.getTime(), rangeSelected.end.getTime());
-
-                    if (dayDate.getTime() > olderDate && dayDate.getTime() < newerDate) {
-                        diaElement.classList.add('in-range');
-                    }
-                });
-            }
+            // 3. ESTILO DE APOYO (Solo para asegurar que veas dónde estás)
+            arrow.style.cursor = 'pointer';
         }
+    });
 
-        // Genera el grid de días (Sin cambios)
-        function generarDiasEnHTML(anio, mes, gridDiasContainer) {
-            gridDiasContainer.innerHTML = '';
-            const primerDiaMes = new Date(anio, mes, 1);
-            const diaDeLaSemana = primerDiaMes.getDay();
-            const offset = (diaDeLaSemana === 0) ? 6 : diaDeLaSemana - 1;
-            const diasEnMes = new Date(anio, mes + 1, 0).getDate();
+    // 3. FUNCIONES DE APOYO (El kit de herramientas)
+    function createDateFromDataset(el) {
+        return new Date(parseInt(el.dataset.anio), parseInt(el.dataset.mes), parseInt(el.dataset.dia));
+    }
 
-            for (let i = 0; i < offset; i++) {
-                gridDiasContainer.appendChild(document.createElement('div')).className = 'dia empty-day';
-            }
+    function clearVisualSelection() {
+        const dias = calendarContainer.querySelectorAll('.dia');
+        dias.forEach(d => d.classList.remove('selected', 'range', 'start-date', 'end-date'));
+    }
 
-            for (let dia = 1; dia <= diasEnMes; dia++) {
-                const diaDiv = document.createElement('div');
-                diaDiv.className = 'dia';
-                diaDiv.textContent = dia;
-                diaDiv.dataset.dia = dia;
-                diaDiv.dataset.mes = mes;
-                diaDiv.dataset.anio = anio;
-
-                const fechaActual = new Date(anio, mes, dia);
-                fechaActual.setHours(0, 0, 0, 0);
-
-                if (fechaActual.getTime() > HOY.getTime() || fechaActual.getTime() < UN_ANIO_ATRAS.getTime()) {
-                    diaDiv.classList.add('disabled-day');
-                } else if (dia === HOY.getDate() && mes === HOY.getMonth() && anio === HOY.getFullYear()) {
-                    diaDiv.classList.add('today');
-                }
-
-                gridDiasContainer.appendChild(diaDiv);
-            }
+    function updateDateDisplays() {
+        if (window.rangeSelected.start) {
+            const start = window.rangeSelected.start.toLocaleDateString();
+            const end = window.rangeSelected.end ? ` - ${window.rangeSelected.end.toLocaleDateString()}` : '';
+            dateStartElement.textContent = start + end;
+            dateStartElement.classList.add('active');
+        } else {
+            dateStartElement.textContent = 'Fecha';
+            dateStartElement.classList.remove('active');
         }
+    }
 
-        // --- LÓGICA DE FLECHAS Y VISTA (Sin cambios relevantes) ---
+    function limpiarRango() {
+        window.rangeSelected.start = null;
+        window.rangeSelected.end = null;
+        clearVisualSelection();
+        updateDateDisplays();
+    }
 
-        function actualizarEstadoFlechas() {
-
-            // LÍMITE IZQUIERDO (Pasado: LIMITE_PASADO_MES)
-            if (currentDisplayDate.getTime() <= LIMITE_PASADO_MES.getTime()) {
-                arrowLeft.classList.add('disabled-arrow');
-                arrowLeft.style.opacity = '0.4';
-            } else {
-                arrowLeft.classList.remove('disabled-arrow');
-                arrowLeft.style.opacity = '1';
-            }
-
-            // LÍMITE DERECHO (Futuro: PRIMER_DIA_MES_ACTUAL)
-            if (currentDisplayDate.getTime() >= PRIMER_DIA_MES_ACTUAL.getTime()) {
-                arrowRight.classList.add('disabled-arrow');
-                arrowRight.style.opacity = '0.4';
-            } else {
-                arrowRight.classList.remove('disabled-arrow');
-                arrowRight.style.opacity = '1';
-            }
-        }
-
-        // NUEVA FUNCIÓN: Controla si el botón de Confirmar debe estar activo
-        function actualizarEstadoBotones() {
-            // El botón de confirmar se activa si hay al menos una fecha seleccionada
-            if (rangeSelected.start) {
-                confirmButton.disabled = false;
-                resetButton.disabled = false;
-            } else if (rangeConfirmed.start) {
-                // Si no hay selección visual, pero hay confirmada, se puede restablecer
-                confirmButton.disabled = true;
-                resetButton.disabled = false;
-            } else {
-                confirmButton.disabled = true;
-                resetButton.disabled = true;
-            }
-        }
-
-        function actualizarVistaCalendario(anio, mes) {
-            currentDisplayDate.setFullYear(anio);
-            currentDisplayDate.setMonth(mes);
-
-            mesDisplay1.textContent = meses[mes];
-            anioDisplay1.textContent = anio;
-
-            generarDiasEnHTML(anio, mes, gridDias1);
-            applyRangeVisuals();
-            actualizarEstadoFlechas();
-            actualizarEstadoBotones(); // Llamamos al final de la actualización
-        }
-
-        // --- FUNCIONES DE ACCIÓN NUEVAS ---
-
-        //function closeCalendar() {
-        //    boxSelector.classList.add('d-none');
-        //}
-
-        function confirmarRango() {
-            // 1. Copiar las fechas seleccionadas al estado confirmado
-            rangeConfirmed.start = rangeSelected.start;
-            rangeConfirmed.end = rangeSelected.end;
-
-            // 2. Actualizar los displays de los campos de texto
-            updateDateDisplays();
-
-            // 3. Cerrar el calendario
-            //closeCalendar();
-
-            // 4. Actualizar estado de botones (ya no habrá selección visual)
-            actualizarEstadoBotones();
-        }
-
-        function restablecerRango() {
-            // 1. Limpiar los estados
-            rangeSelected.start = null;
-            rangeSelected.end = null;
-            rangeConfirmed.start = null;
-            rangeConfirmed.end = null;
-
-            // 2. Actualizar los displays y la vista
-            updateDateDisplays(); // Limpia los campos de texto
-            applyRangeVisuals();  // Limpia el resaltado en el calendario
-            actualizarEstadoBotones(); // Deshabilita botones
-
-            // 3. Reestablecer la vista del calendario al mes actual (por si acaso)
-            initializeCalendarView();
-        }
-
-        // --- EVENT LISTENERS ---
-
-        function initializeCalendarView() {
-            let anio = HOY.getFullYear();
-            let mes = HOY.getMonth();
-            currentDisplayDate = new Date(anio, mes, 1);
-            actualizarVistaCalendario(anio, mes);
-
-            // Al abrir, restaurar la selección visual a la última fecha confirmada
-            rangeSelected.start = rangeConfirmed.start;
-            rangeSelected.end = rangeConfirmed.end;
-            applyRangeVisuals();
-            actualizarEstadoBotones(); // Asegura que el estado del botón refleje la selección.
-        }
-
-        dateStartElement.addEventListener('click', function (e) {
-            e.stopPropagation();
-            //boxSelector.classList.toggle('d-none');
-            //if (!boxSelector.classList.contains('d-none')) {
-            //    initializeCalendarView();
-            //}
+    function applyRangeVisuals() {
+        // Primero limpiamos todos los estilos previos
+        const todosLosDias = gridDias1.querySelectorAll('.dia');
+        todosLosDias.forEach(dia => {
+            dia.classList.remove('selected', 'range', 'start-date', 'end-date');
         });
 
-        if (dateEndElement) {
-            dateEndElement.addEventListener('click', function (e) {
+        // Si no hay fechas, salimos (así el botón Restablecer termina su trabajo)
+        if (!window.rangeSelected.start) return;
+
+        // Si hay fechas, buscamos los elementos y les ponemos la clase 'selected'
+        todosLosDias.forEach(diaElement => {
+            const fechaDia = createDateFromDataset(diaElement);
+            const tiempoDia = fechaDia.getTime();
+
+            if (window.rangeSelected.start && tiempoDia === window.rangeSelected.start.getTime()) {
+                diaElement.classList.add('selected', 'start-date');
+            }
+            if (window.rangeSelected.end && tiempoDia === window.rangeSelected.end.getTime()) {
+                diaElement.classList.add('selected', 'end-date');
+            }
+            if (window.rangeSelected.start && window.rangeSelected.end &&
+                tiempoDia > window.rangeSelected.start.getTime() &&
+                tiempoDia < window.rangeSelected.end.getTime()) {
+                diaElement.classList.add('range');
+            }
+        });
+    }
+
+    function limpiarFiltroIndividual(contenedor) {
+        const header = contenedor.querySelector('.dateSelected, .filtro-menu--concept');
+        const checks = contenedor.querySelectorAll('.form__checkbox');
+        const liPadre = contenedor.closest('li');
+        const textoOriginal = contenedor.dataset.originalText;
+
+        if (contenedor.classList.contains('customdate')) {
+            // Si es el calendario, usamos tu función de rango
+            if (typeof limpiarRango === 'function') limpiarRango();
+        } else {
+            // Si son checkboxes
+            checks.forEach(c => c.checked = false);
+
+            if (header) {
+                header.textContent = textoOriginal; // Restauramos el nombre original
+                header.classList.remove('active');
+            }
+        }
+
+        if (liPadre) {
+            liPadre.classList.remove('filtro-activo');
+        }
+
+        actualizarEstadoBotonLimpiar();
+    }
+
+    // Busca todos los contenedores de filtros
+    // Usamos el CONTAINER como punto de partida
+    document.querySelectorAll('.filtro-menu--concept-container').forEach(contenedor => {
+
+        // Buscamos los elementos HIJOS dentro de ese contenedor
+        const header = contenedor.querySelector('.filtro-menu--concept');
+        const checks = contenedor.querySelectorAll('.form__checkbox');
+        const menu = contenedor.querySelector('.submenu, .boxSelector'); // El desplegable
+        const btnReset = contenedor.querySelector('.reset');
+
+        if (header) {
+            // Guardamos el texto original en el contenedor
+            if (!contenedor.dataset.originalText) {
+                contenedor.dataset.originalText = header.textContent.trim();
+            }
+
+            header.tabIndex = 0;
+
+            // Al hacer clic en el Header, abrimos el menú
+            header.addEventListener('click', (e) => {
                 e.stopPropagation();
-                // boxSelector.classList.toggle('d-none');
-                // if (!boxSelector.classList.contains('d-none')) {
-                //   initializeCalendarView();
-                //}
+                // Cerramos otros menús y abrimos este
+                toggleMenu(menu);
             });
         }
 
-        document.addEventListener('click', function (e) {
-            if (!e.target.closest('.boxSelector') &&
-                !e.target.closest('.customdate.date-start .dateSelected') &&
-                !e.target.closest('.customdate.date-end .dateSelected')) {
-                // Al cerrar sin confirmar, se limpia la selección visual, pero se mantiene la confirmada.
-                rangeSelected.start = rangeConfirmed.start;
-                rangeSelected.end = rangeConfirmed.end;
-                applyRangeVisuals();
-                actualizarEstadoBotones();
-                //closeCalendar();
-            }
+        // Gestionamos los checks dentro de este contenedor
+        checks.forEach(check => {
+            check.addEventListener('change', () => {
+                // Esta es la función que actualiza el texto del Header
+                actualizarEstadoFiltro(contenedor);
+                actualizarEstadoBotonLimpiar();
+            });
         });
 
-        // Event listener para la selección de días
-        boxSelector.addEventListener('click', function (e) {
+        // Gestionamos el botón reset de este contenedor
+        if (btnReset) {
+            btnReset.addEventListener('click', (e) => {
+                e.stopPropagation();
+                limpiarFiltroIndividual(contenedor);
+            });
+        }
+    });
+
+    function generarDiasEnHTML(anio, mes, gridDiasContainer) {
+        if (!gridDiasContainer) return;
+
+        // 1. Limpiamos el contenedor (Usamos el que entra por parámetro)
+        gridDiasContainer.innerHTML = '';
+
+        const primerDia = new Date(anio, mes, 1).getDay(); // 0 (Dom) a 6 (Sab)
+        const diasEnMes = new Date(anio, mes + 1, 0).getDate();
+
+        // 2. Cálculo del desfase (Lunes como primer día de la semana)
+        // Si primerDia es 0 (Domingo), el desfase es 6. Si no, es primerDia - 1.
+        const desfase = primerDia === 0 ? 6 : primerDia - 1;
+
+        // 3. Crear espacios vacíos para el inicio del mes
+        for (let i = 0; i < desfase; i++) {
+            const span = document.createElement('span');
+            span.classList.add('vacio');
+            gridDiasContainer.appendChild(span); // Agregamos al contenedor correcto
+        }
+
+        // 4. Crear los días reales del mes
+        for (let d = 1; d <= diasEnMes; d++) {
+            const span = document.createElement('span');
+            span.classList.add('dia');
+
+            // Atributos de accesibilidad
+            span.setAttribute('tabindex', '0');
+            span.setAttribute('role', 'button');
+            span.setAttribute('aria-label', `Día ${d}`);
+
+            // Dataset
+            span.dataset.dia = d;
+            span.dataset.mes = mes;
+            span.dataset.anio = anio;
+            span.textContent = d;
+
+            // Evento de teclado (¡Tu lógica es excelente!)
+            span.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    span.click();
+                }
+                if (e.key === 'ArrowUp') {
+                    const diaActual = parseInt(span.textContent);
+                    if (diaActual <= 7) {
+                        e.preventDefault();
+                        // Asegúrate de que arrowRight esté definida globalmente
+                        const arrowRight = document.querySelector('.iconBox:last-child');
+                        arrowRight?.focus();
+                    }
+                }
+                if (e.key === 'Escape') {
+                    // Cerramos el menú buscando el contenedor principal
+                    const container = span.closest('.filtro-menu--concept-container');
+                    const header = container?.querySelector('.dateSelected');
+                    header?.click();
+                    header?.focus();
+                }
+            });
+
+            gridDiasContainer.appendChild(span);
+        }
+    }
+
+    function actualizarVistaCalendario(anio, mes) {
+        // 1. Actualizar los textos de la cabecera del calendario
+        const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+        if (mesDisplay1) mesDisplay1.textContent = meses[mes];
+        if (anioDisplay1) anioDisplay1.textContent = anio;
+
+        // 2. Dibujar los números de los días
+        // Esta función la definimos en el paso anterior, asegúrate de tenerla
+        generarDiasEnHTML(anio, mes, gridDias1);
+
+        // 3. Pintar el rango seleccionado (si es que existe uno)
+        if (typeof applyRangeVisuals === 'function') {
+            applyRangeVisuals();
+        }
+
+        // 4. Bloquear/Activar flechas según el rango máximo (HOY)
+        if (typeof actualizarEstadoFlechas === 'function') {
+            actualizarEstadoFlechas();
+        }
+    }
+
+    function actualizarEstadoBotonLimpiar() {
+        const btnBorrarTodo = document.getElementById('btnBorrarTodo');
+        if (!btnBorrarTodo) return;
+
+        // 1. Revisar si hay fechas seleccionadas
+        const hayFecha = window.rangeSelected.start !== null;
+
+        // 2. Revisar si hay algún checkbox marcado en cualquier filtro
+        const hayChecks = Array.from(document.querySelectorAll('.form__checkbox')).some(c => c.checked);
+
+        // 3. Si hay fecha O hay checks, activamos el botón; si no, lo desactivamos
+        if (hayFecha || hayChecks) {
+            btnBorrarTodo.classList.remove('btn-disabled');
+        } else {
+            btnBorrarTodo.classList.add('btn-disabled');
+        }
+    }
+
+    function actualizarEstadoFiltro(contenedor) {
+        const header = contenedor.querySelector('.filtro-menu--concept');
+        const checks = contenedor.querySelectorAll('.form__checkbox');
+        const textoOriginal = contenedor.dataset.originalText;
+
+        const seleccionados = Array.from(checks)
+            .filter(c => c.checked)
+            .map(c => c.closest('label').textContent.trim());
+
+        if (header) {
+            if (seleccionados.length > 0) {
+                header.textContent = seleccionados.join(', ');
+                header.classList.add('active');
+                contenedor.classList.add('filtro-activo'); // El contenedor se ilumina
+            } else {
+                header.textContent = textoOriginal;
+                header.classList.remove('active');
+                contenedor.classList.remove('filtro-activo');
+            }
+        }
+    }
+    // Buscamos todos los li que contienen menús de conceptos
+    document.querySelectorAll('li').forEach(li => {
+        const checks = li.querySelectorAll('.form__checkbox');
+
+        checks.forEach(check => {
+            check.addEventListener('change', () => {
+                // Pasamos el li o el contenedor principal del filtro
+                actualizarEstadoFiltro(li);
+            });
+        });
+    });
+
+    // 4. BUCLE ÚNICO PARA TODOS LOS FILTROS (Menus y Resets)
+    const filtros = document.querySelectorAll('.customdate, .filtro-item-contenedor');
+    filtros.forEach(contenedor => {
+        // Buscamos el header (el que dice "Estatus", "Fecha", etc.)
+        const header = contenedor.querySelector('.dateSelected, .filtro-menu--concept');
+        const menu = contenedor.querySelector('.boxSelector, .submenu');
+
+        if (header) {
+            // 1. Habilitar navegación por teclado
+            header.tabIndex = 0;
+            header.setAttribute('role', 'button');
+
+            // 2. Evento de Teclado (Enter/Espacio)
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    header.click(); // Ejecuta la lógica de apertura
+                }
+            });
+
+            // 3. Evento de Clic (Apertura y Cierre)
+            header.addEventListener('click', (e) => {
+                if (e.target.tagName === 'INPUT' || e.target.closest('.form__checkbox')) {
+                    return;
+                }
+
+                e.stopPropagation();
+
+                // Cerrar todos los demás menús antes de abrir este
+                document.querySelectorAll('.boxSelector, .submenu').forEach(m => {
+                    if (m !== menu) m.classList.add('d-none');
+                });
+
+                // Toggle del menú actual
+                if (menu) {
+                    const estaCerrado = menu.classList.contains('d-none');
+                    menu.classList.toggle('d-none');
+
+                    // Si se está abriendo, gestionar el foco interno
+                    if (estaCerrado) {
+                        // Si es el calendario, enfocamos la flecha
+                        if (contenedor.classList.contains('customdate')) {
+                            const arrowLeft = menu.querySelector('.infoNavegacion .iconBox:first-child');
+                            setTimeout(() => arrowLeft?.focus(), 100);
+                            // Llamada opcional por si necesitas refrescar el calendario al abrir
+                            if (typeof actualizarVistaCalendario === 'function') {
+                                actualizarVistaCalendario(currentDisplayDate.getFullYear(), currentDisplayDate.getMonth());
+                            }
+                        } else {
+                            // Si es un filtro normal, enfocamos el primer checkbox
+                            const primerCheck = menu.querySelector('input');
+                            setTimeout(() => primerCheck?.focus(), 100);
+                        }
+                    }
+                }
+            });
+        }
+        document.querySelectorAll('.filtro-menu--concept-container').forEach(contenedor => {
+            const checks = contenedor.querySelectorAll('.form__checkbox');
+
+            checks.forEach(check => {
+                // El evento 'change' captura tanto el clic del ratón como la tecla Espacio
+                check.addEventListener('change', () => {
+                    actualizarEstadoFiltro(contenedor);
+                });
+            });
+        });
+    });
+    // --- BLOQUE ÚNICO PARA CLIC EN DÍAS ---
+    if (gridDias1) {
+        gridDias1.addEventListener('click', (e) => {
             const diaElement = e.target.closest('.dia');
 
-            if (diaElement && diaElement.closest('.grid-dias') &&
-                !diaElement.classList.contains('empty-day') && !diaElement.classList.contains('disabled-day')) {
+            // 1. Validar que sea un día real
+            if (!diaElement || diaElement.classList.contains('vacio')) return;
 
-                const selectedDate = createDateFromDataset(diaElement);
+            // 2. Crear la fecha desde los datos del span (dataset)
+            const seleccionada = createDateFromDataset(diaElement);
 
-                if (!rangeSelected.start || rangeSelected.end) {
-                    rangeSelected.start = selectedDate;
-                    rangeSelected.end = null;
-                }
-                else if (rangeSelected.start && !rangeSelected.end) {
-                    if (selectedDate.getTime() < rangeSelected.start.getTime()) {
-                        rangeSelected.end = rangeSelected.start;
-                        rangeSelected.start = selectedDate;
-                    }
-                    else {
-                        rangeSelected.end = selectedDate;
-                    }
-                }
-                // No actualizamos el display aquí, solo la selección visual.
-                applyRangeVisuals();
-                actualizarEstadoBotones(); // Actualiza el estado del botón Confirmar
-            }
-        });
-
-        // Event listeners para los botones
-        confirmButton.addEventListener('click', confirmarRango);
-        resetButton.addEventListener('click', restablecerRango);
-
-        // Navegación de Flechas
-        arrowLeft.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (arrowLeft.classList.contains('disabled-arrow')) return;
-            currentDisplayDate.setMonth(currentDisplayDate.getMonth() - 1);
-            actualizarVistaCalendario(currentDisplayDate.getFullYear(), currentDisplayDate.getMonth());
-        });
-
-        arrowRight.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (arrowRight.classList.contains('disabled-arrow')) return;
-            currentDisplayDate.setMonth(currentDisplayDate.getMonth() + 1);
-            actualizarVistaCalendario(currentDisplayDate.getFullYear(), currentDisplayDate.getMonth());
-        });
-
-        // Inicialización
-        updateDateDisplays();
-        actualizarVistaCalendario(HOY.getFullYear(), HOY.getMonth());
-    }); 
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const filtrosDiv = document.querySelector(".filtros");
-        const toggleBtn = document.getElementById("toggleFiltrosBtn");
-        const closeBtn = document.querySelector(".close-filtros-btn"); // Selecciona el nuevo botón de cierre
-
-        if (toggleBtn && filtrosDiv) {
-            // Listener para el botón que abre/cierra (toggle)
-            toggleBtn.addEventListener("click", function () {
-                filtrosDiv.classList.toggle("open"); // Alterna la clase 'open' en el div de filtros
-                toggleBtn.classList.toggle("active"); // Alterna la clase 'active' en el botón de abrir
-
-                // Cambia la dirección de la flecha en el botón de abrir
-                const toggleArrowIcon = toggleBtn.querySelector(".arrow-icon");
-                if (filtrosDiv.classList.contains("open")) {
-                    toggleArrowIcon.textContent = "▲"; // Flecha hacia arriba cuando está abierto
+            // 3. LÓGICA DE SELECCIÓN (Unificada)
+            if (!window.rangeSelected.start || window.rangeSelected.end) {
+                // Empezar selección (primer clic o reinicio)
+                window.rangeSelected.start = seleccionada;
+                window.rangeSelected.end = null;
+            } else {
+                // Segundo clic (completar rango)
+                if (seleccionada < window.rangeSelected.start) {
+                    window.rangeSelected.end = window.rangeSelected.start;
+                    window.rangeSelected.start = seleccionada;
                 } else {
-                    toggleArrowIcon.textContent = "▼"; // Flecha hacia abajo cuando está cerrado
+                    window.rangeSelected.end = seleccionada;
                 }
-            });
+            }
+
+            // 4. FEEDBACK VISUAL DEL LI (Desde el primer clic)
+            const liPadre = gridDias1.closest('li');
+            if (window.rangeSelected.start !== null) {
+                liPadre.classList.add('filtro-activo');
+            }
+
+            // 5. ACTUALIZAR TODO
+            updateDateDisplays();        // Cambia el texto "Fecha" por el número
+            applyRangeVisuals();         // Pinta los días de azul
+            actualizarEstadoBotonLimpiar(); // Activa el botón de "Borrar filtros"
+        });
+    }
+
+    // 5. CLIC FUERA PARA CERRAR TODO
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.customdate') && !e.target.closest('.filtro-item-contenedor')) {
+            document.querySelectorAll('.boxSelector, .submenu').forEach(m => m.classList.add('d-none'));
         }
+    });
 
-        if (closeBtn && filtrosDiv) {
-            // Listener para el botón de cerrar
-            closeBtn.addEventListener("click", function () {
-                filtrosDiv.classList.remove("open"); // Remueve la clase 'open' para cerrar
-                if (toggleBtn) { // Asegúrate de que el botón de abrir existe antes de actualizarlo
-                    toggleBtn.classList.remove("active"); // Asegura que el botón de abrir no tenga la clase active
-                    const toggleArrowIcon = toggleBtn.querySelector(".arrow-icon");
-                    if (toggleArrowIcon) {
-                        toggleArrowIcon.textContent = "▼"; // Restablece la flecha del botón de abrir
-                    }
-                }
+    // Inicializar
+    updateDateDisplays();
+    actualizarVistaCalendario(currentDisplayDate.getFullYear(), currentDisplayDate.getMonth());
+
+    // --- NAVEGACIÓN DE MESES ---
+    if (arrowLeft && arrowRight) {
+        arrowLeft.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que el calendario se cierre al navegar
+
+            // Restamos un mes a la fecha que estamos visualizando
+            currentDisplayDate.setMonth(currentDisplayDate.getMonth() - 1);
+
+            // Dibujamos el nuevo mes
+            actualizarVistaCalendario(currentDisplayDate.getFullYear(), currentDisplayDate.getMonth());
+        });
+
+        arrowRight.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que el calendario se cierre al navegar
+
+            // Sumamos un mes
+            currentDisplayDate.setMonth(currentDisplayDate.getMonth() + 1);
+
+            // Dibujamos el nuevo mes
+            actualizarVistaCalendario(currentDisplayDate.getFullYear(), currentDisplayDate.getMonth());
+        });
+    }
+    const btnBorrarTodo = document.getElementById('btnBorrarTodo');
+    if (btnBorrarTodo) {
+        btnBorrarTodo.addEventListener('click', () => {
+            document.querySelectorAll('.filtro-menu--concept-container, .customdate').forEach(contenedor => {
+                limpiarFiltroIndividual(contenedor);
             });
-        }
-    });
+        });
+    }
+    // Buscamos todos los botones con la clase .reset
+    document.querySelectorAll('.reset').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // 1. Evitamos que el menú se cierre al hacer clic (burbujeo)
+            e.stopPropagation();
 
-    const slider = document.querySelector('.bandeja .table-container');
+            // 2. Buscamos el contenedor más cercano que envuelve al filtro
+            const contenedor = btn.closest('.filtro-menu--concept-container') || btn.closest('.customdate');
 
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+            if (contenedor) {
+                // 3. Llamamos a la función de limpieza que ya tenemos
+                limpiarFiltroIndividual(contenedor);
+            }
+        });
 
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('active-dragging');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('active-dragging');
-    });
-
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('active-dragging');
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2; // Multiplica para un arrastre más rápido
-        slider.scrollLeft = scrollLeft - walk;
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        // Selecciona TODOS los contenedores que se repiten
-        const contenedores = document.querySelectorAll('.form-item-wrapper');
-
-        // Itera sobre cada uno de esos contenedores
-        contenedores.forEach(contenedor => {
-            // Busca el input y el botón DENTRO de cada contenedor específico
-            const campoEntrada = contenedor.querySelector('.buscar');
-            const botonLimpiar = contenedor.querySelector('.clear-button');
-
-            // Asegúrate de que los elementos existan antes de añadir los eventos
-            if (campoEntrada && botonLimpiar) {
-                campoEntrada.addEventListener('input', () => {
-                    if (campoEntrada.value.length > 0) {
-                        botonLimpiar.style.display = 'block';
-                    } else {
-                        botonLimpiar.style.display = 'none';
-                    }
-                });
-
-                botonLimpiar.addEventListener('click', () => {
-                    campoEntrada.value = '';
-                    botonLimpiar.style.display = 'none';
-                    campoEntrada.focus();
-                });
+        // 4. Accesibilidad: permitir usar el botón con el teclado
+        btn.setAttribute('tabindex', '0');
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
             }
         });
     });
+    // --- MANEJAR LA VISIBILDAD DEL PANEL FILTROS EN MÓVILES ---
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const menuItems = document.querySelectorAll('.filtro-menu > li');
+    const filtrosDiv = document.querySelector(".filtros");
+    const toggleBtn = document.getElementById("toggleFiltrosBtn");
+    const closeBtn = document.querySelector(".close-filtros-btn");
 
-        menuItems.forEach(item => {
-            item.addEventListener('click', function (event) {
-                // Previene el comportamiento por defecto del enlace, si lo hubiera
-                event.stopPropagation();
+    if (toggleBtn && filtrosDiv) {
+        toggleBtn.addEventListener("click", function () {
+            const isOpen = filtrosDiv.classList.toggle("open");
+            toggleBtn.classList.toggle("active");
 
-                const submenu = this.querySelector('.submenu');
+            // Actualización de icono
+            const toggleArrowIcon = toggleBtn.querySelector(".arrow-icon");
+            if (toggleArrowIcon) {
+                toggleArrowIcon.textContent = isOpen ? "▲" : "▼";
+            }
 
-                // Cierra otros submenús abiertos
-                document.querySelectorAll('.submenu').forEach(sub => {
-                    if (sub !== submenu) {
-                        sub.style.display = 'none';
-                    }
-                });
-
-                // Alterna la visibilidad del submenú actual
-                if (submenu) {
-                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-
-        // Cierra el menú si se hace clic fuera de él
-        document.addEventListener('click', function () {
-            document.querySelectorAll('.submenu').forEach(sub => {
-                sub.style.display = 'none';
-            });
-        });
-    });
-
-    // Obtén el elemento contenedor
-    const dateContainer = document.querySelector('.dateSelected');
-
-    // Agrega un evento de clic al contenedor
-    dateContainer.addEventListener('click', function () {
-        // Aquí iría tu lógica actual para obtener la fecha del sistema
-        const currentDate = new Date();
-        const mes = currentDate.getMonth() + 1; // getMonth() es base 0
-        const dia = currentDate.getDate();
-        const anio = currentDate.getFullYear();
-
-        // Oculta el texto "Fecha de solicitud"
-        const placeholder = this.querySelector('.placeholder');
-        if (placeholder) {
-            placeholder.style.display = 'none';
-        }
-
-        // Muestra el contenedor de la fecha y actualiza los valores
-        const dateSpan = this.querySelector('.date');
-        if (dateSpan) {
-            dateSpan.style.display = 'inline';
-            this.querySelector('.mes').textContent = mes;
-            this.querySelector('.dia').textContent = dia;
-            this.querySelector('.anio').textContent = anio;
-        }
-    });
-
-    // Obtiene todos los inputs con la clase 'input-placeholder-borrable'
-    const inputs = document.querySelectorAll('.filtro-campo');
-
-    // Itera sobre cada input para asignar los eventos
-    inputs.forEach(input => {
-        // Almacena el texto original del placeholder en un atributo de datos
-        const originalPlaceholder = input.placeholder;
-
-        input.addEventListener('focus', function () {
-            // Borra el placeholder al recibir el foco
-            this.placeholder = '';
-        });
-
-        input.addEventListener('blur', function () {
-            // Vuelve a mostrar el placeholder si el campo está vacío
-            if (this.value === '') {
-                this.placeholder = originalPlaceholder;
+            // ACCESIBILIDAD: Si se abre, mover el foco al primer filtro automáticamente
+            if (isOpen) {
+                const primerHeader = filtrosDiv.querySelector('.filtro-menu--concept, .dateSelected');
+                setTimeout(() => primerHeader?.focus(), 300); // Pequeño delay por la animación CSS
             }
         });
-    });
+    }
+
+    if (closeBtn && filtrosDiv) {
+        closeBtn.addEventListener("click", function () {
+            filtrosDiv.classList.remove("open");
+            toggleBtn?.classList.remove("active");
+
+            const toggleArrowIcon = toggleBtn?.querySelector(".arrow-icon");
+            if (toggleArrowIcon) toggleArrowIcon.textContent = "▼";
+
+            // Devolvemos el foco al botón que abre el menú para no perder al usuario
+            toggleBtn?.focus();
+        });
+    }
+    actualizarEstadoBotonLimpiar();
+});

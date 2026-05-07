@@ -732,67 +732,82 @@
               class="filtro-menu mt--24"
               style="justify-content: flex-end; gap: 2rem"
             >
-              <li class="filtro-menu-li filtro-menu--tramite">
-                Fecha de solicitud
-                <div
-                  class="submenu boxSelector rowgap--16"
-                  style="display: none"
-                >
-                  <div class="form__grupo">
-                    <label
-                      for="mi_check31"
-                      class="form__label form__label--normal"
-                    >
-                      <input
-                        class="form__checkbox"
-                        type="checkbox"
-                        id="mi_check31"
-                      />
-                      Tipo 1
-                    </label>
+              <li>
+                <div class="customdate date-start">
+                  <div
+                    class="dateSelected filtro-menu--concept"
+                    tabindex="0"
+                    role="button"
+                    aria-expanded="false"
+                  >
+                    Fecha
                   </div>
+                  <div class="boxSelector d-none">
+                    <div class="infoNavegacion">
+                      <div class="iconBox">
+                        <svg
+                          focusable="false"
+                          preserveAspectRatio="xMidYMid meet"
+                          fill="currentColor"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 32 32"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          style="opacity: 1"
+                        >
+                          <path d="M20 24L10 16 20 8z"></path>
+                          <title>Caret left</title>
+                        </svg>
+                      </div>
+                      <div class="mes-anio-container">
+                        <span class="month-one">
+                          <span class="mes-display-1"></span>
+                          <span class="anio-display-1"></span>
+                        </span>
+                      </div>
+                      <div class="iconBox">
+                        <svg
+                          focusable="false"
+                          preserveAspectRatio="xMidYMid meet"
+                          fill="currentColor"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 32 32"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M12 8L22 16 12 24z"></path>
+                          <title>Caret right</title>
+                        </svg>
+                      </div>
+                    </div>
 
-                  <div class="form__grupo">
-                    <label
-                      for="mi_check32"
-                      class="form__label form__label--normal"
-                    >
-                      <input
-                        class="form__checkbox"
-                        type="checkbox"
-                        id="mi_check32"
-                      />
-                      Tipo 2
-                    </label>
-                  </div>
-
-                  <div class="form__grupo">
-                    <label
-                      for="mi_check33"
-                      class="form__label form__label--normal"
-                    >
-                      <input
-                        class="form__checkbox"
-                        type="checkbox"
-                        id="mi_check33"
-                      />
-                      Tipo 3
-                    </label>
-                  </div>
-
-                  <hr />
-
-                  <div class="calendar-actions">
-                    <button class="boton__primario confirm" disabled>
-                      Aplicar
-                    </button>
-                    <button class="boton__primario--borde reset">
-                      Restablecer
-                    </button>
+                    <div class="month-one">
+                      <div class="grid-dias-header">
+                        <div>Lu</div>
+                        <div>Ma</div>
+                        <div>Mi</div>
+                        <div>Ju</div>
+                        <div>Vi</div>
+                        <div>Sá</div>
+                        <div>Do</div>
+                      </div>
+                      <div class="grid-dias-1 grid-dias"></div>
+                    </div>
+                    <hr />
+                    <div class="calendar-actions">
+                      <button
+                        class="reset boton__fantasma boton__vertical"
+                        id="btn-limpiar-calendario"
+                      >
+                        Restablecer
+                      </button>
+                    </div>
                   </div>
                 </div>
               </li>
-              <li class="filtro-menu-li filtro-menu--estatus">
+              <li class="filtro-menu-li filtro-menu--estatus li-filtro">
                 Estatus
                 <div
                   class="submenu boxSelector rowgap--16"
@@ -860,7 +875,7 @@
                 </div>
               </li>
 
-              <li class="limpiar-filtros">
+              <li class="limpiar-filtros li-filtro">
                 <button>
                   Borrar filtros &nbsp;<svg
                     focusable="false"
@@ -1547,6 +1562,7 @@
     </div>
 
     <script src="assets/js/header-footer-details.js"></script>
+    <script src="assets/js/bandeja.js"></script>
     <script src="assets/js/details-deskOpen.js"></script>
     <script src="assets/js/dialog.js"></script>
     <script src="assets/js/desplegable.js"></script>
