@@ -36,6 +36,7 @@
 @import "componentes/_tooltip3 .css";
 @import "componentes/_tooltip4Unificado.css";
 @import "componentes/_ruta.css";
+@import "componentes/_slider.css";
 @import "componentes/_barraBusqueda.css";
 @import "componentes/_ventanilla247.css";
 
@@ -44,3 +45,4 @@
 
 /*PERSONALIZAR*/
 @import "personalizar/_tramiteLinea.css";
+@import "personalizar/_pag_landing.css";

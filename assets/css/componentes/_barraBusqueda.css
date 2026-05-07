@@ -1,3 +1,15 @@
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 32px;
+  width: 32px;
+  background-image: url('./../../icons/close--outline.svg');
+  background-size: contain;
+  cursor: pointer;
+}
 .lista--puntual {
     list-style-type: disc;
     padding-left: 1.5rem;
@@ -135,6 +147,76 @@ ul.elementos > li {
     width: auto;
 }
 
+/* Barra de búsqueda en portada */
+.form__inset.main-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    border-radius: 3rem;
+    background-color: #fff;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    padding: 6px 0 6px 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.general-search {
+    margin: 1rem;
+    width: auto;
+    border-radius: 2rem;
+}
+
+.main-search .sh0r {
+    margin: 0 1rem;
+}
+
+.sh0r.js-input {
+    margin: 0;
+    font-weight: 300;
+    padding: .35rem 0 .5rem 1rem;
+}
+
+.search-icon {
+    width: 1.5rem;
+    margin: 0 0 0 .5rem;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.search-container {
+    position: relative; /* Mantiene las listas posicionadas respecto al formulario */
+}
+
+/* Esto asegura que las listas se vean bien en ambos modelos */
+.suggestions-list, .search-results {
+    position: absolute;
+    z-index: 100;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    top: 4rem;
+    padding: 0;
+    margin: 0 0 0 1.75rem;
+    list-style: none;
+}
+
+.suggestions-list li, .search-results li {
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .3rem;
+}
+.suggestions-list li:hover, .search-results li:hover {
+    background: var(--neutro200);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.search-button { cursor:pointer; background-color: var(--principal); padding:32px 40px; border:none;}
+
 @media (max-width: 768px) {
     .color-ref--swatches {
         display: inline-block;
@@ -144,5 +226,30 @@ ul.elementos > li {
         display: flex;
         align-items: center;
         gap: .5rem;
+    }
+    .sh0r.js-input {
+        font-size: 1rem;
+        padding: .35rem 0 .5rem .5rem;
+    }
+    .general-search .sh0r.js-input {
+        padding: .3rem 0 .2rem .5rem;
+        background: transparent;
+    }
+    .search-button {
+        padding: 2rem 1rem;
+    }
+    .form__inset.main-search {
+        height: 2.5rem;
+    }
+    .search-button img {
+        width: 1.5rem;
+    }
+    .form__inset {
+        padding: 0 0 0 .5rem;
+    }
+    
+    .suggestions-list, .search-results {
+        top: 2.5rem;
+        margin: 0 0 0 1.3rem;
     }
 }
