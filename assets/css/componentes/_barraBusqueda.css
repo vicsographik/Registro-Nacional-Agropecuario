@@ -156,7 +156,7 @@ ul.elementos > li {
     border-radius: 3rem;
     background-color: #fff;
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
-    margin: 1rem 0;
+    margin: 1rem 0 2rem;
     padding: 6px 0 6px 12px;
     position: relative;
     overflow: hidden;

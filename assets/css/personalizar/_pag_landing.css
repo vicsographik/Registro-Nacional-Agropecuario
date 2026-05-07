@@ -1,0 +1,143 @@
+/*header*/
+.home-header__parent { position: relative;}
+.home-header { display: flex; justify-content:space-between; align-items: center; position: relative; min-height:430px;}
+.home-header--background {
+    width: 100%;
+    height: 550px;
+    background: #002F2A;
+    background-image: var(--degradado-bottom);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    position:absolute;
+}
+
+.home-header-cont { 
+    color: var(--neutro100);
+    width: 24rem;
+}
+
+.home-header-cont h1 {
+    margin: 0;
+}
+
+.header-img {
+    margin-top: 5rem;
+}
+
+summary.h2b, summary.sh1sb {
+    margin: 0;
+}
+
+.tramites details li {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-bottom: 1px solid var(--neutro400);
+    padding: 1rem;
+}
+.tramites details li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.faq summary {
+    margin-bottom: 0;
+}
+.faq .details__caja {
+    margin-top: .75rem;
+    padding-top: .75rem;
+    border-top: 1px solid var(--neutro400);
+}
+.faq ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: .5rem;
+}
+.faq li {
+    padding: .5rem;
+}
+.contacto ul {
+    list-style: none;
+}
+.contacto li {
+    padding: .5rem 0;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.contacto strong.b1sb {
+    color: var(--principal);
+    margin: 0 0 .5rem;
+    display: inline-block;
+}
+.b-left {
+    padding: 0 0 0 1rem;
+    border-left: 1px solid var(--neutro400);
+    margin-bottom: 1rem;
+}
+.contacto .fila--mix-4-8 {
+    border-bottom: 1px solid var(--neutro400);
+    margin-bottom: 1rem;
+}
+.contacto .fila--mix-4-8:last-child {
+    border: none;
+}
+.Llave-hold--a-tramites {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Llave-hold {
+    padding-top: 128px;
+    background: url(./../../img/fondo-Llave.jpg) repeat-x;
+}
+.ver-mas {
+    display: flex;
+    justify-content: space-between;
+}
+.ver-mas--link {
+    display: inline-flex;
+    align-items: center;
+    width: 8rem;
+    color: var(--principal);
+}
+.ver-mas--link img {
+    width: 2rem;
+}
+
+
+@media (min-width:767.9px) and (max-width:1100px) {
+    .c-visa-electronica { padding:32px}
+    .home-header-cont {margin-top:40px; width:60%;}
+    .header-img { width:40%;}
+    .header-img img { width:120%; right:0;}
+}
+
+@media (max-width:767.9px) {
+    .home-header {flex-direction: column; height: auto; min-height:unset; margin-top: 3rem; padding-top: 2rem; align-items: flex-start; }
+    .home-header-cont {text-align:center; margin-top:0;}
+    .header-img img { width: 100%; border-radius: 1rem; }
+    .home-header-cont h1 {
+        text-align: left;
+    }
+    .home-header-cont .h1m {
+        text-align: left;
+        font-size: 2rem;
+        line-height: 110%;
+    }
+    .header-img {
+        text-align: center;
+        width: 100%;
+        padding: 1rem;
+        margin-top: 0;
+    }
+    .home-header-cont {
+        width: 100%;
+    }
+
+
+    .c-visa-electronica { padding:32px; flex-direction:column; 
+        background-image: url(../../img/nubes.png), linear-gradient(180deg, rgba(0, 42, 83, 1) 30%, rgba(33, 169, 216, 1) 90%); background-position:bottom;}
+    .c-visa-electronica__avion { position:static; height:200px;}
+    .c-visa-electronica__avion img { position:relative; width:100%; bottom:-90px}
+}

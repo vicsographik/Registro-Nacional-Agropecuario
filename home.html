@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Registro Nacional Agropecuario</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DESCRIPCIÓN">
+    <meta name="keywords" content="PALABRAS CLAVE">
+    <meta property="og:title" content="NOMBRE DEL SITIO">
+    <meta property="og:description" content="DESCRIPCIÓN">
+
+    <!-- LA RUTA DE LA IMAGEN OG:IMG DEBE SER ABSOLUTA  -->
+    <meta property="og:image" content="assets/img/og-img.png">
+    <link rel="shortcut icon" href="https://www.gob.mx/resources/img/favicon.ico">
+    <link href="https://framework-gb.cdn.gob.mx/gm/accesibilidad/css/gobmx-accesibilidad.min.css" rel="stylesheet">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- HEADER -->
+        <header class="header header--sombra">
+            <!--Lleva al contenido principal cuando se navega con tabulador-->
+            <a class="irContent" href="#mainContent">Ir al contenido principal</a>
+
+            <section class="mexico">
+                <div class="mexico__contenedor">
+                    <div class="mexico__escudo">
+                        <a href="https://www.gob.mx/" class="mexico__aescudo">
+                            <img src="assets/img/gobierno-mexico.svg" class="mexico__img"
+                                alt="Ir a la página de inicio del Gobierno de México">
+                        </a>
+                    </div>
+                    <div class="mexico__menu">
+                        <details class="mexico__details" open>
+                            <summary class="mexico__summary">
+                                <span class="mexico__span">Menú</span>
+                            </summary>
+                            <div class="mexico__detailsCont">
+                                <a href="https://www.gob.mx/tramites" class="mexico__a">Trámites</a>
+                                <a href="https://www.gob.mx/gobierno" class="mexico__a">Gobierno</a>
+                                <a href="https://www.gob.mx/" class="mexico__a" target="_blank" rel="noopener"
+                                    title="Ir a la página de búsqueda del Gobierno de México"><img
+                                        src="assets/icons-base/header-lupa.svg" alt=""></a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+            <section class="subheader">
+                <div class="subheader__contenedor">
+
+                    <div class="idioma">
+                        <div class="idioma__cont idioma--sm">
+                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
+                            <select class="idioma__select" id="idioma-select">
+                                <option lang="es">Es</option>
+                                <option lang="en">En</option>
+                                <option lang="de">De</option>
+                                <option lang="it">It</option>
+                                <option lang="fr">Fr</option>
+                                <option lang="pt">Pt</option>
+                            </select>
+                            <div class="idioma__marker" aria-hidden="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
+                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="idioma__cont idioma--lg">
+                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
+                            <select class="idioma__select" id="idioma-select">
+                                <option lang="es">Español</option>
+                                <option lang="en">English</option>
+                                <option lang="de">Deutsch</option>
+                                <option lang="it">Italiano</option>
+                                <option lang="fr">Français</option>
+                                <option lang="pt">Português</option>
+                            </select>
+                            <div class="idioma__marker" aria-hidden="true">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
+                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </header>
+
+        <!-- MAIN -->
+        <main id="mainContent">
+            <section class="home-header__parent">
+                <div class="home-header--background"></div>
+                <div class="home-header caja__maxw">
+                    <div class="home-header-cont">
+                        <h1 class="h1b pb--16"> <img src="./assets/img/Logo-Agricultura.svg"
+                                alt="Secretaría de Agricultura y Desarrollo Rural"></h1>
+                        <p class="h1m">Ventanilla única
+                            del Registro Nacional Agropecuario
+                        </p>
+                    </div>
+                    <div class="header-img">
+                        <img src="assets/img/campesino.jpg" alt="imagen de Visa mexicana" aria-hidden="true">
+                    </div>
+                </div>
+            </section>
+            <div class="caja__maxw">
+                <hr class="my--40">
+                <form class="search-container">
+                    <label for="search-main" class="oculto">Busca trámite por nombre</label>
+
+                    <div class="form__inset main-search">
+                        <input type="search" id="search-main"
+                            placeholder="Buscar trámite por nombre: aviso previo de constitución de una organización..."
+                            class="sh0r js-input" autocomplete="off" aria-expanded="false" aria-haspopup="listbox">
+
+                        <button class="search-button" type="submit">
+                            <span class="oculto">Buscar</span>
+                            <img src="./assets/icons-base/search.svg" alt="" aria-hidden="true" class="icono--blanco">
+                        </button>
+                    </div>
+
+                    <ul id="search-suggestions" class="suggestions-list js-list is-hidden" role="listbox">
+                        <li role="option">Senderismo en la montaña</li>
+                        <li role="option">Rutas gastronómicas</li>
+                        <li role="option">Tours en bicicleta</li>
+                        <li role="option">Avistamiento de aves</li>
+                    </ul>
+                </form>
+                <section class="tramites rowgap--16">
+                    <details class="cajaBasica--16">
+                        <summary class="h2b">Organismos ganaderos<span class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <ol>
+                                <li><span>Aviso previo de constitución de una organización ganadera</span><a href="#"
+                                        class="boton__primario">Ir al trámite</a></li>
+                                <li><span>Inscripción de constitución de organizaciones ganaderas, generales,
+                                        especializadas y uniones</span><a href="#" class="boton__primario">Ir al
+                                        trámite</a></li>
+                                <li><span>Solicitud de registro de modificaciones a las inscripciones en el Registro
+                                        Nacional de Organismos Ganaderos</span><a href="#" class="boton__primario">Ir al
+                                        trámite</a></li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="cajaBasica--16">
+                        <summary class="h2b">Organismos agrícolas<span class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <ol>
+                                <li><span>Autorización de organización y funcionamiento de un organismo
+                                        agrícola</span><a href="#" class="boton__primario">Ir al trámite</a></li>
+                                <li><span>Solicitud de registro de modificaciones a las inscripciones en el registro de
+                                        organismos agrícolas</span><a href="#" class="boton__primario">Ir al trámite</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="cajaBasica--16">
+                        <summary class="h2b">Organismos cañeros<span class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <ol>
+                                <li><span>Registro de una sociedad y/o asociación como organización local de
+                                        abastecedores de caña de azúcar</span><a href="#" class="boton__primario">Ir al
+                                        trámite</a></li>
+                                <li><span>Certificación de padrón de abastecedores ingenios azucareros, afiliaciones y
+                                        renuncias de abastecedores de caña de azúcar </span><a href="#"
+                                        class="boton__primario">Ir al trámite</a></li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="cajaBasica--16">
+                        <summary class="h2b">Registro Nacional Agropecuario<span class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <ol>
+                                <li><span>Expedición de copias certificadas de documentos que obran en la custodia del
+                                        Registro Nacional Agropecuario</span><a href="#" class="boton__primario">Ir al
+                                        trámite</a></li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="cajaBasica--16">
+                        <summary class="h2b">Organismos apícolas<span class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <ol>
+                                <li><span>Certificación de criaderos de abejas reinas</span><a href="#"
+                                        class="boton__primario">Ir al trámite</a></li>
+                                <li><span>Solicitud de constancias de control de la varroasis</span><a href="#"
+                                        class="boton__primario">Ir al trámite</a></li>
+                            </ol>
+                        </div>
+                    </details>
+                </section>
+                <section class="Llave-hold mt--64">
+                    <div class="cajaBasica--32 Llave-hold--a-tramites">
+                        <div>
+                            <img src="./assets/img/logo-Llave.svg" alt="Llave MX">
+                        </div>
+                        <div>
+                            <div class="sh0r">Accede a trámites y servicios del gobierno</div>
+                            <div class="botonera--start botonera--responsiva">
+                                <a class="boton__secundario" href="#">Crear cuenta</a>
+                                <a class="boton__primario" href="#">Iniciar sesión</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="ver-mas mt--48">
+                    <h2 class="mb--32">Conoce la ventanilla única</h2>
+                    <a class="ver-mas--link" href="#"><span>Ver más</span> <img class="icono--principal"
+                            src="./assets/icons/chevron--right.svg" alt=""></a>
+                </div>
+                <!-- SLIDER -->
+                <div class="slider" role="region" aria-label="Carrusel de promociones" aria-roledescription="carrusel">
+                    <div class="slider__track" id="sliderTrack">
+
+                        <div class="slider__slide slider__slide--active slider__slide--transparent" role="group"
+                            aria-roledescription="diapositiva" aria-label="Diapositiva 1 de 3">
+                            <picture>
+                                <source media="(max-width: 767.9px)" srcset="./assets/img/hold1.jpg">
+                                <img src="./assets/img/hold1.jpg" alt="Slide 1" class="slider__img">
+                            </picture>
+                            <div class="slider--text">En Tlaxcala honran a sus raíces y difuntos</div>
+                        </div>
+                        <div class="slider__slide  slider__slide--transparent" role="group"
+                            aria-roledescription="diapositiva" aria-label="Diapositiva 2 de 3">
+                            <picture>
+                                <source media="(max-width: 767.9px)" srcset="./assets/img/hold2.jpg">
+                                <img src="./assets/img/hold2.jpg" alt="Slide 2" class="slider__img">
+                            </picture>
+                            <div class="slider--text">#SENASICA realiza su labor para proteger al ganado del Gusano Barrenador</div>
+                        </div>
+                        <div class="slider__slide slider__slide--transparent" role="group"
+                            aria-roledescription="diapositiva" aria-label="Diapositiva 3 de 3">
+                            <picture>
+                                <source media="(max-width: 767.9px)" srcset="./assets/img/hold1.jpg">
+                                <img src="./assets/img/hold1.jpg" alt="Slide 3" class="slider__img">
+                            </picture>
+                            <div class="slider--text">#SENASICA realiza su labor para proteger al ganado del Gusano Barrenador</div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button id="prevBtn" class="slider-arrow" aria-label="Anterior"><img class="icono--principal"
+                                src="./assets/img/arrowLeft.svg" alt=""></button>
+                        <button id="nextBtn" class="slider-arrow" aria-label="Siguiente"><img class="icono--principal"
+                                src="./assets/img/arrowRight.svg" alt=""> </button>
+                    </div>
+                    <div class="slider__dots" id="sliderDots" role="tablist" aria-label="Seleccionar diapositiva">
+                        <button class="slider__dot slider__dot--active" role="tab" aria-selected="true"
+                            aria-label="Diapositiva 1"></button>
+                        <button class="slider__dot" role="tab" aria-selected="false"
+                            aria-label="Diapositiva 2"></button>
+                        <button class="slider__dot" role="tab" aria-selected="false"
+                            aria-label="Diapositiva 3"></button>
+                    </div>
+                </div>
+                <section class="faq rowgap--16">
+                    <h2>Preguntas frecuentes</h2>
+                    <details class="cajaBasica--16">
+                        <summary class="sh1sb">¿Cómo actualizo los medios de contacto en mi perfil de Llave MX?<span
+                                class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <ul>
+                                <li>Entra a <a href="#">LlaveMx </a> y accede a tu cuenta</li>
+                                <li>Ingresa el número de celular o correo electrónico que quieras actualizar</li>
+                                <li>Guarda los cambios</li>
+                                <li>Recibirás un enlace para verificar tu nuevo número de celular o correo electrónico
+                                    actualizados, consulta más información dando clic aquí</li>
+                            </ul>
+                        </div>
+                    </details>
+                </section>
+                <div class="logo--center mb--32 mt--64">
+                    <img src="./assets/img/Logo-SADER.png" alt="Secretaría de Agricultura y Desarrollo Rural">
+                </div>
+                <section class="contacto rowgap--16 mb--64">
+                    <details class="cajaBasica--16">
+                        <summary class="sh1sb">Medios de contacto<span class="details__flecha"></span>
+                        </summary>
+                        <div class="details__caja">
+                            <div class="fila--mix-4-8">
+                                <div>
+                                    <strong class="b1sb">Coordinación Ganadera</strong>
+                                    <ul>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-user.svg" alt="">
+                                            Lic. Guadalupe Griselda Peralvillo Guzmán
+                                        </li>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-phone.svg" alt="">
+                                            55 3871 1000 ext. 40179
+                                        </li>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-email.svg" alt="">
+                                            <a href="#">guadalupe.peralvillo@agricultura.gob.mx</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="b-left">
+                                    <strong class="b1sb">Trámites asignados</strong>
+                                    <ul>
+                                        <li>Aviso previo de constitución de una organización ganadera -
+                                            AGRICULTURA-02-003
+                                        </li>
+                                        <li>Inscripción de constitución de organizaciones ganaderas, generales,
+                                            especializadas y
+                                            uniones - AGRICULTURA-02-004</li>
+                                        <li>Solicitud de registro de modificaciones a las inscripciones en el Registro
+                                            Nacional
+                                            de Organismos Ganaderos - AGRICULTURA-02-005</li>
+                                        <li>Solicitud de expedición de constancias registrales y copias certificadas de
+                                            documentos que obran en la custodia del Registro Nacional Agropecuario -
+                                            AGRICULTURA-02-008</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fila--mix-4-8">
+                                <div>
+                                    <strong class="b1sb">Registro agrícola</strong>
+                                    <ul>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-user.svg" alt="">
+                                            Lic. Alberto Francisco Espinosa Razo
+                                        </li>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-phone.svg" alt="">
+                                            55 3871 1000 ext. 40170
+                                        </li>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-email.svg" alt="">
+                                            <a href="#">alberto.espinosa@agricultura.gob.mx</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="b-left">
+                                    <strong class="b1sb">Trámites asignados</strong>
+                                    <ul>
+                                        <li>Aviso previo de constitución de una organización ganadera -
+                                            AGRICULTURA-02-006
+                                        </li>
+                                        <li>Solicitud de registro de modificaciones a las inscripciones en el Registro
+                                            de Organismos Agrícolas - AGRICULTURA-02-007</li>
+                                        <li>Solicitud de expedición de constancias registrales y copias certificadas de
+                                            documentos que obran en la custodia del Registro Nacional Agropecuario -
+                                            AGRICULTURA-02-008</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fila--mix-4-8">
+                                <div>
+                                    <strong class="b1sb">Coordinación Cañera</strong>
+                                    <ul>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-user.svg" alt="">
+                                            Lic. Gerardo Román Bustos Hernández
+                                        </li>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-phone.svg" alt="">
+                                            55 3871 1000 ext. 40172
+                                        </li>
+                                        <li>
+                                            <img class="icono--principal" src="./assets/icons/ico-email.svg" alt="">
+                                            <a href="#">gerardo.bustos@agricultura.gob.mx</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="b-left">
+                                    <strong class="b1sb">Trámites asignados</strong>
+                                    <ul>
+                                        <li>Certificación de padrón de abastecedores ingenios azucareros, afiliaciones y
+                                            renuncias de abastecedores caña de azúcar - AGRICULTURA-02-009
+                                        </li>
+                                        <li>Registro de una sociedad y/o asociación como organización local de
+                                            abastecedores de caña de azúcar - AGRICULTURA-02-010</li>
+                                        <li>Solicitud de expedición de constancias registrales y copias certificadas de
+                                            documentos que obran en la custodia del Registro Nacional Agropecuario -
+                                            AGRICULTURA-02-008</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </section>
+            </div>
+
+        </main>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer__contenedor">
+
+                <!-- ESCUDO DEL GOBIERNO DE MEXICO -->
+                <div class="footer__mexico">
+                    <img src="https://framework-gb.cdn.gob.mx/gobmx/img/logo_blanco.svg" alt="Gobierno de México"
+                        class="footer__escudo">
+                </div>
+
+                <div class="footer__colCentral">
+
+                    <!-- QUE ES GOB MX -->
+                    <div class="footer__gobmx">
+                        <details class="mexico__details" open>
+                            <summary class="footer__summary footer__summary--gobmx">
+                                <span class="footer__tit">¿Qué es gob.mx?</span>
+                            </summary>
+                            <p class="mexico__detailsp"> Es el portal único de trámites, información y participación
+                                ciudadana.
+                                <a href="https://www.gob.mx/que-es-gobmx" target="_blank" rel="noopener"
+                                    title="El enlace abre en ventana nueva"> <b>Leer más</b> </a>
+                            </p>
+                        </details>
+                    </div>
+
+                    <!-- ENLACES -->
+                    <div class="footer__enlaces">
+                        <details class="mexico__details" open>
+                            <summary class="footer__summary footer__summary--enlaces"> <span
+                                    class="footer__tit">Enlaces</span>
+                            </summary>
+                            <div class="footer__enlacesList">
+
+                                <div class="footer__enlacesCol1">
+                                    <a class="footer__enlacesLink" href="https://datos.gob.mx/" target="_blank"
+                                        rel="noopener" title="El enlace abre en ventana nueva">
+                                        Datos
+                                    </a>
+
+                                    <a class="footer__enlacesLink"
+                                        href="https://www.gob.mx/inafed/acciones-y-programas/portal-de-obligaciones-de-transparencia-pot"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                                        Portal de Obligaciones de Transparencia
+                                    </a>
+
+                                    <a class="footer__enlacesLink"
+                                        href="https://www.plataformadetransparencia.org.mx/Inicio" target="_blank"
+                                        rel="noopener" title="El enlace abre en ventana nueva">
+                                        Plataforma Nacional de Transparencia
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="https://alertadores.buengobierno.gob.mx/"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                                        Alerta
+                                    </a>
+
+                                </div>
+
+                                <div class="footer__enlacesCol2">
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
+                                        Administraciones anteriores
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="https://www.gob.mx/accesibilidad"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                                        Declaración de accesibilidad
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="http://www.ordenjuridico.gob.mx/"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                                        Marco jurídico
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
+                                        Política de seguridad
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="https://www.gob.mx/terminos" target="_blank"
+                                        rel="noopener" title="El enlace abre en ventana nueva">
+                                        Términos y condiciones
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
+                                        Aviso de privacidad
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
+                                        Aviso de privacidad simplificado
+                                    </a>
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
+                                        Mapa de sitio
+                                    </a>
+                                </div>
+
+                            </div>
+                        </details>
+                    </div>
+
+
+
+                </div>
+
+                <!-- REDES -->
+                <div class="footer__redes">
+                    <p class="footer__denuncia">
+                        <a href="https://sidec.buengobierno.gob.mx/#!/" target="_blank" rel="noopener"
+                            title="El enlace abre en ventana nueva">
+                            Denuncia contra servidores públicos
+                        </a>
+                    </p>
+
+                    <div class="footer__siguenosCont">
+                        <p class="footer__siguenosTit">Síguenos en</p>
+                        <ul class="footer__redes__ul">
+                            <li> <a target="_blank" rel="noopener" title="El enlace abre en ventana nueva"
+                                    href="https://www.facebook.com/gobmexico" aria-label="Facebook de Presidencia"> <img
+                                        alt="Facebook" src="assets/icons-base/facebook.svg"> </a> </li>
+                            <li> <a target="_blank" rel="noopener" title="El enlace abre en ventana nueva"
+                                    href="https://twitter.com/GobiernoMX" aria-label="Twitter de Presidencia"> <img
+                                        alt="Twitter" src="assets/icons-base/twitter-x.svg"> </a> </li>
+                            <li> <a target="_blank" rel="noopener" title="El enlace abre en ventana nueva"
+                                    href="https://www.instagram.com/gobmexico/" aria-label="Instagram de Presidencia">
+                                    <img alt="instagram" src="assets/icons-base/instagram.svg"> </a> </li>
+                            <li> <a target="_blank" rel="noopener" title="El enlace abre en ventana nueva"
+                                    href="https://www.youtube.com/@gobiernodemexico"
+                                    aria-label="Youtube de Presidencia">
+                                    <img alt="youtube" src="assets/icons-base/youtube.svg"> </a> </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__079">
+                        <div class="footer__079col1">
+                            <img src="assets/icons-base/footer-flor.svg" alt="" class="footer__079img">
+                            <span class="footer__079num">079</span>
+                        </div>
+                        <div class="footer__079info">
+                            <span class="footer__079txt">Comunícate, <br> estamos para ayudarte</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="assets/js/header-footer-details.js"></script>
+    <script src="assets/js/details-cierra-onclickout.js"></script>
+    <script src="assets/js/details.js"></script>
+    <script src="assets/js/search-sugestionList.js"></script>
+    <script src="assets/js/slider.js"></script>
+
+</body>
+
+</html>
