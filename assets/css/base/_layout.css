@@ -256,7 +256,7 @@ a.footer__enlacesLink:visited { color:#FFF;}
     .menuMain__link { border-radius:8px; flex-direction:column; row-gap:4px; width:73px; padding:4px; font-weight:normal; font-size:.625rem; align-items:center; justify-content:start; text-align: center; height:100%;}
     
     /*menuMovil*/
-    .menuMovil {  position: absolute; right:0px; bottom:79px; z-index:4; width:75vw; transition:all .05s; padding:16px; display:flex; flex-direction:column; gap:16px; overflow-y:auto;}
+    .menuMovil {  position: absolute; right:0px; bottom:67px; z-index:12; width:75vw; transition:all .05s; padding:16px; display:flex; flex-direction:column; gap:16px; overflow-y:auto;}
     .menuMovil--colapsado { right:-75vw; display:none;}
     .menuMovil__tit { font-size:1.25rem; font-weight:500;}
     .menuMovil__list { padding:0; margin:0; list-style-type:none}
