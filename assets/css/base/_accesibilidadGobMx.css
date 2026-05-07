@@ -1,9 +1,9 @@
         #accesibilidadGob {
-            width: 1.3rem;
+            width: 2rem;
             padding-top: .2rem;
         }
         #accessibility {
-            background: transparent;
+            background: transparent !important;
         }
         #accessibility,
         .menu-btn {

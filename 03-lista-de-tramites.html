@@ -22,7 +22,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/estilos.css">
- 
+    <link href="https://framework-gb.cdn.gob.mx/gm/accesibilidad/css/gobmx-accesibilidad.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -60,7 +61,7 @@
             </section>
             <section class="subheader">
                 <div class="subheader__contenedor">
-                 <details class="mexico__details navHeader__details">
+                    <details class="mexico__details navHeader__details">
                         <summary class="mexico__summary">
                             <span class="mexico__span">Menú</span>
                         </summary>
@@ -75,12 +76,7 @@
                             </ul>
                         </nav>
                     </details>
-
-                    <button type="button" class="boton__limpio">
-                        <img src="assets/icons-base/accesibilidad.svg" alt="" aria-hidden="true" class="icono--32">
-                        <span class="oculto">Opciones de accesibilidad</span>
-                    </button>
-
+                    <div id="accesibilidadGob"></div>
                     <!-- class=detailsClickOut cierra Details si se cliquea fuera-->
                     <!-- temaVerde o temaRojo según sea el caso -->
                     <details class="usrperfil__details detailsClickOut temaVerde">
@@ -89,9 +85,9 @@
                                 <span class="usrperfil__iniciales">MA</span>
                                 <span class="usrperfil__nombre">María Concepción</span>
                             </span>
-                            <svg class="usrperfil__summaryIcon details__flecha" focusable="false" preserveAspectRatio="xMidYMid meet"
-                                fill="currentColor" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="usrperfil__summaryIcon details__flecha" focusable="false"
+                                preserveAspectRatio="xMidYMid meet" fill="currentColor" width="24" height="24"
+                                viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
                             </svg>
 
@@ -344,8 +340,9 @@
                     </a>
                 </li>
                 <li class="menuMain__item menuMain__item--mas">
-                    <button class="menuMain__link" id="menuMovil__gatillo" aria-expanded="false" >
-                        <img src="assets/icons/overflow-menu--horizontal.svg" alt="" aria-hidden="true" class="menuMain__icono">
+                    <button class="menuMain__link" id="menuMovil__gatillo" aria-expanded="false">
+                        <img src="assets/icons/overflow-menu--horizontal.svg" alt="" aria-hidden="true"
+                            class="menuMain__icono">
                         <span class="menuMain__txt">Más</span>
                     </button>
                 </li>
@@ -360,82 +357,128 @@
                 <hr class="hr">
                 <div class="menuMovil__tit">Mis trámites y servicios</div>
                 <ul class="menuMovil__list">
-                <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Ventanilla digital</span>
-                    </a>
-                </li>
+                    <li class="menuMovil__item">
+                        <a href="#" class="menuMovil__link">
+                            <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                            <span class="menuMain__txt">Ventanilla digital</span>
+                        </a>
+                    </li>
                 </ul>
                 <hr class="hr">
                 <div class="menuMovil__tit">Registro Nacional Agropecuario</div>
                 <ul class="menuMovil__list">
                     <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons-base/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Inicio</span>
-                    </a>
-                </li>
+                        <a href="#" class="menuMovil__link">
+                            <img src="assets/icons-base/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                            <span class="menuMain__txt">Inicio</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
-
         <!-- MAIN -->
         <main id="mainContent">
-        <!-- Bóton Volver -->
-        <a href="#" class="boton__link mb--32 mt--16">
-            <img src="./assets/icons-base/arrow-left.svg" alt="">
-            Volver
-        </a>
-        <!-- Mi perfil -->
-            <div class="progresoPasos__header">
-                <h1 class="progresoPasos__tit">Mi perfil</h1>
-                <p>En este apartado podrás visualizar tu información personal asociada a Llave MX.</p>
-            </div>
-            <div class="aviso aviso--info borde--no mb--24">
-                <svg class="aviso__icon" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z">
-                    </path>
-                    <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"></path>
-                </svg>
-                <div class="aviso__cont">
-                    Para editar tus datos debes hacerlo desde Llave MX
+            <!-- Bóton cancelar -->
+            <a href="#" class="boton__link mb--32 mt--16">
+                <img src="./assets/icons-base/arrow-left.svg" alt="">
+                Regresar
+            </a>
+            <!-- Pasos para completar el trámite -->
+            <section class="progresoPasos">
+                <div class="progresoPasos__header">
+                    <p class="h2sb">Trámites de la ventanilla única del Registro Nacional Agropecuario</p>
                 </div>
-            </div>
+            </section>
+            <form class="search-container">
+                <label class="sh0sb" for="search-main">Buscador de trámites</label>
 
-        <!-- Datos del perfil -->
-        <div class="cajaBasica--32 rowgap--24 mb--32">
-            <ul class="fila--col3">
-                <li>Primer apellido<br>
-                    <span class="f--semibold">Herrera</span>
-                </li>
-                <li>Segundo apellido<br>
-                    <span class="f--semibold">Marín</span>
-                </li>
-                <li>Nombre<br>
-                    <span class="f--semibold">Valeria</span>
-                </li>
-                <li>Nacionalidad<br>
-                    <span class="f--semibold">Mexicana</span>
-                </li>
-                <li><abbr title="Clave Única de Registro de Población">CURP</abbr><br>
-                    <span class="f--semibold">GAFA840901HDFRRL00</span>
-                </li>
-                <li><abbr title="Registro Federal de Contribuyentes">RFC</abbr><br>
-                    <span class="f--semibold">GAFA840901HD8</span>
-                </li>
-                <li>Teléfono<br>
-                    <span class="f--semibold">5567879087</span>
-                </li>
-                <li>Correo electrónico<br>
-                    <span class="f--semibold">clausita777@gmail.com</span>
-                </li>
-            </ul>
-        </div>
+                <div class="form__inset main-search">
+                    <input type="search" id="search-main"
+                        placeholder="Buscar trámite por nombre: aviso previo de constitución de una organización..."
+                        class="sh0r js-input" autocomplete="off" aria-expanded="false" aria-haspopup="listbox">
+
+                    <button class="search-button" type="submit">
+                        <span class="oculto">Buscar</span>
+                        <img src="./assets/icons-base/search.svg" alt="" aria-hidden="true" class="icono--blanco">
+                    </button>
+                </div>
+
+                <ul id="search-suggestions" class="suggestions-list js-list is-hidden" role="listbox">
+                    <li role="option">Senderismo en la montaña</li>
+                    <li role="option">Rutas gastronómicas</li>
+                    <li role="option">Tours en bicicleta</li>
+                    <li role="option">Avistamiento de aves</li>
+                </ul>
+            </form>
+            <section class="tramites rowgap--16">
+                <div class="cajaBasica--16">
+                    <summary class="h2b">Organismos ganaderos
+                    </summary>
+                    <div class="details__caja1">
+                        <ol>
+                            <li><span>Aviso previo de constitución de una organización ganadera</span><a href="#"
+                                    class="boton__primario">Ir al trámite</a></li>
+                            <li><span>Inscripción de constitución de organizaciones ganaderas, generales,
+                                    especializadas y uniones</span><a href="#" class="boton__primario">Ir al
+                                    trámite</a></li>
+                            <li><span>Solicitud de registro de modificaciones a las inscripciones en el Registro
+                                    Nacional de Organismos Ganaderos</span><a href="#" class="boton__primario">Ir al
+                                    trámite</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="cajaBasica--16">
+                    <summary class="h2b">Organismos agrícolas
+                    </summary>
+                    <div class="details__caja1">
+                        <ol>
+                            <li><span>Autorización de organización y funcionamiento de un organismo
+                                    agrícola</span><a href="#" class="boton__primario">Ir al trámite</a></li>
+                            <li><span>Solicitud de registro de modificaciones a las inscripciones en el registro de
+                                    organismos agrícolas</span><a href="#" class="boton__primario">Ir al trámite</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="cajaBasica--16">
+                    <summary class="h2b">Organismos cañeros
+                    </summary>
+                    <div class="details__caja1">
+                        <ol>
+                            <li><span>Registro de una sociedad y/o asociación como organización local de
+                                    abastecedores de caña de azúcar</span><a href="#" class="boton__primario">Ir al
+                                    trámite</a></li>
+                            <li><span>Certificación de padrón de abastecedores ingenios azucareros, afiliaciones y
+                                    renuncias de abastecedores de caña de azúcar </span><a href="#"
+                                    class="boton__primario">Ir al trámite</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="cajaBasica--16">
+                    <summary class="h2b">Registro Nacional Agropecuario
+                    </summary>
+                    <div class="details__caja1">
+                        <ol>
+                            <li><span>Expedición de copias certificadas de documentos que obran en la custodia del
+                                    Registro Nacional Agropecuario</span><a href="#" class="boton__primario">Ir al
+                                    trámite</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="cajaBasica--16">
+                    <summary class="h2b">Organismos apícolas
+                    </summary>
+                    <div class="details__caja1">
+                        <ol>
+                            <li><span>Certificación de criaderos de abejas reinas</span><a href="#"
+                                    class="boton__primario">Ir al trámite</a></li>
+                            <li><span>Solicitud de constancias de control de la varroasis</span><a href="#"
+                                    class="boton__primario">Ir al trámite</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
         </main>
-
         <!-- FOOTER -->
         <footer class="footer">
             <div class="footer__contenedor">
@@ -454,9 +497,11 @@
                             <summary class="footer__summary footer__summary--gobmx">
                                 <span class="footer__tit">¿Qué es gob.mx?</span>
                             </summary>
-                            <p class="mexico__detailsp"> Es el portal único de trámites, información y participación ciudadana.
+                            <p class="mexico__detailsp"> Es el portal único de trámites, información y participación
+                                ciudadana.
                                 <a href="https://www.gob.mx/que-es-gobmx" target="_blank" rel="noopener"
-                                    title="El enlace abre en ventana nueva"> <b>Leer más</b> </a> </p>
+                                    title="El enlace abre en ventana nueva"> <b>Leer más</b> </a>
+                            </p>
                         </details>
                     </div>
 
@@ -467,56 +512,70 @@
                                     class="footer__tit">Enlaces</span>
                             </summary>
                             <div class="footer__enlacesList">
-                                
+
                                 <div class="footer__enlacesCol1">
-                                    <a class="footer__enlacesLink" href="https://datos.gob.mx/" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                                    <a class="footer__enlacesLink" href="https://datos.gob.mx/" target="_blank"
+                                        rel="noopener" title="El enlace abre en ventana nueva">
                                         Datos
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="https://www.gob.mx/inafed/acciones-y-programas/portal-de-obligaciones-de-transparencia-pot" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink"
+                                        href="https://www.gob.mx/inafed/acciones-y-programas/portal-de-obligaciones-de-transparencia-pot"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
                                         Portal de Obligaciones de Transparencia
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="https://www.plataformadetransparencia.org.mx/Inicio" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink"
+                                        href="https://www.plataformadetransparencia.org.mx/Inicio" target="_blank"
+                                        rel="noopener" title="El enlace abre en ventana nueva">
                                         Plataforma Nacional de Transparencia
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="https://alertadores.buengobierno.gob.mx/" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="https://alertadores.buengobierno.gob.mx/"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
                                         Alerta
                                     </a>
-                                
+
                                 </div>
-                                
+
                                 <div class="footer__enlacesCol2">
-                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
                                         Administraciones anteriores
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="https://www.gob.mx/accesibilidad" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="https://www.gob.mx/accesibilidad"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
                                         Declaración de accesibilidad
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="http://www.ordenjuridico.gob.mx/" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="http://www.ordenjuridico.gob.mx/"
+                                        target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
                                         Marco jurídico
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
                                         Política de seguridad
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="https://www.gob.mx/terminos" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="https://www.gob.mx/terminos" target="_blank"
+                                        rel="noopener" title="El enlace abre en ventana nueva">
                                         Términos y condiciones
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
                                         Aviso de privacidad
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
                                         Aviso de privacidad simplificado
                                     </a>
-                                    
-                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+
+                                    <a class="footer__enlacesLink" href="#" target="_blank" rel="noopener"
+                                        title="El enlace abre en ventana nueva">
                                         Mapa de sitio
                                     </a>
                                 </div>
@@ -525,14 +584,15 @@
                         </details>
                     </div>
 
-                    
+
 
                 </div>
 
                 <!-- REDES -->
                 <div class="footer__redes">
                     <p class="footer__denuncia">
-                        <a href="https://sidec.buengobierno.gob.mx/#!/" target="_blank" rel="noopener" title="El enlace abre en ventana nueva">
+                        <a href="https://sidec.buengobierno.gob.mx/#!/" target="_blank" rel="noopener"
+                            title="El enlace abre en ventana nueva">
                             Denuncia contra servidores públicos
                         </a>
                     </p>
@@ -547,10 +607,11 @@
                                     href="https://twitter.com/GobiernoMX" aria-label="Twitter de Presidencia"> <img
                                         alt="Twitter" src="assets/icons-base/twitter-x.svg"> </a> </li>
                             <li> <a target="_blank" rel="noopener" title="El enlace abre en ventana nueva"
-                                    href="https://www.instagram.com/gobmexico/" aria-label="Instagram de Presidencia"> <img
-                                        alt="instagram" src="assets/icons-base/instagram.svg"> </a> </li>
+                                    href="https://www.instagram.com/gobmexico/" aria-label="Instagram de Presidencia">
+                                    <img alt="instagram" src="assets/icons-base/instagram.svg"> </a> </li>
                             <li> <a target="_blank" rel="noopener" title="El enlace abre en ventana nueva"
-                                    href="https://www.youtube.com/@gobiernodemexico" aria-label="Youtube de Presidencia">
+                                    href="https://www.youtube.com/@gobiernodemexico"
+                                    aria-label="Youtube de Presidencia">
                                     <img alt="youtube" src="assets/icons-base/youtube.svg"> </a> </li>
                         </ul>
                     </div>
@@ -571,11 +632,12 @@
     </div>
 
     <script src="assets/js/header-footer-details.js"></script>
-    <script src="assets/js/details-deskOpen.js"></script>
     <script src="assets/js/dialog.js"></script>
     <script src="assets/js/aside-show-hide.js"></script>
     <script src="assets/js/aside-movil-height.js"></script>
     <script src="assets/js/details-cierra-onclickout.js"></script>
+    <script src="assets/js/accesibilidad-gobmx.js"></script>
+    <script src="https://framework-gb.cdn.gob.mx/gm/accesibilidad/js/gobmx-accesibilidad.min.js"></script>
 
 </body>
 

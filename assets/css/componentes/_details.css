@@ -11,7 +11,7 @@ details[open] .openHide { display:none;}    /*Oculto en Details open / Mostrado 
 
 /* Rota la flecha del summary*/
 .details__flecha { transition:all 0.2s; background-image: url(./../../icons-base/chevron--down.svg);
-width: 2rem; height: 2rem;}
+width: 2rem; height: 2rem; background-repeat: no-repeat;}
 [open] .details__flecha { transform: rotate(-180deg);}
 
 /*Linea entre summary y contenido*/

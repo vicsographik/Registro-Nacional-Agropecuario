@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Title</title>
+    <title>Registro Nacional Agropecuario</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/estilos.css">
+    <link href="https://framework-gb.cdn.gob.mx/gm/accesibilidad/css/gobmx-accesibilidad.min.css" rel="stylesheet">
  
 </head>
 
@@ -60,44 +61,23 @@
             </section>
             <section class="subheader">
                 <div class="subheader__contenedor">
+                 <details class="mexico__details navHeader__details">
+                        <summary class="mexico__summary">
+                            <span class="mexico__span">Menú</span>
+                        </summary>
+                        <nav class="navHeader">
+                            <ul class="navHeader__ul mexico__detailsCont">
+                                <li class="navHeader__li">
+                                    <a href="#" class="navHeader__a">Inicio</a>
+                                </li>
+                                <li class="navHeader__li">
+                                    <a href="#" class="navHeader__a" aria-current="page">Trámites y servicios</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </details>
 
-                    <div class="idioma">
-                        <div class="idioma__cont idioma--sm">
-                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
-                            <select class="idioma__select" id="idioma-select">
-                                <option lang="es">Es</option>
-                                <option lang="en">En</option>
-                                <option lang="de">De</option>
-                                <option lang="it">It</option>
-                                <option lang="fr">Fr</option>
-                                <option lang="pt">Pt</option>
-                            </select>
-                            <div class="idioma__marker" aria-hidden="true">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="idioma__cont idioma--lg">
-                            <label for="idioma--select" class="oculto">Selecciona idioma</label>
-                            <select class="idioma__select" id="idioma-select">
-                                <option lang="es">Español</option>
-                                <option lang="en">English</option>
-                                <option lang="de">Deutsch</option>
-                                <option lang="it">Italiano</option>
-                                <option lang="fr">Français</option>
-                                <option lang="pt">Português</option>
-                            </select>
-                            <div class="idioma__marker" aria-hidden="true">
-                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
-                                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </div>
+                    <div id="accesibilidadGob"></div>
 
                     <!-- class=detailsClickOut cierra Details si se cliquea fuera-->
                     <!-- temaVerde o temaRojo según sea el caso -->
@@ -351,31 +331,16 @@
                 </svg>
             </button>
             <div class="menuMain__header">
-                <div class="menuMain__headerCont">Plataforma Nacional de Catastro</div>
+                <div class="menuMain__headerCont">Registro Nacional Agropecuario</div>
+                <div class="menuMain__txt ">Ventanilla de trámites</div>
             </div>
             <ul class="menuMain__lista">
-
-                <li class="menuMain__item">
-                    <a href="#" class="menuMain__link menuMain__linkSm">
-                        <img src="assets/icons/money.svg" alt="" aria-hidden="true" class="menuMain__icono">
-                        <span class="menuMain__txt">Central de Pagos</span>
-                    </a>
-                </li>
-
                 <li class="menuMain__item">
                     <a href="#" class="menuMain__link menuMain__linkSm" aria-current="page">
                         <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="menuMain__icono">
-                        <span class="menuMain__txt">Ventanilla digital</span>
+                        <span class="menuMain__txt">Mis trámites</span>
                     </a>
                 </li>
-
-                <li class="menuMain__item">
-                    <a href="#" class="menuMain__link menuMain__linkSm" >
-                        <img src="assets/icons/folder.svg" alt="" aria-hidden="true" class="menuMain__icono">
-                        <span class="menuMain__txt">Expediente</span>
-                    </a>
-                </li>
-
                 <li class="menuMain__item menuMain__item--mas">
                     <button class="menuMain__link" id="menuMovil__gatillo" aria-expanded="false" >
                         <img src="assets/icons/overflow-menu--horizontal.svg" alt="" aria-hidden="true" class="menuMain__icono">
@@ -391,35 +356,21 @@
                     <img src="assets/icons/close.svg" alt="" aria-hidden="true" class="">
                 </button>
                 <hr class="hr">
-                <div class="menuMovil__tit">Mi PNC</div>
+                <div class="menuMovil__tit">Mis trámites y servicios</div>
                 <ul class="menuMovil__list">
-                    <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/money.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Central de Pagos</span>
-                    </a>
-                </li>
-
                 <li class="menuMovil__item">
                     <a href="#" class="menuMovil__link">
                         <img src="assets/icons/document.svg" alt="" aria-hidden="true" class="ico--blanco--24">
                         <span class="menuMain__txt">Ventanilla digital</span>
                     </a>
                 </li>
-
-                <li class="menuMovil__item">
-                    <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/folder.svg" alt="" aria-hidden="true" class="ico--blanco--24">
-                        <span class="menuMain__txt">Expediente</span>
-                    </a>
-                </li>
                 </ul>
                 <hr class="hr">
-                <div class="menuMovil__tit">Plataforma nacional de catastrro</div>
+                <div class="menuMovil__tit">Registro Nacional Agropecuario</div>
                 <ul class="menuMovil__list">
                     <li class="menuMovil__item">
                     <a href="#" class="menuMovil__link">
-                        <img src="assets/icons/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
+                        <img src="assets/icons-base/home.svg" alt="" aria-hidden="true" class="ico--blanco--24">
                         <span class="menuMain__txt">Inicio</span>
                     </a>
                 </li>
@@ -429,7 +380,58 @@
 
         <!-- MAIN -->
         <main id="mainContent">
-            <div style="background:#CCC; height:300px;">Contenido</div>
+        <!-- Bóton Volver -->
+        <a href="#" class="boton__link mb--32 mt--16">
+            <img src="./assets/icons-base/arrow-left.svg" alt="">
+            Volver
+        </a>
+        <!-- Mi perfil -->
+            <div class="progresoPasos__header">
+                <h1 class="progresoPasos__tit">Mi perfil</h1>
+                <p>En este apartado podrás visualizar tu información personal asociada a Llave MX.</p>
+            </div>
+            <div class="aviso aviso--info borde--no mb--24">
+                <svg class="aviso__icon" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
+                    viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z">
+                    </path>
+                    <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"></path>
+                </svg>
+                <div class="aviso__cont">
+                    Para editar tus datos debes hacerlo desde Llave MX
+                </div>
+            </div>
+
+        <!-- Datos del perfil -->
+        <div class="cajaBasica--32 rowgap--24 mb--32">
+            <ul class="fila--col3">
+                <li>Primer apellido<br>
+                    <span class="f--semibold">Herrera</span>
+                </li>
+                <li>Segundo apellido<br>
+                    <span class="f--semibold">Marín</span>
+                </li>
+                <li>Nombre<br>
+                    <span class="f--semibold">Valeria</span>
+                </li>
+                <li>Nacionalidad<br>
+                    <span class="f--semibold">Mexicana</span>
+                </li>
+                <li><abbr title="Clave Única de Registro de Población">CURP</abbr><br>
+                    <span class="f--semibold">GAFA840901HDFRRL00</span>
+                </li>
+                <li><abbr title="Registro Federal de Contribuyentes">RFC</abbr><br>
+                    <span class="f--semibold">GAFA840901HD8</span>
+                </li>
+                <li>Teléfono<br>
+                    <span class="f--semibold">5567879087</span>
+                </li>
+                <li>Correo electrónico<br>
+                    <span class="f--semibold">clausita777@gmail.com</span>
+                </li>
+            </ul>
+        </div>
         </main>
 
         <!-- FOOTER -->
@@ -571,8 +573,9 @@
     <script src="assets/js/dialog.js"></script>
     <script src="assets/js/aside-show-hide.js"></script>
     <script src="assets/js/aside-movil-height.js"></script>
-    <script src="assets/js/tabla-responsiva-sombreado.js"></script>
     <script src="assets/js/details-cierra-onclickout.js"></script>
+    <script src="assets/js/accesibilidad-gobmx.js"></script>
+    <script src="https://framework-gb.cdn.gob.mx/gm/accesibilidad/js/gobmx-accesibilidad.min.js"></script>
 
 </body>
 

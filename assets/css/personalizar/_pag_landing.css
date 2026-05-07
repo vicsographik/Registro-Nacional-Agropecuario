@@ -27,16 +27,19 @@ summary.h2b, summary.sh1sb {
     margin: 0;
 }
 
-.tramites details li {
+.tramites details li, .tramites .details__caja1 li {
     display: flex;
     align-items: center;
     justify-content:space-between;
     border-bottom: 1px solid var(--neutro400);
     padding: 1rem;
 }
-.tramites details li:last-child {
+.tramites details li:last-child, .tramites .details__caja1 li:last-child {
     border-bottom: none;
     padding-bottom: 0;
+}
+.tramites .boton__primario {
+    min-width: 8.9rem;
 }
 .faq summary {
     margin-bottom: 0;
@@ -134,7 +137,25 @@ summary.h2b, summary.sh1sb {
     .home-header-cont {
         width: 100%;
     }
-
+    .tramites details li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .tramites .boton__primario {
+        width: 100%;
+    }
+    .Llave-hold--a-tramites {
+        width: 90%;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .Llave-hold--a-tramites__im {
+        width: 50%;
+    }
+    .menu-slide {top: 3.5rem !important;}
 
     .c-visa-electronica { padding:32px; flex-direction:column; 
         background-image: url(../../img/nubes.png), linear-gradient(180deg, rgba(0, 42, 83, 1) 30%, rgba(33, 169, 216, 1) 90%); background-position:bottom;}
