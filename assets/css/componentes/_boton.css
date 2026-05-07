@@ -112,7 +112,10 @@
 
 .boton__link--underline { text-decoration:underline;}
 
-
+/*LIMPIO*/
+.boton__limpio { padding:0; min-width:unset;}
+.boton__limpio img, 
+.boton__limpio svg { width:unset;}
 
 
 

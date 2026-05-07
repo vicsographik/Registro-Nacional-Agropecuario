@@ -48,9 +48,9 @@ progress { background-color:var(--neutro400);}
 
 /*PASOS PROGRESO*/
 .progresoPasos { margin-bottom:3rem;}
-.progresoPasos__desc {  font-size:1rem; font-weight:600; color: var(--neutro600);  margin:0; }
+.progresoPasos__desc {  font-size:1rem; font-weight:600; color: var(--neutro700);  margin:0; }
 .progresoPasos__desc.desc--v2 { font-size:1.5rem; color: var(--principal); margin-bottom:16px;}
-.progresoPasos__tit { font-size:1.5rem; font-weight:600; color: var(--principal); margin:0 0 1.5rem 0; }
+.progresoPasos__tit { font-size:1.5rem; font-weight:600; margin:0 0 1.5rem 0; }
 .progresoPasos__tit.tit--v2 { font-weight:400;  margin:0; }
 
 .progresoPasos__pasos { display:flex; column-gap:1rem; align-items:start; justify-content: center;  }
