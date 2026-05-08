@@ -73,7 +73,7 @@
     justify-content: space-between;
 }
 .search--field {
-    width: 40%;
+    width: 43%;
 }
 
 /* ---------------- FORM ---------------- */
@@ -362,6 +362,12 @@
         padding: 3rem 0 6rem 1rem;
         width: 90%;
     }
+    .bandeja--params {
+        padding: 0 1rem;
+    }
+    .r-btns {
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width:768px) {
@@ -371,6 +377,15 @@
     }
 
     .head-title--button {
+        width: 100%;
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search--field {
+        width: 100%;
+    }
+    .dateSelected {
         width: 100%;
     }
 }
